@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    
+    <script type="text/javascript" src="http://iop.io/js/vendor/d3.v3.min.js"></script>
+    <script type="text/javascript" src="http://iop.io/js/vendor/polymer/PointerEvents/pointerevents.js"></script>
+    <script type="text/javascript" src="http://iop.io/js/vendor/polymer/PointerGestures/pointergestures.js"></script>
+    <script type="text/javascript" src="http://iop.io/js/iopctrl.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div>
+      http://www.presentation-process.com/wp-content/uploads/pptx-flat-design-speedometer.jpg
+        <span id="speedometer"></span>
+    </div>
+    
+    <script>
+        var svg = d3.select("#speedometer")
+                .append("svg:svg")
+                .attr("width", 400)
+                .attr("height", 400);
+
+
+        var gauge = iopctrl.arcslider()
+                .radius(120)
+                .events(false)
+                .indicator(iopctrl.defaultGaugeIndicator);
+        gauge.axis().orient("in")
+                .normalize(true)
+                .ticks(12)
+                .tickSubdivide(3)
+                .tickSize(10, 8, 10)
+                .tickPadding(5)
+                .scale(d3.scale.linear()
+                        .domain([0, 160])
+                        .range([-3*Math.PI/4, 3*Math.PI/4]));
+        var gauge2 = gauge;
+
+        svg.append("g")
+                .attr("class", "gauge")
+                .call(gauge);
+                
+        svg.append("g")
+                .attr("class", "gauge2")
+                .call(gauge2);      
+                
+        gauge2.value(10);
+        gauge.value(92);
+        
+    
+    </script>
+  </body>
+</html>

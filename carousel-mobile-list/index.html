@@ -1,0 +1,30 @@
+<!doctype html>
+<html ng-app="ui.bootstrap.demo">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.js"></script>
+    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
+    <script src="example.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  </head>
+  <body>
+
+<div ng-controller="CarouselDemoCtrl">
+  <div style="height: 305px">
+    <carousel interval="myInterval" class="visible-xs">
+      <slide ng-repeat="slide in slides" active="slide.active">
+            <a href="#" ng-href="slide.href">
+                <i class="fa fa-5x" ng-class="slide.icon"></i>
+                <h4 ng-bind="slide.title"></h4>
+            </a>
+      </slide>
+    </carousel>
+	<div ng-repeat="slide in slides" active="slide.active" class="hidden-xs">
+            <a href="#" ng-href="slide.href">
+                <i class="fa fa-5x" ng-class="slide.icon"></i>
+                <h4 ng-bind="slide.title"></h4>
+            </a>
+  </div>
+  </div>
+  </body>
+</html>
