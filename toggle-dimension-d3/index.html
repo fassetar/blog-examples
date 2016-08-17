@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 960px;
+    height: 500px;
+    position: relative;
+  }
+  
+  path.topSlice,
+  path.outerSlice {
+    stroke: white !important;
+    stroke-width: 0.4px;
+  }
+  
+  polyline {
+    opacity: .3;
+    stroke: black;
+    stroke-width: 2px;
+    fill: none;
+  }
+  
+  svg text.percent {
+    font-size: 12px;
+  }
+</style>
+<link href="style.css" rel="stylesheet" />
+
+<body>
+  <label>3D/2D</label>
+  <label class="switch">
+    <input type="checkbox" class="messageCheckbox" onClick="changeData()">
+    <div class="slider round"></div>
+  </label>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="Donut3D.js"></script>
+  <script>
+    var salesData = [{
+      label: "Basic",
+      color: "#67b7dc"
+    }, {
+      label: "Plus",
+      color: "#84B761"
+    }, {
+      label: "Lite",
+      color: "#fdd400"
+    }, {
+      label: "Elite",
+      color: "#cc4748"
+    }, {
+      label: "Delux",
+      color: "#2F4074"
+    }];
+
+    var svg = d3.select("body").append("svg").attr("width", 700).attr("height", 300);
+
+    svg.append("g").attr("id", "salesDonut");
+
+    Donut3D.draw("salesDonut", randomData(), 150, 150, 130, 120, 20, 0);
+
+    function changeData() {
+      var checkedValue = document.querySelector('.messageCheckbox').checked;
+      if (checkedValue) {
+        Donut3D.transition("salesDonut", randomData(), 130, 120, 0, 0);
+      } else {
+        Donut3D.transition("salesDonut", randomData(), 130, 120, 20, 0);
+      }
+    }
+
+    function randomData() {
+      return salesData.map(function(d) {
+        return {
+          label: d.label,
+          value: 1000 * Math.random(),
+          color: d.color
+        };
+      });
+    }
+  </script>
+</body>
