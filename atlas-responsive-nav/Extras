@@ -1,0 +1,29 @@
+What's the difference from navbar-right vs. pull-right?
+
+
+what's the difference from navbar-nav vs. nav-pills?
+
+
+
+
+<div class="navbar-header">
+        <a class="navbar-brand" href="/">Company Logo</a>
+      <!--This needs to center on lower res.-->
+      <!--These Url's are case sentive-->
+</div>
+
+
+
+       <!--nav navbar-nav navbar-right vs. nav navbar-nav navpills pull-right-->
+       <!-- Are not the the same one will make the icons stack and the others not-->
+        <!--This is fine if it's a image but text would wrap-->
+        
+        
+
+Default height behavior --
+When you can use the p tag but otherwise try a break tag.
+http://stackoverflow.com/questions/8397852/why-p-tag-cant-contain-div-tag-inside-it
+
+
+Removing extra links on particular pages..
+http://stackoverflow.com/q/22338743/1265036

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="scotchApp" lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+  <style>
+    .navbar .navbar-nav {
+      display: inline-block;
+      float: none;
+      vertical-align: top;
+    }
+  </style>
+  <title ng-bind="Page.title"></title>
+</head>
+<body ng-controller="mainController">
+  <div ng-bind="Page.title"></div>
+    <div class="container">
+      <br/>
+        <div class="media pull-left col-centered ">
+          <img class="media-object pull-left" src="..." alt="..." height="45" width="45"/>
+          <div class="media-body">
+            <h4 class="media-heading"><a class="" href="#">Company Name</a></h4>
+              <small>Company Message</small>
+          </div>
+        </div>
+        <ul class="nav pull-right">
+          <li><a href="#login"><i class="fa fa-sign-in fa-fw"></i>Login</a></li>
+        </ul>
+    </div>
+    <br/>
+    <nav class="navbar navbar-default text-center" role="navigation">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".layout-nav">
+        <i class="fa fa-list fa-lg"></i>
+      </button>
+      <div class="navbar-collapse collapse layout-nav">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  <div id="main">
+    <!-- angular templating -->
+    <div ng-view></div>
+  </div>
+  
+  <footer class="text-center">
+    <p>Address</p>
+    <p>Phone Number</p>
+  </footer>
+  <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="script (2).js"></script>
+</body>
+</html>

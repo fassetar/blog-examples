@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html ng-app="scotchApp" lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+  <style>
+    #main {
+  float: left;
+  width: 750px;
+}
+
+#sidebar {
+  float: right;
+  width: 100px;
+}
+
+#sequence {
+  width: 600px;
+  height: 70px;
+}
+
+#legend {
+  padding: 10px 0 0 3px;
+}
+
+#sequence text, #legend text {
+  font-weight: 600;
+  fill: #fff;
+}
+
+#chart {
+  position: relative;
+}
+
+#chart path {
+  stroke: #fff;
+}
+
+#explanation {
+  position: absolute;
+  top: 260px;
+  left: 305px;
+  width: 140px;
+  text-align: center;
+  color: #666;
+  z-index: -1;
+}
+
+#percentage {
+  font-size: 2.5em;
+}
+  </style>
+  <title ng-bind="Page.title"></title>
+</head>
+<body ng-controller="mainController" id="fromHTMLtestdiv">
+    <div class="container">
+      <br/>
+        <div class="media pull-left col-centered ">
+          <img class="media-object pull-left" src="#" alt="..." height="45" width="45"/>
+          <div class="media-body">
+            <h4 class="media-heading"><a class="" href="#">Company Name</a></h4>
+              <small>Company Message</small>
+          </div>
+        </div>
+        <ul class="nav pull-right">
+          <li><a href="#login"><i class="fa fa-sign-in fa-fw"></i>Login</a></li>
+        </ul>
+    </div>
+    <br/>
+    <nav class="navbar navbar-default" role="navigation">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".layout-nav">
+        <i class="fa fa-list fa-lg"></i>
+      </button>
+      <div class="container">
+      <div class="row">
+      <div class="navbar-collapse collapse layout-nav">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <form class="navbar-form navbar-right" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      </div>
+      </div>
+    </nav>
+    
+  <div id="main">
+    <!-- angular templating -->
+    <div ng-view><p>THSESATSFASDFKFDASLKDFS</p></div>
+  </div>
+  <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="jspdf.min.js"></script>
+  <script src="script.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script>
+var width = 960,
+    height = 700,
+    radius = Math.min(width, height) / 2,
+    color = d3.scale.category20c();
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("class", "to_pdf")
+    .attr("height", height)
+    .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height * .52 + ")");
+
+var partition = d3.layout.partition()
+    .sort(null)
+    .size([2 * Math.PI, radius * radius])
+    .value(function(d) { return 1; });
+
+var arc = d3.svg.arc()
+    .startAngle(function(d) { return d.x; })
+    .endAngle(function(d) { return d.x + d.dx; })
+    .innerRadius(function(d) { return Math.sqrt(d.y); })
+    .outerRadius(function(d) { return Math.sqrt(d.y + d.dy); });
+
+d3.json("flare.json", function(error, root) {
+  var path = svg.datum(root).selectAll("path")
+      .data(partition.nodes)
+    .enter().append("path")
+      .attr("display", function(d) { return d.depth ? null : "none"; }) // hide inner ring
+      .attr("d", arc)
+      .style("stroke", "#fff")
+      .style("fill", function(d) { return color((d.children ? d : d.parent).name); })
+      .style("fill-rule", "evenodd")
+      .each(stash);
+
+  d3.selectAll("input").on("change", function change() {
+    var value = this.value === "count"
+      ? function() { return 1; }
+        : function(d) { return d.size; };
+
+    path
+        .data(partition.value(value).nodes)
+      .transition()
+        .duration(1500)
+        .attrTween("d", arcTween);
+  });
+});
+
+// Stash the old values for transition.
+function stash(d) {
+  d.x0 = d.x;
+  d.dx0 = d.dx;
+}
+
+// Interpolate the arcs in data space.
+function arcTween(a) {
+  var i = d3.interpolate({x: a.x0, dx: a.dx0}, a);
+  return function(t) {
+    var b = i(t);
+    a.x0 = b.x;
+    a.dx0 = b.dx;
+    return arc(b);
+  };
+}
+
+  d3.select(self.frameElement).style("height", height + "px");
+
+  $(".btn-primary").click(function() {
+    var svg = document.querySelector( "svg" );
+    var svgData = new XMLSerializer().serializeToString( svg );
+ 
+    var canvas = document.createElement( "canvas" );
+    var svgSize = svg.getBoundingClientRect();
+        canvas.width = svgSize.width;
+        canvas.height = svgSize.height;
+    var ctx = canvas.getContext( "2d" );
+ 
+    var img = document.createElement( "img" );
+    img.setAttribute( "src", "data:image/svg+xml;base64," + btoa( svgData ) );
+ 
+    var pdf = new jsPDF('p', 'pt', 'letter')
+        , source = $('#fromHTMLtestdiv')[0]
+        , specialElementHandlers = {
+	'#bypassme': function(element, renderer){
+		return true
+	}
+}
+
+
+margins = {
+    top: 80,
+    bottom: 60,
+    left: 40,
+    width: 522
+  };
+  img.onload = function() {
+    ctx.drawImage(img, 0, 0 );
+    console.log(canvas.toDataURL("image/png"));
+    pdf.addImage(canvas.toDataURL("image/png"), 'png', 15, 40, 180, 160);
+    
+  
+    pdf.fromHTML(
+  	source // HTML string or DOM elem ref.
+  	, margins.left // x coord
+  	, margins.top // y coord
+  	, {
+  		'width': margins.width // max width of content on PDF
+  		, 'elementHandlers': specialElementHandlers
+  	},
+  	function (dispose) {
+  	  // dispose: object with X, Y of the last line add to the PDF
+  	  //          this allow the insertion of new lines after html
+        pdf.save('Test.pdf');
+      },
+  	margins
+  )
+      // Now is done
+    console.log( canvas.toDataURL( "image/png" ) );
+    };
+    
+  });
+</script>
+</body>
+</html>
