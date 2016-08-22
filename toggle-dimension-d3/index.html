@@ -33,7 +33,7 @@
     <input type="checkbox" class="messageCheckbox" onClick="changeData()">
     <div class="slider round"></div>
   </label>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
   <script src="Donut3D.js"></script>
   <script>
     var salesData = [{
@@ -53,18 +53,18 @@
       color: "#2F4074"
     }];
 
-    var svg = d3.select("body").append("svg").attr("width", 700).attr("height", 300);
+    var svg = d3.select("body").append("svg").attr("width", 300).attr("height", 300);
 
-    svg.append("g").attr("id", "salesDonut");
+    svg.append("g").attr("id", "salesDonut").style("float","left");
 
     Donut3D.draw("salesDonut", randomData(), 150, 150, 130, 120, 20, 0);
 
     function changeData() {
       var checkedValue = document.querySelector('.messageCheckbox').checked;
-      if (checkedValue) {
-        Donut3D.transition("salesDonut", randomData(), 130, 120, 0, 0);
-      } else {
+      if (!checkedValue) {
         Donut3D.transition("salesDonut", randomData(), 130, 120, 20, 0);
+      } else {
+        Donut3D.transition("salesDonut", randomData(), 130, 120, 0, 0);
       }
     }
 
@@ -72,7 +72,7 @@
       return salesData.map(function(d) {
         return {
           label: d.label,
-          value: 1000 * Math.random(),
+          value: 1000,
           color: d.color
         };
       });
