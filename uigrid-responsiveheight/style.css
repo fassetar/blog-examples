@@ -1,0 +1,15 @@
+.grid {
+    height: 218px;
+}
+.ui-grid-header-cell {  
+  background-color:white;
+}
+.ui-grid-row:nth-child(even) .ui-grid-cell {
+  background-color: #fff;
+}
+.ui-grid-row:nth-child(odd) .ui-grid-cell {
+  background-color: #f9f9f9;
+}
+.ui-grid-pager-panel {
+  border-top: 1px #d4d4d4 solid;
+}
