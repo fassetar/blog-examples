@@ -1,0 +1,2 @@
+The trick really is to bind the checkboxes for items to their flags. This way they get updated and you
+don't need to have a ng-click method for each item. Rather then use ng-check on the items I used ng-model. 
