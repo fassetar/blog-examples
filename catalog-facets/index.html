@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="myApp" lang="en">
+  <head>
+    <!--No Styles so why not put Javascript first-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.min.js"></script>
+    <script src="script.js" ansync></script>
+  </head>
+  <body ng-controller="mainController">
+    <h1>Catalog Facets</h1>
+    {{update()}}
+    <ul>
+      <li><input type="checkbox" ng-click="allNeedsClicked()" ng-checked="allNeedsMet()"/>All
+      <label></label>
+        <ul ng-repeat="i in items">
+          <li><input type="checkbox" ng-model="i.flag"/>{{i.item}}</li>
+        </ul>
+      </li>
+    </ul>
+    <label>Single value Url Query:</label>/?fq={{url()}}
+    <br/>
+    <label style="float:left">Multi value Url Query:/?</label>
+    <div style="float:left" ng-repeat="i in items">
+      <div ng-if="i.flag">fq={{i.item}}<span ng-if="items[$index+1].flag || items[$index+2].flag">&</span></div>
+    </div>
+  </body>
+</html>
