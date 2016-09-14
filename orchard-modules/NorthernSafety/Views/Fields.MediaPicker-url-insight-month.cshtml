@@ -1,0 +1,22 @@
+﻿@using Orchard.Utility.Extensions;
+
+@{
+    string name = Model.ContentField.DisplayName;  
+}
+@*<p class="media-picker-field media-picker-field-@name.HtmlClassify()">
+    <span class="name">@name:</span>
+    <span class="value">@Model.ContentField.Url</span>
+</p>
+
+ Other available properties *@
+@* 
+    Alternate Text: @Model.ContentField.AlternateText
+    Class: @Model.ContentField.Class
+    Style: @Model.ContentField.Style
+    Alignment @Model.ContentField.Alignment
+    Width: @Model.ContentField.Width
+    Height: @Model.ContentField.Height
+    
+    You can also display an image using this example, and add the attributes you need:*@
+	<div id="banner" style="background:url(@Href(Model.ContentField.Url)) top left no-repeat;"><h1>Insight - Northern Safety's Newsletter</h1><h2><a href="/insight/archive">View the Insight Archive</a></h2></div>
+    @*<img src="@Href(Model.ContentField.Url)" />*@

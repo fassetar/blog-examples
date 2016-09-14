@@ -1,0 +1,43 @@
+﻿@charset "UTF-8";
+/* CSS Document */
+
+/* Begin: Breadcrumbs */
+ul#breadcrumbs {
+	display: block;
+	height: 20px;
+	clear: both;
+	list-style: outside none none;
+	margin: 0 0 8px 4px;
+}
+ul#breadcrumbs li {
+	display: block;
+	float: left;
+	font-size: 12px; font-weight:bold;
+	color: #152b67;
+	padding: 0 3px 0 7px;
+	background: url(/Themes/NorthernSafety/Styles/images/arrow_link_type_11.gif) right center no-repeat;
+}
+
+ul#breadcrumbs li a {
+	display: block;
+	margin: 0 0 0 -7px;
+	padding: 0 8px 0 7px;
+	color: #152b67;
+}
+
+
+ul#breadcrumbs li a.last {
+	display: block;
+	margin: 0 0 0 -7px;
+	padding: 0 8px 10px 7px;
+	color: #202020;
+    text-transform:capitalize;
+}
+
+ul#breadcrumbs li a:hover.last {text-decoration:none;}
+
+ul#breadcrumbs li.noArrow {background: none; color: #202020;}
+
+
+
+/* End: Breadcrumbs */

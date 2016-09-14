@@ -1,0 +1,55 @@
+﻿@using Northern.News.Models;
+@using Northern.News.Extensions;
+@{
+    Style.Require("ArticlesArchive");
+    Script.Require("ArticlesArchive");
+    IEnumerable<KeyValuePair<ArchiveData, int>> archives = Model.Archives;
+}
+<div id="verticalNavHP">
+<div id="LeftNavAttributes">
+  <h3 class="headline">Archives</h3>
+   
+    @*@if (archives.Count() > 20) {
+		
+	<ul id="LeftNavAttributesStyling" class="articleMonthList">
+        @{
+            int lastYear = archives.First().Key.Year;
+            int firstYear = archives.Last().Key.Year;
+        }
+        @for (int year = lastYear; year >= firstYear; year--) 
+		{
+            var yearMonths = archives.Where(m => m.Key.Year == year);
+            
+            if (year == lastYear) {
+        <li>
+            <p>@year</p>
+             @Html.UnorderedList(yearMonths, (t, i) => Html.Link(string.Format("{0:MMMM} ({1})", t.Key.ToDateTime(), t.Value), Url.ArticleArchiveMonth(t.Key.Year, t.Key.Month)), "archiveMonthList")
+       </li>
+            } 
+            
+            if (year != lastYear) {
+        <li class="previous">
+            <p>@year <span>(@yearMonths.Sum(ym => ym.Value))</span></p>
+            @Html.UnorderedList(yearMonths, (t, i) => Html.Link(string.Format("{0:MMMM} ({1})", t.Key.ToDateTime(), t.Value), Url.ArticleArchiveMonth(t.Key.Year, t.Key.Month)), "archiveMonthList")
+        </li>
+            }
+        }
+		
+    </ul>
+    } 
+    else if (archives.Count() > 0) {*@
+        @Html.UnorderedList(archives, (t, i) => Html.Link(string.Format("{0:MMMM yyyy} ({1})", t.Key.ToDateTime(), t.Value), Url.ArticleArchiveMonth(t.Key.Year, t.Key.Month)), "archiveMonthList")
+		
+    @*}
+    else {
+    <div class="message info">@T("None found")</div>
+    }*@
+
+</div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('.archiveMonthList').attr('id', 'LeftNavAttributesStyling');
+    });
+</script>

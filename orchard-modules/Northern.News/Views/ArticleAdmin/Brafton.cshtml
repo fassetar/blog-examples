@@ -1,0 +1,17 @@
+﻿<h2>Articles in Brafton feed: <b>@ViewData["count_feed"].ToString()</b></h2>
+<h2>Articles in Database: <b>@ViewData["count_db"].ToString()</b></h2>
+<h2>Articles Published: <b>@ViewData["count_published"].ToString()</b></h2><br />
+<h2>Automatic loads occur: <br /><b>7:00AM, 11:00AM, 3:00PM</b></h2>
+
+<br /><hr />
+
+<table>
+    <tr>
+        <td style="padding:5px">
+            <h2>[ @Html.ActionLink("Load New Articles", "LoadBrafton", new { area = "Northern.News" }, new { Style = "color:green" }) ]</h2>
+        </td>
+        @*<td style="padding:5px">
+            <h2>[ @Html.ActionLink("Delete All Articles", "DeleteAllArticles", null, new { Style = "color:red" }) ]</h2>
+        </td>*@
+    </tr>
+</table>

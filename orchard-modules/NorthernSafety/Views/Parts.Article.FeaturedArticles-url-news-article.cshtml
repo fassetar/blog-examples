@@ -1,0 +1,23 @@
+﻿<div id="prodArticles" style="display:none;">
+<!-- Begin: Right Sidebar -->               
+		  		
+    <div id="rightWrapper">
+        <div id="RecentRightContainerTop">
+		    <h3>Recent Articles</h3>
+        </div>
+   		<div id="RecentRightContainer">
+            @foreach (dynamic i in Model.ContentItems.ContentItems)
+            { 
+	            <h4 class="ArticleLink"><a href="/@i.ContentItem.AutoroutePart.Path">@Display(i.ContentItem.TitlePart.Title)</a><br />
+                <span class="date">@Display(i.Meta)</span></h4>
+            }
+        </div>
+        <div id="RecentRightContainerBottom">
+        </div>
+     </div>
+     <div class="clear"></div>
+     <div id="questionsBreak"></div>
+
+          <!-- End: Right Sidebar -->
+
+</div>

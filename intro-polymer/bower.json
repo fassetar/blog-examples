@@ -1,0 +1,15 @@
+{
+  "name": "Intro-Polymer",
+  "version": "0.0.1",
+  "homepage": "https://github.com/fassetar",
+  "authors": [
+    "Anthony Fassett <fassetar@gmail.com>"
+  ],
+  "description": "An Intro to polymer.",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "*",
+    "polymer": "Polymer/polymer#~0.5.5"
+  }
+}

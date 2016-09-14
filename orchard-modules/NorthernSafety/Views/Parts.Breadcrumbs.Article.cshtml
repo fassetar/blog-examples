@@ -1,0 +1,18 @@
+﻿<ul id="breadcrumbs">
+	<li><a href="/">Home</a></li>
+	<li><a href = "/news">Northern Safety News & Information</a></li>
+    @if (!String.IsNullOrEmpty(Model.ParentTaxo))
+    {
+        <li><a href="/News-Category/@Display(Model.ParentTaxo.ToLower().Replace(" ","-"))">@Display(Model.ParentTaxo)</a></li>
+        if (!String.IsNullOrEmpty(Model.ChildTaxo))
+        {
+            <li><a href="/News-Category/@Display(Model.ParentTaxo.ToLower().Replace(" ","-"))/@Display(Model.ChildTaxo.ToLower().Replace(" ","-"))">@Display(Model.ChildTaxo)</a></li>
+        }
+    }
+    @*@if (Model.ParentTaxo == "Safety Products"){
+        <li><a href="/News-Category/safety-products">Safety Products</a></li>
+    } else if (Model.ParentTaxo == "Disaster Preparedness"){
+        <li><a href="/News-Category/disaster-preparedness">Disaster Preparedness</a></li>
+    }*@
+	<li class="noArrow"><a class="last">@Display(Model.Title)</a></li>
+</ul>

@@ -1,0 +1,33 @@
+﻿@using Orchard.Utility.Extensions;
+@{
+    if (Model.Title != null) {
+        Layout.Title = Model.Title;
+    }
+    
+    var contentTypeClassName = ((string)Model.ContentItem.ContentType).HtmlClassify();
+}
+<article class="content-item @contentTypeClassName">
+    <header>
+        @Display(Model.Header)
+        @if (Model.Meta != null) {
+        <div class="metadata">
+            @Display(Model.Meta)
+        </div>
+        }
+    </header>
+    @Display(Model.Content)
+	
+	<div id="right">
+	<script type="text/javascript">
+    $(function () {
+       $('#right').load('/insproducts?prod1=@Model.ContentItem.NewsLetter.Product1.Value&prod2=@Model.ContentItem.NewsLetter.Product2.Value&prod3=@Model.ContentItem.NewsLetter.Product3.Value&prod4=@Model.ContentItem.NewsLetter.Product4.Value');       
+    });
+	</script>
+	</div>
+	
+    @if(Model.Footer != null) {
+    <footer>
+        @Display(Model.Footer)
+    </footer>
+    }
+</article>

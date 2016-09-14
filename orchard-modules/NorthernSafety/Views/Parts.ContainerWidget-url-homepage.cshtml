@@ -1,0 +1,21 @@
+﻿@{
+    IEnumerable<object> items = Model.ContentItems;
+    Model.ContentItems.Classes.Add("content-items");
+    Model.ContentItems.Classes.Add("list-items");
+}
+<div id="homeFeaturedContainer">      
+    <div id="homeLatestNews">
+        <a href="/news">Latest News & Articles</a>            
+    </div>
+    <div id="homeLatestNewsFeed">
+        <ul>
+        @foreach (var i in items) { 
+            <li>@Display(i)</li>
+        }
+        </ul>
+        <div id="homeLatestNewsMore">
+            <a class="readmore" href="#">View More Safety Articles</a>   
+        </div>                    
+    </div>
+    <div id="homeLatestNewsFoot">
+    </div>

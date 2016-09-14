@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Placement>
+    <Place Parts_Article_Edit="Content:10"/>
+    <Place Parts_Article="Content:1"/>
+    <Place Parts_Article_FeaturedArticles_Edit="Content:10"/>
+    <Place Parts_Article_FeaturedArticles="Content"/>
+    <Place Parts_Article_RecentArticles_Edit="Content:10"/>
+    <Place Parts_Article_RecentArticles="Content"/>
+    <Place Parts_Article_ArticlesArchive="Content"/>
+    <Place Parts_Article_List="Content"/>
+</Placement>

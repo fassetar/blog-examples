@@ -1,0 +1,29 @@
+﻿@*
+	Called when displaying a list of content items associated to a specific term.
+	Available objects: 
+		Model.Term
+		Model.Taxonomy
+		Model.List
+*@
+
+@{
+    Model.List.Classes.Add("content-items");
+    string title = Model.Term.Name;
+    var shape = New.Parts_Breadcrumbs_Article(Title: title);
+    WorkContext.Layout.Navigation.Add(shape, "2");
+}
+<h2 class="archivePageHeader">@Html.Encode(Model.Term.Name)</h2>
+@if (Model.Pager.TotalItemCount > 0)
+{
+<div id="archivePage">
+    @Display(Model.List)
+</div>
+@Display(Model.Pager)
+}
+else
+{
+<p>There are no articles in @Html.Encode(Model.Term.Name).</p>
+}
+
+@*<h1 class="page-title">@T("Contents associated with {0}", Html.Encode(Model.Term.Name))</h1>
+@Display(Model.List)*@

@@ -1,0 +1,40 @@
+﻿@using Orchard.Utility.Extensions;
+<div id="RecentArticlesContainer">
+				
+	<div id="RecentArticlesTop">
+		<h3>Recent Articles</h3>
+	</div>
+				  
+	<div id="RecentArticles">
+			
+		<div class="RecentArticlesWrapper">
+	
+		@foreach (dynamic i in Model.ContentItems.ContentItems) {
+
+          string bodyHtml = i.ContentItem.BodyPart.Text;
+          var body = new HtmlString(Html.Excerpt(bodyHtml, 250).ToString()
+             .Replace(Environment.NewLine, "</p>" + Environment.NewLine + "<p>"));
+          var contentTypeClassName = ((string)i.ContentItem.ContentType).HtmlClassify();
+			
+			<article class="content-item @contentTypeClassName">
+			<h4 class="ArticleLink"><a href="@i.ContentItem.AutoroutePart.Path">@Display(i.ContentItem.TitlePart.Title)</a></h4>@*<span class="date">@Display(i.Meta)</span>*@
+				<div class="articleStub">@Display(Html.Raw(body.ToString()))<a class="readmoreArticles" href="@i.ContentItem.AutoroutePart.Path">Read Full Article</a></div>
+			</article>
+			<div class="ArticlebreakLine"></div>
+		}
+		</div>    				
+		
+	</div>
+				
+	<div id="RecentArticlesBottomL">
+	<a class="loadmoreArticles" href="/news-recent-articles">View All Recent Articles</span></a>
+	</div>
+	<div id="RecentArticlesBottomR"></div>
+								
+	<div class="clear">
+				
+	</div>
+</div>
+
+
+

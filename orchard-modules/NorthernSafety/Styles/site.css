@@ -1,0 +1,1353 @@
+﻿@charset "utf-8"; 
+/*@import url("top_menu.css"); 
+@import url("jQModal.css"); 
+ Begin: Basic Elements */
+html, body { 
+	padding: 0; 
+	margin: 0; 
+ }
+body { 
+	line-height: 18px; 
+	font-size: 10px; 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	color: #333333;
+	background: #f2f0ed;
+ }
+* { 
+	padding: 0; 
+	margin: 0; 
+ }
+.clear { 
+	display: block; 
+	clear: both; 
+	line-height: 0; 
+	font-size: 0; 
+	height: 0; 
+ }
+
+ul.insightlist { list-style:none; }
+/* Widgets
+***************************************************************/
+.widgets { }
+.widget h1 { font-size: 1.077em; }
+.widget, .widget-html-widget, article, .zone { margin:0; padding:0; }
+header, footer, aside, nav, article { display: block; }
+
+/* Edit Mode Widgets */
+/* These are the edit controls that appear when you're logged-in */
+.widget-control { position: relative; border: none; border-right:none; border-left:none; }
+.widget-control .manage-actions { position:absolute; top: 0px; right: 0px; display:none; }
+.widget-control .manage-actions a { display: block; background-color: #dbdbdb; color: #434343; padding: 3px 6px;  }
+.widget-control .manage-actions a:hover { background-color: #434343; color: #fff; text-decoration: none; }
+
+/* Content Mode */
+.content-control { border: none; overflow:auto; position: relative; border-right:none; border-left:none; overflow:hidden; }
+.content-control .manage-actions { position:absolute; top: 0px; right: 0px; display:none; }
+.content-control .manage-actions a { display: block; background-color: #dbdbdb; color: #434343; padding: 3px 6px;  }
+.content-control .manage-actions a:hover { background-color: #434343; color: #fff; text-decoration: none; }
+
+.clear-l { display: block; clear: both; line-height: 0; font-size: 0 }
+
+a { cursor: pointer; color: #336699; text-decoration: none; }
+a.arrowType2 { background: url(/Themes/NorthernSafety/Styles/images/arrow_link_type_2.gif) left center no-repeat; padding: 0 0 0 8px; }
+a:hover { text-decoration: underline; }
+
+ul.insight { list-style:none; }//removes bullets for /insight & /insight/achive
+
+div#ppc_header { width: 682px; height: 150px;}
+div#ppc_inner_header { width: 390px; height: 140px; margin: 0; padding: 5px 5px 5px 10px; }
+div#ppc_inner_header h2 { color: #036; font-size: 24px; line-height: 24px; font-weight: 400; padding: 0 0 5px; }
+.unbold { font-weight: normal; }
+.u { text-decoration: underline !important; }
+.bold,
+.b { font-weight: bold !important; }
+.i,
+.italic { font-style: italic !important; }
+.maroonBold { font-weight:bold; color: #900; }
+.featuredprice { font-weight:bold; color:#000; padding-top: 2px; }
+.floatright { float:right; }
+.red { color: #CC0033; }
+
+input, .ui-autocomplete-input { 
+	font-size: 9px; 
+	line-height: 9px; 
+	padding: 2px 5px; 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	border: 1px solid #bfbebe; 
+	background: url(/Themes/NorthernSafety/Styles/images/input_bg01.gif) top left repeat-x; 
+ }
+select { 
+	font-size: 9px; 
+	line-height: 16px; 
+	height: 16px; 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	border: 1px solid #bfbebe; 
+	background: url(/Themes/NorthernSafety/Styles/images/input_bg01.gif) top left repeat-x; 
+ }
+select option { background: #fff; }
+* html input { padding: 4px 5px 0 5px; }
+input.radio { border: 0 !important; padding: 0 !important; background: none !important; }
+input.checkbox { border: 0  !important; padding: 0 !important; background: none !important; }
+textarea { 
+	font-size: 9px; 
+	line-height: 16px; 
+	padding: 4px 0px 4px 5px; 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	border: 1px solid #b2b2b2; 
+	background: url(/Themes/NorthernSafety/Styles/images/input_bg02.gif) left top no-repeat; 
+ }
+input.invalid,
+select.invalid { background: #fff8d7 url(/Themes/NorthernSafety/Styles/images/input_error_bg01.gif) left top no-repeat; }
+textarea.invalid { background: #fff8d7 url(/Themes/NorthernSafety/Styles/images/input_error_bg02.gif) left top no-repeat; }
+input#btnSubmit { background:none; border:none; }
+/* End: Basic Elements */
+
+/* Begin: Page Structure Elements */
+div#container { position: relative; }
+div#container,
+div#bottomContainer,
+div#footer { margin: 0 auto; }
+div#container {
+	width: 927px;
+	padding: 0 4px 0 18px;
+	background: #fff url(/Themes/NorthernSafety/Styles/images/hNav/bg_middle_gradient-WH.gif) left top repeat-y;
+	height: 100%;
+}
+div#bottomContainer { 
+	width: 949px; 
+	height: 240px; 
+	background: url(/Themes/NorthernSafety/Styles/images/bg_bottom_gradient.jpg) left top no-repeat; 
+ }
+div#footer { 
+	width: 949px; 
+	font-size: 9px; 
+	line-height: 14px; 
+ }
+/* End: Page Structure Elements */
+
+/* Begin: Header, Content, Left Menu, Footer */
+div#header { height: 106px; background: #fff; }
+div#topMenu { height: 30px; background: url(/Themes/NorthernSafety/Styles/images/topmenu_bg.png) left top repeat-x; }
+div#topMenuBottomSpacer { height: 9px !important; background: #ffffff; }
+div#contentContainer { padding-bottom: 10px; }
+div#leftMenu { 
+	width: 202px; /* 220px - 18px = 202px; */
+	padding: 0 0 0 18px; 
+	margin: 0 0 0 -18px; 
+	background: #edebe2 url(/Themes/NorthernSafety/Styles/images/left_menu_bg.gif); 
+	float: left; 
+	background-color:white;
+	/*z-index:0; 
+	position:relative; */
+ }
+div#content { 
+	width: 682px; 
+	padding: 0 15px; 
+	float: right; 
+ }
+/* End: Header, Content, Left Menu, Footer */
+
+/* Begin: Header */
+/* Begin: Logo and Phone Info */
+h2.logo, h2.logo a, h2.logo_live, h2.logo_live a, h2.logo_stage, h2.logo_stage a, h2.logo_dev, h2.logo_dev a, h2.logo_dev2, h2.logo_dev2 a { 
+	display: block; 
+	width: 180px; 
+	height: 49px; 
+ }
+
+h2.logo { 
+	float: left; 
+	margin: 30px 0 0 16px; 
+	background: url(/Themes/NorthernSafety/Styles/images/logo.gif) left top no-repeat; 
+ }
+h2.logo_live { 
+	float: left; 
+	margin: 47px 0 0 16px; 
+	background: url(/Themes/NorthernSafety/Styles/images/logo_live.gif) left top no-repeat; 
+ }
+h2.logo_stage { 
+	float: left; 
+	margin: 47px 0 0 16px; 
+	background: url(/Themes/NorthernSafety/Styles/images/logo_qa.gif) left top no-repeat; 
+ }
+h2.logo_dev { 
+	float: left; 
+	margin: 47px 0 0 16px; 
+	background: url(/Themes/NorthernSafety/Styles/images/logo_dev.gif) left top no-repeat; 
+ }
+h2.logo_dev2 { 
+	float: left; 
+	margin: 47px 0 0 16px; 
+	background: url(/Themes/NorthernSafety/Styles/images/logo_dev2.gif) left top no-repeat; 
+ }
+h2.logo span, h2.logo_live span, h2.logo_stage span, h2.logo_dev span, h2.logo_dev2 span { display: none; }
+
+p#callCenterSchedule { 
+	float: left; 
+	width: 220px; 
+	margin: 40px 0 0 40px; 
+	line-height: 14px; 
+	font-size: 10px; 
+	color: #666666; 
+	display: block; 
+	font-weight: bold; 
+ }
+p#callCenterSchedule span.phone { 
+	color: #0f416d; 
+	font-size: 20px; 
+	font-weight: bold; 
+	line-height: 26px; 
+ }
+/* End: Logo and Phone Info */
+
+#liveChat { 
+	float: left; 
+	margin: 40px 0 0 0; 
+	width: 140px; 
+	height: 50px; 
+	overflow: hidden; 
+	z-index: 100; 
+ }
+
+.lpPoweredBy 
+{ 
+	display: none; 
+	height: 0; 
+ }
+
+/* Begin: Links, Shopping Cart */
+div#SCLinksContainer { 
+	float: right; 
+	margin: 35px 10px 0 0; 
+	text-align: right; 
+	width: 300px; 
+ }
+* html div#SCLinksContainer { margin-right: 5px; }
+
+div#SCLinksContainer div.SCLinks { margin: 0 0 5px 0; }
+div#SCLinksContainer div.SCLinks span { padding: 0 0 0 16px; background: url(/Themes/NorthernSafety/Styles/images/arrow_link_type_1.gif) 10px center no-repeat; }
+div#SCLinksContainer div.SCLinks a { 
+	line-height: 18px; 
+	font-size: 10px; 
+ }
+div#SCLinksContainer div.SCCart { 
+	height: 28px; 
+	float: right; 
+ }
+* html div#SCLinksContainer div.SCCart { margin:0 -200px 0 0; }
+
+div#SCLinksContainer div.SCCart span.showHide { display: block; float: left; }
+.sh_right { background: url(/Themes/NorthernSafety/Styles/images/shopping_cart_top_arrow_red.gif) left top no-repeat; }
+.sh_down { background: url(/Themes/NorthernSafety/Styles/images/shopping_cart_top_arrow_dwn.gif) left top no-repeat; }
+
+div#SCLinksContainer div.SCCart span.showHide a { display: block; width: 30px; height: 28px; }
+div#SCLinksContainer div.SCCart span.bag { display: block; float: left; background: url(/Themes/NorthernSafety/Styles/images/shopping_cart_top_basket.gif) left top no-repeat; }
+div#SCLinksContainer div.SCCart span.bag a { display: block; width: 29px; height: 28px; text-indent: -999em; }
+div#SCLinksContainer div.SCCart span.items { display: block; float: left; line-height: 28px; padding: 0 10px 0 2px; background: url(/Themes/NorthernSafety/Styles/images/shopping_cart_top_items_gradient.gif) left top repeat-x; }
+div#SCLinksContainer div.SCCart span.items a { display: block; float: left; line-height: 28px; }
+div#SCLinksContainer div.SCCart a#CheckoutBtn, div#SCLinksContainer div.SCCart a#CheckoutGrayBtn { display: block; float: left; height: 26px; margin-left:-3px; }
+div#SCLinksContainer div.SCCart span.shoppingCartBtn { display: block; float: left; width: 105px; height: 28px; background: url(/Themes/NorthernSafety/Styles/images/btn_shopping_cart.gif) left top repeat-x; }
+div#SCLinksContainer div.SCCart span.shoppingCartBtn a { display: block; width: 105px; height: 28px; }
+div#SCLinksContainer div.SCCart span.shoppingCartBtn a span { display: none; }
+
+span#notYou { margin: 0 0 0 10px; }
+div#wellcomeBack { position: absolute; top: 17px; right: 13px; font-size: 10px; line-height: 20px; }
+* html div#wellcomeBack { position: absolute; top: -20px; right: 0; font-size: 10px; line-height: 20px; }
+/* End: Links, Shopping Cart */
+
+/* Begin: topSearch */
+div#topSearch { height: 40px; background: url(/Themes/NorthernSafety/Styles/images/Searchbar-bg.jpg) left top no-repeat #fff; border: none; }
+#TopSearchForm { position:relative; }
+#autocomplete { padding: 14px 0 0 72px; position: absolute; }
+.searchWord { height:18px; width: 50px; float: left; margin: 12px 0 0 15px; font-weight:bold; text-align:right; font-size:12px; padding:0; }
+.searchTextArea { height: 18px; width: 375px; float: left; margin: 10px 0 0 7px; font-weight:normal; text-align:left; font-size:10px; color: #666; padding:0; background-color: #fff; padding:1px 4px; background: url(/Themes/NorthernSafety/Styles/images/search-area.jpg) left center no-repeat; }
+.searchGo { height: 21px; width: 30px; float: left; margin: 11px 0 0 0px; padding:0; background: url(/Themes/NorthernSafety/Styles/images/go.png) top left no-repeat; }
+.searchGo a { height: 21px; width: 30px; border:none; display:block; }
+.searchAdvanced { height:18px; width: 100px; float: left; margin: 11px 0 0 12px; font-weight:normal; text-align:left; font-size:9px; padding:0; vertical-align: middle; }
+.searchAdvanced a { text-decoration:underline; }
+.searchPhrase { height:18px; width: 275px; float: right; margin: 6px 0 0 47px; font-weight:bold; text-align:left; font-size:10px; padding:0; color: #1D316E; }
+.searchPhrase  a { text-decoration:underline; color: #C00; font-weight:bold; }
+/* End: topSearch */
+
+/* End: Header */
+
+/* Begin: Footer */
+div#footerPartners { float: left; width: 192px; padding: 0 0 12px 28px; font-size: 9px; line-height: 14px; }
+p#footerAddress { float: left; width: 210px; padding: 0 0 12px 28px; font-size: 9px; line-height: 14px; }
+div#footerSitemap { float: left; width: 715px; padding: 0 14px 0 0; }
+p#footerCopyright { float: left; width: 697px; padding: 0 14px 0 0; }
+
+p#footerCopyright, p#footerCopyright a { text-align: right; font-size: 9px; line-height: 14px; }
+p#footerAddress { font-size: 9px; }
+ul#footerSitemapLinks { list-style: outside none none; float: right; }
+ul#footerSitemapLinks li { float: left; }
+ul#footerSitemapLinks li a { font-size: 10px; line-height: 20px; padding: 0 0 0 9px; }
+p#footerAddress span.phoneLabel { display: block; float: left; clear: left; width: 40px; }
+div#bottomContainerLeft { width: 185px; float: left; padding: 20px 5px 0 30px; font-size:10px; color: #666; line-height:14px; }
+
+div#bottomContainerLeft .signup { width: 160px; text-transform:uppercase; line-height: 11px; height: 28px; font-weight:bold; padding-top: 1px; color: #333; }
+div#bottomContainerLeft .signup img { float:left; border:none; padding-right: 5px; }
+
+div#emailCollection { margin: 10px 0; }
+#specialOffersEmail { width: 165px; }
+div#bottomContainerLeft .signupButton { width: 180px; text-align:right; }
+
+div#bottomContainerRight {width: 704px; float:left; padding: 16px 0 30px 20px;}
+div#bottomContainerRight h4 { font-size:10px; color: #152b67;}
+
+div#bottomContainerRight ul {list-style-type:none;}
+div#bottomContainerRight ul a {text-decoration:none; color: #474747;}
+
+div#bottomContainerRight .textcontainerPad {width:162px; padding: 0 0 0 15px; margin:0; float: left;}
+div#bottomContainerRight .textcontainerNoPad {width:162px; padding: 0; margin:0; float: left;}
+
+div#bottomContainerPartners {width: 250px; height: 60px; float: left; padding: 0 0 10px 30px;}
+div#bottomContainerPartners img {padding-right: 8px;}
+div#bottomContainerPartners img a {border:none;}
+
+div#bottomContainerCustomerInfo {width: 610px; height: 60px; float:right; text-align:right; padding: 0 15px 3px 10px; font-weight:bold; color: #4e6380; font-size:11px;}
+
+/* End: Footer */
+
+/* Begin: Breadcrumbs 
+ul#breadcrumbs { 
+	display: block; 
+	height: 20px; 
+	clear: both; 
+	list-style: outside none none; 
+	margin: 0 0 10px 0; 
+	width:550px; 
+ }
+ul#breadcrumbs li { 
+	display: inline; 
+	height:20px; 
+	line-height:20px; 
+	float: left; 
+	font-size: 10px; 
+	padding: 0 8px 0 7px; 
+	background: url(/Themes/NorthernSafety/Styles/images/arrow_link_type_2.gif) left center no-repeat; 
+ }
+ul#breadcrumbs li h2 { 
+	display: inline; 
+	height:20px; 
+	line-height:20px; 
+	float: left; 
+	font-size: 10px; 
+	color: #336699; 
+	font-weight:normal; 
+ }
+ul#breadcrumbs li a { 
+	display: block; 
+	text-transform: capitalize; 
+	margin: 0 -8px 0 -7px; 
+	padding: 0 8px 0 7px; 
+	color: #336699; 
+ }
+ Begin: Breadcrumbs */
+
+/* Begin: Left Menu */
+div#leftMenu ul.mainMenu { display: block; list-style: outside none none; }
+div#leftMenu ul.mainMenu li { display: block; clear: left; }
+div#leftMenu ul.mainMenu li.header { 
+	height: 25px; 
+	line-height: 25px; 
+	padding: 0 0 0 9px; 
+	background: url(/Themes/NorthernSafety/Styles/images/left_menu_tab.gif) left top no-repeat; 
+ }
+ 
+div#leftMenu ul.mainMenu li.headerGreatDeals {
+	height: 25px;
+	line-height: 25px;
+	padding: 0 0 0 9px;
+	background: url(/Themes/NorthernSafety/Styles/images/left_menu_tab_top.gif) left top no-repeat; font-weight:bold; color: #fff;
+}
+div#leftMenu ul.mainMenu li.header a,
+div#leftMenu ul.mainMenu li.headerLast a,
+div#leftMenu ul.mainMenu li.headerLastClosed a { 
+	font-size: 10px; 
+	color: #442c0f; 
+ }
+div#leftMenu ul.mainMenu li.headerLast { 
+	height: 25px; 
+	line-height: 25px; 
+	padding: 0 0 0 10px; 
+	background: url(/Themes/NorthernSafety/Styles/images/left_menu_tab_last.gif) left top no-repeat; 
+ }
+div#leftMenu ul.mainMenu li.headerLastClosed { 
+	height: 28px; 
+	line-height: 25px; 
+	padding: 0 0 0 10px; 
+	background: url(/Themes/NorthernSafety/Styles/images/left_menu_tab_last_closed.gif) left top no-repeat; 
+ }
+div#leftMenu ul.mainMenu a.opened { 
+	padding: 0 18px 0 0; 
+	background: url(/Themes/NorthernSafety/Styles/images/left_menu_category_opened.gif) right center no-repeat; 
+ }
+div#leftMenu ul.mainMenu a.closed { 
+	padding: 0 18px 0 0; 
+	background: url(/Themes/NorthernSafety/Styles/images/left_menu_category_closed.gif) right center no-repeat; 
+ }
+div#leftMenu ul.mainMenu li.lastMenuItem, div#leftMenu ul.ArchiveMenu li.lastMenuItem { padding-bottom: 10px !important; background: url(/Themes/NorthernSafety/Styles/images/left_menu_tab_last_footer.gif) left bottom no-repeat; }
+
+div#leftMenu div#OnlineCatalog { padding:3px 9px; background:#ffffff; border-top: 1px solid #999999; border-bottom: 1px solid #999999; border-right: 1px solid #dddddd; margin:0 1px 0 0; }
+div#leftMenu div#OnlineCatalog a { display: block; padding: 0 0 0 6px; background: url(/Themes/NorthernSafety/Styles/images/arrow_link_type_2.gif) left center no-repeat; }
+div#leftMenu div#OnlineCatalog span { text-transform:uppercase; }
+
+
+/* Begin: Light Brown Menu */
+div#leftMenu li.lightBrownHeader { 
+	position: relative; 
+	height: 26px; 
+	width: 215px; 
+	margin: 0 0 0 -15px; 
+	background: url(/Themes/NorthernSafety/Styles/images/left_menu_light_brown_header.gif) left top no-repeat; 
+ }
+
+div#leftMenu li.lightBrownHeader a.opened,
+div#leftMenu li.lightBrownHeader a.closed,
+div#leftMenu li.lightBrownHeader a { 
+	display: block; 
+	text-decoration: none; 
+	height: 26px; 
+	line-height: 26px; 
+	padding: 0 11px 0 0; 
+	color: #333333; 
+	font-size: 12px; 
+	text-align: right; 
+	background: url(/Themes/NorthernSafety/Styles/images/left_menu_brown_header_opened_arrow.gif) 7px center no-repeat; 
+ }
+
+div#leftMenu ul.lightBrownMenu { display: block; padding: 0 2px 5px 0; margin: 0px; background: url(/Themes/NorthernSafety/Styles/images/left_menu_light_brown_footer.gif) right bottom no-repeat; height: 100% }
+div#leftMenu ul.lightBrownMenu li { display: block; margin: 0px; padding: 0px; list-style: outside none none; }
+/*div#leftMenu ul.lightBrownMenu li a { display: block; height: 21px; line-height: 21px; font-size: 10px; text-align: right; padding: 0 12px 0 0; background: #fff; border-bottom: 1px solid #e0dfd7; }*/
+div#leftMenu ul.lightBrownMenu li a { display: block; line-height: 15px; font-size: 10px; text-align: right; padding: 3px 12px 3px 5px; ; background: #fff; border-bottom: 1px solid #e0dfd7; }
+div#leftMenu ul.lightBrownMenu li.selected a { background: #fcf2cd; text-decoration: none; }
+div#leftMenu ul.lightBrownMenu li a:hover { background: #fcf2cd; text-decoration: none; }
+* html div#leftMenu ul.lightBrownMenu li { height: 0; line-height: 0; }
+* html div#leftMenu ul.lightBrownMenu { height: 0; line-height: 0; }
+
+div#leftMenu ul.lightBrownMenuArrows li a { background: #fff url(/Themes/NorthernSafety/Styles/images/left_menu_light_brown_menu_item_arrows.gif) right top no-repeat; line-height: 19px; height: 19px; padding: 0 22px 2px 0 !important; text-decoration: none; display: block }
+div#leftMenu ul.lightBrownMenuArrows li a.selected,
+div#leftMenu ul.lightBrownMenuArrows li a:hover { background: #fcf2cd url(/Themes/NorthernSafety/Styles/images/left_menu_light_brown_menu_item_arrows.gif) right top no-repeat; }
+
+/* Begin: Light Brown Menu */
+
+/* Begin: Left Menu Forms */
+/* Begin: Common Form Class */
+div#leftMenu ul { list-style: outside none none; }
+div#leftMenu .commonForm { display: block; padding: 8px 9px 7px 9px; }
+div#leftMenu .commonForm label { display: block; font-size: 10px; line-height: 18px; margin: 0; }
+div#leftMenu .commonForm div.txtFldContainer { height: 18px; margin: 4px 0 4px 1px; }
+div#leftMenu .commonForm div.txtFldContainer input { display: block; float: left; width: 137px; }
+
+div#leftMenu .commonForm a.goBtn { 
+	display: block; 
+	float: left; 
+	margin: 0 0 0 4px; 
+	width: 24px; 
+	border: 0; 
+ }
+div#leftMenu .commonForm a.goBtn img { border: 0; }
+div#leftMenu .commonForm span.link { display: block; padding: 0 0 0 6px; background: url(/Themes/NorthernSafety/Styles/images/arrow_link_type_2.gif) left center no-repeat; }
+div#leftMenu .commonForm span.link a { display: block; }
+/* End: Common Form Class */
+
+/* Begin: Sign Up Form */
+#signUpForm { background: #dae4eb url(/Themes/NorthernSafety/Styles/images/sign_up_container.gif) left top no-repeat; }
+#leftMenuSearchForm { padding: 5px 9px 8px 9px !important; }
+/* End: Sign Up Form */
+
+/* Begin: Shopping Cart Form */
+/*li#leftMenuQuickShop div.product { 
+	height: 18px; 
+	margin-bottom: 3px; 
+	clear: left; 
+ }*
+/* html li#leftMenuQuickShop div.product { margin-bottom: 2px; }
+li#leftMenuQuickShop div.product input { 
+	padding-left: 1px !important; 
+	padding-right: 1px !important; 
+	color: #333; 
+	text-align: left; 
+ }*/
+/*li#leftMenuQuickShop #leftMenuShoppingCart { 
+	padding: 5px 5px 9px 9px; 
+ }*/
+/*
+li#leftMenuQuickShop .itemPrefix { width: 25px; text-align: center; margin: 0 1px; }
+li#leftMenuQuickShop .itemNumber { width: 75px; text-align: center; margin: 0 1px; }
+li#leftMenuQuickShop .itemQty { width: 20px; text-align: center; margin: 0 1px; }
+li#leftMenuQuickShop span.itemFieldsSeparator { width: 3px; color: #bfbebe; }
+li#leftMenuQuickShop br { clear: left }
+
+li#leftMenuQuickShop div#addToShoppingCart { float: right; clear: right; margin: 27px 0 0 0; }
+li#leftMenuQuickShop div#addToShoppingCart a { display: block; }
+li#leftMenuQuickShop div#addToShoppingCart a img { border: 0; }
+li#leftMenuQuickShop a { display: block; clear: left; margin: 5px 0 0 4px; }
+a#needToBuyMore,
+a#needToBuyLess { padding: 0 0 0 8px; background: url(/Themes/NorthernSafety/Styles/images/arrow_link_type_2.gif) left center no-repeat; }
+/*#needToBuyMoreContainer, #leftMenuQuickShop { display: none; }*/
+/* End: Shopping Cart Form */
+/* End: Left Menu Forms */
+
+/* Begin: Top Categories, Great Deals */
+* html div#leftMenu li.topCategories,
+* html div#leftMenu li.greatDeals,
+* html div#leftMenu li.lightBrownMenu,
+* html div#leftMenu li.onlineResources,
+* html div#leftMenu li.ArticleTaxo,
+* html div#leftMenu li.ArticleArch { height: 0px; }
+div#leftMenu li.topCategories ul, div#leftMenu li.greatDeals ul, div#leftMenu li.Articletaxo ul { padding: 5px 0 9px 0; height: 100%; }
+div#leftMenu li.onlineResources ul, div#leftMenu li.ArticleArch ul { padding: 5px 0 0 0; height: 100%; }
+
+div#leftMenu li.topCategories ul span,
+div#leftMenu li.greatDeals ul span,
+div#leftMenu li.onlineResources ul span { 
+	padding: 0 0 0 15px; 
+	background: url(/Themes/NorthernSafety/Styles/images/arrow_link_type_2.gif) 9px center no-repeat; 
+ }
+
+div#leftMenu li.ArticleTaxo ul.terms li { list-style: none; font-weight:bold; }
+div#leftMenu li.ArticleTaxo ul.terms li ul.terms li { list-style:disc none inside; font-weight:normal; margin:0 0 0 10px; }
+div#leftMenu div.archives ul { padding:0 0 0 15px; }
+div#leftMenu li.ArchiveList div.archives ul li { list-style:disc none inside; font-weight:normal; margin:0 0 0 10px; }
+
+div#leftMenu li.topCategories a.viewAll,
+div#leftMenu li.greatDeals a.viewAll,
+div#leftMenu li.onlineResources a.viewAll { font-weight: bold; }
+div#leftMenu li.topCategories span.selected,
+div#leftMenu li.greatDeals span.selected,
+div#leftMenu li.onlineResources span.selected { 
+	background: url(/Themes/NorthernSafety/Styles/images/arrow_link_type_3.gif) 9px 4px no-repeat; 
+ }
+div#leftMenu li.topCategories span.selected a,
+div#leftMenu li.greatDeals span.selected a,
+div#leftMenu li.onlineResources span.selected a { color: #c75d17; font-weight: bold; }
+/* End: Top Categories, Great Deals */
+/* End: Left Menu */
+
+/* Begin: Paging */
+div.paging { 
+	clear: both; 
+	float: right; 
+ }
+div.paging ul { height: 15px; list-style: outside none none; margin: 0 0 0 11px; border: 1px solid #ccc; background: #faf9f4; }
+div.paging div, div.paging ul { display: block; float: right; }
+div.paging ul li { display: block; float: left; height: 15px; font-weight: bold; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9px; }
+div.paging ul li a { display: block; line-height: 15px; padding:0 2px 0 2px; height: 15px; text-align: center; width:10px; }
+div.paging ul li a.selected { background: #f4e5ac; color: #000; }
+
+div.paging ul li.next { border-left: 1px solid #ccc; background: url(/Themes/NorthernSafety/Styles/images/btn_paging_next_disabled.gif) left top no-repeat; width:15px; padding:0; }
+div.paging ul li.next a { background: url(/Themes/NorthernSafety/Styles/images/btn_paging_next_enabled.gif) left top no-repeat; width:15px; padding:0; }
+div.paging ul li.next span { display: none; }
+div.paging ul li.last { border-left: 1px solid #ccc; background: url(/Themes/NorthernSafety/Styles/images/btn_paging_last_disabled.gif) left top no-repeat; width:15px; padding:0; }
+div.paging ul li.last a { background: url(/Themes/NorthernSafety/Styles/images/btn_paging_last_enabled.gif) left top no-repeat; width:15px; padding:0; }
+div.paging ul li.last span { display: none; }
+
+
+div.paging ul li.prev { border-right: 1px solid #ccc; background: url(/Themes/NorthernSafety/Styles/images/btn_paging_prev_disabled.gif) left top no-repeat; width:15px; padding:0; }
+div.paging ul li.prev a { background: url(/Themes/NorthernSafety/Styles/images/btn_paging_prev_enabled.gif) left top no-repeat; width:15px; padding:0; }
+div.paging ul li.prev span { display: none; }
+div.paging ul li.first { border-right: 1px solid #ccc; background: url(/Themes/NorthernSafety/Styles/images/btn_paging_first_disabled.gif) left top no-repeat; width:15px; padding:0; }
+div.paging ul li.first a { background: url(/Themes/NorthernSafety/Styles/images/btn_paging_first_enabled.gif) left top no-repeat; width:15px; padding:0; }
+div.paging ul li.first span { display: none; }
+
+div#SearchSort { float:right; text-align: right; }
+div#SearchSort select#sortBy { width:150px; }
+/* End: Paging */
+
+/* Begin: Ribbons */
+div.ribonSuperBuy,
+div.ribonSale,
+div.ribonBest,
+div.ribonNew,
+div.ribonEdlp,
+div.ribonEmpty,
+div.ribonClear { 
+	position: absolute; 
+	margin: 0; 
+	padding: 0; 
+	height: 62px; 
+	width: 62px; 
+	top: 0; 
+	right: 0; 
+ }
+div.ribonSuperBuy { background: url(/Themes/NorthernSafety/Styles/images/ribbon_super_buy.png) left top no-repeat; }
+div.ribonSale { background: url(/Themes/NorthernSafety/Styles/images/ribbon_sale.png) left top no-repeat; }
+div.ribonBest { background: url(/Themes/NorthernSafety/Styles/images/ribbon_best.png) left top no-repeat; }
+div.ribonNew { background: url(/Themes/NorthernSafety/Styles/images/ribbon_new.png) left top no-repeat; }
+div.ribonEdlp { background: url(/Themes/NorthernSafety/Styles/images/ribbon_edlp.png) left top no-repeat; }
+div.ribonClear { background: url(/Themes/NorthernSafety/Styles/images/ribonClear.png) left top no-repeat; }
+div.ribonEmpty { text-align:center; vertical-align:middle; }
+
+div.ribonSuperBuy span { display: none; }
+* html div.ribonSuperBuy { background: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/Themes/NorthernSafety/Styles/images/ribbon_super_buy.png', sizingMethod='image'); }
+div.ribonSale span { display: none; }
+* html div.ribonSale { background: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/Themes/NorthernSafety/Styles/images/ribbon_sale.png', sizingMethod='image'); }
+div.ribonBest span { display: none; }
+* html div.ribonBest { background: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/Themes/NorthernSafety/Styles/images/ribbon_best.png', sizingMethod='image'); }
+div.ribonNew span { display: none; }
+* html div.ribonNew { background: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/Themes/NorthernSafety/Styles/images/ribbon_new.png', sizingMethod='image'); }
+div.ribonEdlp span { display: none; }
+* html div.ribonEdlp { background: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/Themes/NorthernSafety/Styles/images/ribbon_edlp.png', sizingMethod='image'); }
+div.ribonClear span { display: none; }
+* html div.ribonClear { background: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/Themes/NorthernSafety/Styles/images/ribonClear.png', sizingMethod='image'); }
+/* End: Ribbons */
+
+/* Begin: Price Dots */
+div.priceDots { 
+	width: 130px; 
+	float: right; 
+	font-size: 10px; 
+	line-height: 16px; 
+	border: 1px solid #e5e5e5; 
+	margin: 10px 10px 0 auto; 
+ }
+div.priceDots div.row { height: 16px; background: url(/Themes/NorthernSafety/Styles/images/dots.gif) 0px 1px repeat-x; }
+div.priceDots div.yellow,
+div.priceDots div.yellow .qty,
+div.priceDots div.yellow .price { background-color: #fefcec !important; }
+div.priceDots div.qty { float: left; line-height: 16px; clear: left; padding: 0 0 0 7px; background-color: #fff; }
+div.priceDots div.price { float: right; line-height: 16px; padding: 0 7px 0 0; background-color: #fff; }
+div.priceDots div.selected { font-weight: bold; }
+/* Begin: Price Dots */
+/* Begin: Prices */
+span.price { font-weight: bold; }
+div.hot,
+span.hot { color: #c30; }
+/* End: Prices */
+
+
+span.asLowAs { color: #000 !important; font-weight: normal !important; }
+
+div.emailValidationError { display: none; font-size: 9px; line-height: 16px; color: #dd431f; clear: left; }
+input.emailValidationError { border: 1px solid #dd431f !important; }
+
+/*.ItemNLbl { 
+	float: left; 
+	width: 91px; 
+	height: 10px; 
+	margin: 0!important; 
+	padding: 0px!important
+ }
+.ItemQtyLbl { 
+	float: left; 
+	width: 50px; 
+	height: 10px; 
+	margin: 0!important; 
+	padding: 0px!important
+ }*/
+
+.arrowType1 { padding: 0 0 0 8px; background: url(/Themes/NorthernSafety/Styles/images/arrow_link_type_1.gif) no-repeat left center; }
+.arrowType2 { padding: 0 0 0 8px; background: url(/Themes/NorthernSafety/Styles/images/arrow_link_type_2.gif) no-repeat left center; }
+.arrowType4 { padding: 0 0 0 9px; background: url(/Themes/NorthernSafety/Styles/images/arrow_link_type_4.gif) no-repeat left center; }
+
+
+/* Begin: Support Form */
+div#supportForm { 
+	clear: left; 
+	width: 525px; 
+	height: 77px; 
+	padding: 10px; 
+	border: 1px solid #dedede; 
+	background: url(/Themes/NorthernSafety/Styles/images/login_support_bg.png) left top repeat-x; 
+ }
+div#supportForm img { display: block; float: left; border: 1px solid #cfcfcf; }
+div#supportForm div#helpInfoContainer { margin: 0 0 0 10px; float: left; }
+div#supportForm p#needHelp { color: #555; font-size: 16px; line-height: 20px; }
+div#supportForm p#needHelp span.phone { color: #1a376f; font-weight: bold; }
+div#supportForm div#emailCS { margin: 10px 0 0 0; }
+div#supportForm a { text-decoration: underline; }
+
+/* End: Support Form */
+/* Begin: Messages */
+div.errorMsg { padding: 11px 20px 12px 57px; background: #fbf4eb url(/Themes/NorthernSafety/Styles/images/msg_error.png) left top no-repeat; }
+div.errorMsg h3 { font-size: 10px; line-height: 14px; }
+div.errorMsg p { font-size: 10px; line-height: 14px; padding: 0; margin: 0; }
+
+div.errorMsg ul, div.successMsg ul { list-style:inside; }
+
+div.successMsg { padding: 11px 20px 12px 57px; background: #e9f1f7 url(/Themes/NorthernSafety/Styles/images/msg_success.png) left top no-repeat; }
+div.successMsg h3 { font-size: 10px; line-height: 14px; }
+div.successMsg p { font-size: 10px; line-height: 14px; padding: 0; margin: 0; }
+
+div.itemAddedMsg { padding: 11px 20px 12px 57px; background: #e9f1f7 url(/Themes/NorthernSafety/Styles/images/msg_item_added.png) left top no-repeat; }
+div.itemAddedMsg h3{ font-size: 10px; line-height: 14px; font-weight:bold; }
+div.itemAddedMsg p { font-size: 10px; line-height: 14px; padding: 0; margin: 0; }
+
+ul.valErrors { list-style-position:inside; }
+span.valErrors { font-weight:bold; }
+input.input-validation-error, select.input-validation-error, textarea.input-validation-error { background:#fbf4eb; border:1px solid #cc3300; }
+span.field-validation-error { color:#cc3300; font-weight:bold; }
+/* End: Messages */
+
+span.asterisk { color: #CC3300; }
+
+/* Begin: Tab Navigation */
+div.tabNavigation { clear: left; position: relative; }
+div.tabNavigation ul.yui-nav { display: block; position: absolute; list-style: outside none none; }
+/* Begin: Common Tab */
+div.tabNavigation ul.yui-nav li { 
+	display: block; 
+	float: left; 
+	width: 118px; 
+	height: 29px; 
+	line-height: 29px; 
+	margin: 0 3px 0 0; 
+	font-weight: bold; 
+ }
+div.tabNavigation ul.yui-nav li a { 
+	display: block; 
+	font-size: 10px; 
+	text-decoration: none; 
+	white-space: nowrap; 
+	text-align: center; 
+ }
+/* End: Common Tab */
+
+/* Begin: Selected Tab */
+div.tabNavigation ul.yui-nav li.selected a { color: #333; }
+div.tabNavigation ul.yui-nav li.selected a.firstTabHeader { /* Your code is here */ }
+/* End: Selected Tab */
+/* Begin: Special Tab */
+div.tabNavigation ul.yui-nav li.special a { background: url(/Themes/NorthernSafety/Styles/images/tab_nav_tab_special.gif) left bottom no-repeat; }
+/* End: Special Tab */
+/* Begin: Tab Content */
+div.tabNavigation div.yui-content { clear: left; padding-top: 27px; }
+div.tabNavigation div.tab div.top { /* Your code is here */ }
+div.tabNavigation div.tab div.content { /* Your code is here */ }
+div.tabNavigation div.tab div.bottom { /* Your code is here */ }
+/* End: Tab Content */
+/* End: Tab Navigation */
+
+div.printThisPage { background: url(/Themes/NorthernSafety/Styles/images/btn_print.gif) left center no-repeat; padding-left: 15px; }
+div.btnEnlarge { position: absolute; width: 198px; height: 16px; left: 0px; bottom: 0px; }
+div.btnEnlarge a { display: block; height: 16px; width: 198px; background: url(/Themes/NorthernSafety/Styles/images/btn_enlarge.gif) left top no-repeat; }
+div.btnEnlarge a:hover { background: url(/Themes/NorthernSafety/Styles/images/btn_enlarge_rollover.gif) left top no-repeat; }
+div.btnEnlarge a span { display: none; }
+
+/* Begin: Category */
+div.categorySections { background: #f9f7ef; margin-bottom: 18px; width: 199px; }
+div.categorySections h3 { display: block; height: 27px; line-height: 27px; font-size: 12px; padding: 0 10px; background: #e8e6dd; }
+div.categorySections h3.first { background: url(/Themes/NorthernSafety/Styles/images/product_details_category_header.gif) left top no-repeat; }
+div.categorySections div.product { padding: 10px; height: 100%; }
+div.categorySections div.product div.image { float: left; }
+div.categorySections div.product div.image img { border: 1px solid #cfcfcf; }
+div.categorySections div.product div.content { float: left; width: 115px; margin: -3px 0 0 10px; font-size: 9px; line-height: 12px; }
+div.categorySections div.product div.content a { font-weight: bold; }
+div.categorySections div.breakLine { line-height: 1px; height: 1px; font-size: 0px; border-bottom: 1px solid #e0dfd7; padding: 0; margin: 0; }
+div.categorySections div.viewAll { padding: 0 10px 10px 10px; line-height: 9px; font-size: 9px; }
+div.categorySections div.last { background: url(/Themes/NorthernSafety/Styles/images/product_details_category_last.gif) left bottom no-repeat; }
+.rel_item img { border: 1px solid #d4d4d4; width: 48px; height: 48px; }
+/* End: Category */
+
+/* Jquery Tool Tip */
+#tooltip { 
+	position: absolute; 
+	z-index: 3000; 
+	border: 1px solid #333333; 
+	background-color: #eeeeee; 
+	padding: 5px; 
+	opacity: 0.85; 
+ }
+#tooltip h3, #tooltip div { margin: 0; font-size:10px; color:#333333; line-height:12px; }
+/* end jQ tooltip */
+
+.watermark { color:#777777; }
+
+/*validation errors*/
+label.error { padding:0 0 0 10px; color:Red; font-weight:bold; }
+input.error, select.error, textarea.error { border-color:Red; background:#fbf4eb; }
+
+/*About US*/
+/* Begin: Page Header */
+h2.pageHeader { 
+	display: block; 
+	font-size: 16px; 
+	line-height: 16px; 
+	color: #152b67; 	 
+	border-bottom: 1px solid #0b3f65; 
+	padding: 0 0 4px 0; 
+	margin: 19px 0 10px 0; 
+ }
+
+div#logoText { 
+	width: 561px; 
+	padding: 4px 0 4px 127px; 
+	height: 72px; 
+	font-size: 10px; 
+	line-height: 16px; 
+	letter-spacing: -1px; 
+	background: url(/Themes/NorthernSafety/Styles/images/about_us_logo.gif) left top no-repeat; 
+ }
+
+div#logoText h3 { 
+	color: #260066; 
+	font-size: 12px; 
+	line-height: 16px; 
+	margin: 0 0 6px 0; 
+	text-transform: uppercase; 
+	letter-spacing: -1px; 
+ }
+
+div#textContent { float: left; width: 478px; margin: 34px 0 0 0; }
+div#textContent h3 { font-size: 10px; line-height: 16px; text-transform: uppercase; }
+div#textContent p { margin-bottom: 15px; line-height: 16px; }
+div#sign1, div#sign2 { margin: 0 0 6px 0; width:250px; float:left; }
+div#photoContent div.picture { margin: 0 0 10px 0; }
+
+div#listsContainer { margin: 0 0 16px 0; padding: 0 0 0 40px; }
+
+ul#firstCol { display: block; float: left; }
+ul#secondCol { display: block; float: left; margin-left: 18px; }
+ul#firstCol li,
+ul#secondCol li { 
+	list-style: outside none none; 
+	font-size: 10px; 
+	line-height: 20px; 
+ }
+/* End: Page Header */
+
+#content { padding-bottom: 11px !important; }
+ul#abcList { display: block; margin: 0 auto; line-height: 26px; height: 26px; background: url(/images/abc_inactive.gif) left top repeat-x; }
+ul#abcList li { display: block; list-style: outside none none; float: left; line-height: 26px; text-align: center; width: 25px; font-weight: bold; }
+ul#abcList li a { display: block; text-transform: uppercase; }
+ul#abcList li a.selected,
+ul#abcList li a:hover { display: block; background: url(/images/abc_active.gif) top left no-repeat; text-decoration: none; }
+ul#abcList li.first { float: left; width: 30px; background: url(/images/abc_first_inactive.gif) left top no-repeat; }
+ul#abcList li.first a { background: url(/images/abc_first_inactive.gif) left top no-repeat; }
+ul#abcList li.first a.selected,
+ul#abcList li.first a:hover { background: url(/images/abc_first_active.gif) left top no-repeat; }
+ul#abcList li.last { float: right; width: 30px; background: url(/images/abc_last_inactive.gif) right top no-repeat; }
+ul#abcList li.last a.selected,
+ul#abcList li.last a:hover { background: url(/images/abc_last_active.gif) right top no-repeat; }
+
+#content div.sectionName { 
+	float: left; 
+	width: 63px; 
+	margin: 15px 0 20px 0; 
+	text-transform: uppercase; 
+	font-weight: bold; 
+	font-size: 14px; 
+ }
+#content div.linksContainer ul.firstCol,
+#content div.linksContainer ul.secondCol,
+#content div.linksContainer ul.thirdCol { 
+	display: block; 
+	float: left; 
+	width: 207px; 
+	margin-top: 13px; 
+	margin-bottom: 15px; 
+ }
+#content div.linksContainer ul.firstCol li,
+#content div.linksContainer ul.secondCol li,
+#content div.linksContainer ul.thirdCol li { list-style: outside none none; font-size: 10px; line-height: 18px; }
+
+#content div.BTTC ul { margin-bottom: 5px !important; }
+#content div.BTT { text-align: right; }
+#content div.breakLine { border-bottom: 1px solid #bebebe; }
+
+div#leftColumn { float: left; width: 443px; }
+div#leftColumn h3 { line-height: 24px; font-size: 10px; text-transform: uppercase; margin-bottom: 2px; }
+div#leftColumn p { margin-bottom: 13px; }
+ul#vacancyList li { list-style: outside none none; line-height: 30px; font-size: 10px; }
+ul#benefitsPackage { margin: 0 0 13px 38px; }
+ul#benefitsPackage li { list-style-position: inside; }
+div#equalOpportunity { font-size: 12px; line-height: 16px; font-weight: bold; color: #cc3300; }
+
+div#contactUsContainer { 
+	float: right; 
+	width: 196px; 
+	line-height: 16px; 
+	font-size: 10px; 
+	padding: 15px 15px 21px 13px; 
+	border: 1px solid #dedede; 
+	background: #fefeff url(/Themes/NorthernSafety/Styles//images/services_contact_us_bg.png) left bottom repeat-x; 
+ }
+h3#contactUs { line-height: 23px; font-size: 10px; text-transform: uppercase; margin: -15px -15px 10px -13px; background: url(/Themes/NorthernSafety/Styles/images/services_bg_gradient.png) left bottom repeat-x; padding: 0 0 0 12px; }
+div#contactUsContainer h4 { line-height: 16px; font-size: 10px; }
+div#contactUsContainer span.phone { color: #cc3300; font-size: 11px; font-weight: bold; }
+div#contactUsContainer p,
+div#contactUsContainer div { line-height: 16px; font-size: 10px; margin-bottom: 6px; }
+div#contactUsContainer div.emailUs { letter-spacing: -1px; }
+div#callUsToday { margin-bottom: 15px !important; }
+span#attnHumanPhone { line-height: 16px; font-size: 11px; font-weight: bold; color: #696969; }
+
+div.breakLine { float: none; clear: both; border-bottom: 1px solid #bebebe; margin: 15px 0 10px 0; }
+
+
+/* Begin: Popup */
+div#jobDescription { background: #fff; width:630px; height:500px; padding: 0 0 15px 0; }
+div#jobDescription div#vacancyHeaderContainer { 
+	line-height: 31px; 
+	height: 31px; 
+	text-align: center; 
+	padding: 0 30px 0 0; 
+	background: url(/images/popup_header.gif) left top repeat-x; 
+ }
+div#jobDescription div#vacancyHeaderContainer h2 { display: block; float: left; color: #333333; font-size: 10px; width: 400px; }
+div#jobDescription div#vacancyHeaderContainer a.close { display: block; float: right; padding-right: 17px; background: url(/images/ico_close.gif) right center no-repeat; }
+
+
+div#jobDescription div#contentContainer { padding: 10px 50px 30px 50px; height:440px; overflow-y:scroll; }
+div#jobDescription h1.logo { float: none; margin: 0; margin-bottom: 16px; }
+div#jobDescription p#talentSearch { font-size: 14px; line-height: 16px; }
+div#jobDescription span#eagerAssess { color: #cc3300; }
+div#jobDescription div#equalOpportunity { font-size: 12px; line-height: 16px; font-weight: bold; color: #cc3300; }
+div#jobDescription h2#vacancyHeader { font-size: 16px; line-height: 24px; margin-bottom: 10px; }
+div#jobDescription p { line-height: 16px; font-size: 10px; margin-bottom: 11px;  }
+div#jobDescription h4 { font-size: 10px; line-height: 16px; text-transform: uppercase; }
+
+div#jobDescription ul { margin-left: 43px; margin-bottom: 14px; }
+/* End: Popup */
+/*End About US*/
+
+/* News (Brafton Articles) */
+.article p { margin:0 0 10px 0; }
+
+/* Home Page */
+
+/* Homepage Banner*/
+
+div#home_promo { width:710px; height:378px; padding:0; margin:0; }
+div#homeFlashContainer { padding: 0 0 8px 0; height: 378px; position:relative; }
+
+div#numberSliderWrapper { padding:3px 15px; height: 19px; width: 707px; position: absolute; left: 0px; top: 353px; font-weight:bold; color: #9d9d9d; background:url(/Themes/NorthernSafety/Styles/images/bannerbkg.png) bottom left no-repeat; }
+div#numberSliderWrapper .number {width: 25px; display: block; float:left;}
+div#numberSliderWrapper .number a {color: #9d9d9d; text-decoration:none; } 
+div#numberSliderWrapper .active a  {color: #fff; text-decoration:none; } 
+div#numberSliderWrapper .navigate {width: 25px; display: block; float:left;}
+div#numberSliderWrapper .navigate a {border: none;} 
+
+div#homeFeaturedContainer { margin:10px 0 0 0; float: left; width: 523px; margin-right: 7px; }
+
+/* Latest News & Articles */
+
+div#homeLatestNews { margin:5px 0 0 0; padding: 2px 0 3px 10px; background:url(/Themes/NorthernSafety/Styles/images/na-backgroundrepeating.jpg) no-repeat top left; width: 513px; }
+div#homeLatestNews a { font-weight:bold; color: #000000; font-size:12px }
+
+div#homeLatestNewsFeed { padding: 8px 0 1px 10px; border-left:#bcbcbc solid 1px; border-right:#bcbcbc solid 1px; width: 511px; }
+div#homeLatestNewsFeed a { font-weight:bold; color: #2C578F; font-size:10px; text-decoration:none; }
+div#homeLatestNewsFeed .special{ text-decoration:underline; padding: 0; }
+div#homeLatestNewsFeed ul { list-style:none; line-height: 15px; }
+div#homeLatestNewsFeed ul .date { font-size:10px; font-weight:normal;  color:#666666; padding: 0 5px; text-decoration:none; }
+div#homeLatestNewsFeed li { margin-bottom:3px }
+
+div#homeLatestNewsMore { text-align:right; height: 15px; border: none; }
+div#homeLatestNewsMore .readmore { font-weight:bold; color: #900; padding: 0 10px 0 0; text-decoration:underline; }
+
+div#homeLatestNewsFoot { padding: 0; width: 523px; margin: -2px 0 10px 0; height:10px; background:url(/Themes/NorthernSafety/Styles/images/na-foot.jpg) bottom left no-repeat; }
+
+/* NEW Featured Products */
+
+div#homeFeatProdHeader {padding: 3px 0 0 10px; background:url(/Themes/NorthernSafety/Styles/images/featuredProdTop.jpg) no-repeat top left; width: 513px; height: 22px;}
+div#homeFeatProdHeader h4 {font-weight:bold; color:#fff; font-size:11px; float: left;}
+div#homeFeatProdHeader .slider {width: 20px;float:right; height: 21px; color: #fff; border: none; text-align:right; padding-right:8px;}
+div#homeFeatProdHeader .slider a {border: none;}
+div#homeFeatProdHeader .slider img {padding-top: 1px;}
+div#homeFeatProdHeader .counter {width: auto;float:right; height: 21px; color: #fff; border: none; text-align:right; padding-right:8px; padding-top: 1px;}
+
+div#homeFeatProd {padding: 6px 0 1px 10px; border:#bcbcbc solid 1px; border-bottom:none; width: 511px; float:left;}
+
+div#homeFeatProd  .homeFeaturedTop h4 {padding: 3px 0 0 10px;}
+div#homeFeatProd  .homeFeaturedTop a {font-weight:bold; color: #fff; font-size:12px;}
+
+div#homeFeatProd  .homeFeaturedContent {padding: 8px; margin-top:3px; border: none;width:151px;  float:left;}
+div#homeFeaturedTopL .homeFeaturedContent img {margin:0;}
+div#homeFeaturedTopL .homeFeaturedContent a {color:#336699; font-size:10px;}
+
+div#homeFeatProd  .homeFeaturedContent .desccontainer {height: 75px; margin-top:8px; font-weight:bold; line-height:14px;}
+div#homeFeatProd  .homeFeaturedContent .price {height: 19px; font-weight:bold; padding-bottom:3px;}
+div#homeFeatProd  .homeFeaturedContent .buttonccontainer {height: 18px;}
+div#homeFeatProd  .homeFeaturedContent .buttonccontainer img {padding: 0; margin:0;}
+div#homeFeatProd  .homeFeaturedContent .buttonccontainer img a {border: none;}
+
+div#homeFeatProdFoot { padding:0 14px 0 0; float:left; width: 513px; height:11px; overflow:none; background:url(/Themes/NorthernSafety/Styles/images/na-foot.jpg) top left no-repeat;}
+
+/* Catalog & Insight */
+div#homeRightSideContainer { padding: 0; margin: 5px 15px 0 0; width: 164px; float:right; text-align:center; }
+
+div#homeRightSideContentTop { padding: 0; margin:0; width: 178px; height: 10px; background:url(/Themes/NorthernSafety/Styles/images/Right-Side-top.jpg) top left no-repeat; }
+div#homeRightSideContentBottom { padding: 0; margin:0; width: 178px; height: 10px; background:url(/Themes/NorthernSafety/Styles/images/Right-Side-bottom.jpg) bottom left no-repeat; }
+
+div#homeRightSideContent { padding:0 8px 0 8px; background-color:#f5f3eb; width: 160px; height: 490px; border-left:#bcbcbc solid 1px; border-right:#bcbcbc solid 1px; font-weight:bold; font-size:11px; }
+div#homeRightSideContent span.orangeBtn { font-size:8px; margin:5px 0; }
+div#homeRightSideContent img  { padding: 5px 0 2px 0; }
+div#homeRightSideContent img a { border: none; }
+div.hr { width: 100%; height: 1px; background:#bcbcbc; margin: 12px 0; }
+
+/* End: Homepage */
+
+div#ArticleList ul { list-style:none; }
+
+/* Article List Classes */
+div.ArticleListWrapper { display:none; }
+div.RecentArticlesWrapper div.ArticleListWrapper, div.FeaturedArticlesWrapper div.ArticleListWrapper { display:block; }
+
+/* Begin: Main Articles Page */
+
+/* Begin: Page Header */
+h2.pageHeaderArticle { display: block; font-size: 16px; line-height: 34px; color: #152b67;  border-bottom: 1px solid #0b3f65; margin: 5px 0 10px 0; }
+
+
+/* Begin: Slider Box */
+div.featuredArticle { display:none; }
+div#SliderBoxTop { width: 690px; height: 27px; padding:0; margin:0; background: url(/Themes/NorthernSafety/Styles/images/newsinfo-top.jpg) left top no-repeat; }
+div#SliderBoxBottom { width: 690px; height: 10px; padding:0; margin: 0 0 12px 0; clear:both; float: left; background: url(/Themes/NorthernSafety/Styles/images/newsinfo-bottom.jpg) bottom left no-repeat; }
+
+div#SliderBoxTop h2 { font-size:12px; color: #fff; padding:6px 0px 0px 10px; }
+
+div#SliderBox { width: 672px; height: 166px; padding: 8px 8px 0px 8px; margin:0; font-size: 10px; line-height: 16px; background: url(/Themes/NorthernSafety/Styles/images/Slider-BG.jpg) left top repeat-x; border-top:1px solid #bcbcbc; border-left:1px solid #bcbcbc; border-right:1px solid #bcbcbc; }
+
+div#SliderBox img { float: left; padding: 7px 4px 7px 4px; }
+div#SliderBox img a { border: none; }
+div#SliderBox h3 { font-size: 14px; line-height: 16px; margin: 0px 0 6px 0; text-decoration:underline; }
+div#SliderBox h3 a { text-decoration:underline; color:#2C578F; }
+
+div#SliderBox .floatRight { float:right; }
+
+div#FeatArticleContainer { width: 436px; overflow: none; float: left; height: 150px; margin-top: 8px; padding: 0px 3px 0px 12px; }
+div#FeatArticleMainContainer { width: 436px; overflow: hidden; float: left; height: 100px; margin:0; padding:0; }
+div#FeatArticleReadMoreContainer { width: 436px; height: 18px; margin:16px 0 0 0; padding:0; float:left; text-align: left; font-weight:bold; font-size:16; }
+div#FeatArticleReadMoreContainer a { text-decoration: underline; color: #950F01; }
+div#FeatArticlePlaceholderContainer { width: 71px; height:auto; margin:0; padding:0; float:right; clear: both; }
+div#FeatArticlePlaceholderContainer img { padding: none; }
+
+/* Begin: Recent Articles Feed */
+
+div#RecentArticlesContainer { padding:0; float: left; width: 485px; margin: 0 7px 0 0; }
+
+div#RecentArticlesTop{ float: left; width: 485px; height: 25px; background:url(/Themes/NorthernSafety/Styles/images/recent-articles-top.jpg) top left no-repeat; }
+div#RecentArticlesTop h3 { font-size:12px; color: #fff; padding:4px 0px 0px 10px; }
+
+div#RecentArticles { float: left; width: 457px; border: 1px solid #bcbcbc; padding: 7px 14px 7px 12px; }
+div#RecentArticles h3 { line-height: 16px; font-size: 11px; margin-bottom: 2px; }
+div#RecentArticles p { margin-bottom: 13px; }
+div#RecentArticles a { text-decoration:underline; }
+div#RecentArticles .date { font-size:9px; font-weight:normal; font-style:italic; color:#666666; padding-left: 8px; text-decoration:none; }
+div#RecentArticles .readmoreArticles { font-style:italic; text-decoration:none; }
+div#RecentArticles a:hover { text-decoration: underline; }
+
+div#RecentArticlesBottomL{ float: left; width: 240px; height: 23px; background:url(/Themes/NorthernSafety/Styles/images/recent-articles-bottomL.gif) no-repeat; padding-top: 2px; }
+div#RecentArticlesBottomL a { font-size:10px; color:#544932; padding:2px 0px 0px 10px; text-decoration:none; }
+div#RecentArticlesBottomL .downarrow { padding: 0 0 0 3px; text-decoration:none; border: none; }
+div#RecentArticlesBottomL a:hover { text-decoration:underline; }
+
+div#RecentArticlesBottomR{ float: right; width: 233px; height: 23px; background:url(/Themes/NorthernSafety/Styles/images/recent-articles-bottomR.gif) no-repeat; padding: 2px 12px 0 0; text-align:right; }
+div#RecentArticlesBottomR a { font-size:10px; color:#544932; padding:2px 0px 0px 10px; text-decoration:none; }
+div#RecentArticlesBottomR a:hover { text-decoration:underline; }
+
+ul.ArticleList li { list-style:none; font-size: 10px; line-height:16px; }
+div.articleStub { max-height:64px; overflow:hidden; line-height:16px; z-index: 1; }
+div.articleReadMore { float:right; background:#fff; margin:-16px 0 0 0; z-index:10; position:relative; width:110px; text-align:right; }
+ul.ArticleList li a { color:#2C578F; }
+ul#benefitsPackage { margin: 0 0 13px 38px; }
+ul#benefitsPackage li { list-style-position: inside; }
+div#equalOpportunity { font-size: 12px; font-weight: bold; color: #cc3300; }
+
+div.ArticlebreakLine { float: none; clear: both; border-bottom: 1px solid #bebebe; margin: 7px 0 7px 0; }
+
+/* Begin: Main Articles Page Right Side Column */
+
+div#rightWrapper { float: right; width: 186px; padding:0; margin:0; border: none; text-align:center; height:485px; }
+
+div#AdContainerTop { float: right; width: 160px; height: 14px; padding: 4px 14px 7px 12px; border: none; background:url(/Themes/NorthernSafety/Styles/images/ad-container-top.jpg) top left no-repeat; color: #fff; }
+div#AdContainerBottom { float: right; width: 186px; height: 10px; padding: 0; margin: 0 0 10px 0; }
+	
+div#AdContainer { float: right; width: 158px; line-height: 16px; font-size: 10px; padding: 4px 14px 0px 12px; border-left: 1px solid #bcbcbc; border-right: 1px solid #bcbcbc; border-top: 1px solid #bcbcbc; background: #fefeff  url(/Themes/NorthernSafety/Styles/images/featuredAd_contact_us_bg.png) left bottom repeat-x; text-align:center; }
+h3#AdContainer { line-height: 23px; font-size: 10px; text-transform: uppercase; margin: -15px -15px 10px -13px; background: url(/Themes/NorthernSafety/Styles/images/services_bg_gradient.png) left bottom repeat-x; padding: 0 0 0 12px; }
+div#AdContainer h4 { line-height: 16px; font-size: 10px; }
+div#AdContainer img { margin: 0px 0 4px 0; }
+div#AdContainer img a { border: none; }
+div#AdContainer span.price { color: #cc3300; font-size: 11px; font-weight: bold; line-height:16px; }
+div#AdContainer p,
+div#AdContainer div { line-height: 16px; font-size: 10px; margin-bottom: 6px; }
+div#AdContainer div.emailUs { letter-spacing: -1px; }
+
+div#callUsToday { margin-bottom: 15px !important; }
+span#attnHumanPhone { line-height: 16px; font-size: 11px; font-weight: bold; color: #696969; }
+
+div.leftBreakLine { float: none; clear: both; border: 0px; margin: 7px 0 7px 0; }
+
+div#InsightContainer Top { margin:0px; padding: 0px; height: 10px; }
+div#InsightContainer { width: 158px; height: 165px; line-height: 16px; font-size: 10px; padding: 0px 14px 7px 12px; margin:0; 
+	border-left: 1px solid #bcbcbc; border-right: 1px solid #bcbcbc; background:url(/Themes/NorthernSafety/Styles/images/Insight-Container_bg.png) #fff left bottom repeat-x; text-align:center; }
+div#InsightContainer p { font-style:italic; font-weight:bold; font-size:11px; }
+div#InsightContainer img { margin: 5px 0 5px 0; }
+div#InsightTop { background:url(/Themes/NorthernSafety/Styles/images/InsightContainerTop.png) top left no-repeat; width:186px; height:10px; }
+div#InsightBottom { background:url(/Themes/NorthernSafety/Styles/images/AdContainerBottom.png) bottom left no-repeat; width:186px; height:10px; }
+
+/* Begin: Article-Level Page */
+
+/* Begin: Article-Level Content */
+
+h2.ArticlePageHeader {display: block;font-size: 15px;line-height: 20px;	color: #152b67;border-bottom: 1px solid #152b67;margin: 10px 0 0 0; text-transform:capitalize; }
+p.ArticlePageHeader {display: block;font-size: 10px;line-height: 10px;	color: #666;border:none;margin: 5px 0 18px 0;}
+
+div#articlePage { text-align:left; margin-bottom: 15px; }
+div#articlePage a { text-decoration: underline; }
+div#articlePage .picture { background-color: #fff; border: 1px solid #bcbcbc; padding: 5px; font: 10px Arial, sans-serif; color:#666; } 
+div#articlePage img { border: 1px solid #bcbcbc; vertical-align:middle; margin-bottom: 3px; }
+div#articlePage .right { margin: 0 0 8px 9px; float:right; } 
+div#GoBack { margin: 0; padding: 0; float: left; clear: both; }
+div#GoBack img { padding-bottom: 10px; }
+
+
+/* Begin: Article-Level Featured Products */
+
+div#FeatProdContainer { padding:0; float: left; width: 485px; margin-right: 7px; margin-top: 10px; }
+div#FeatProd { float: left; width: 463px; height: 270px; border-top: 1px solid #bcbcbc; border-left: 1px solid #bcbcbc; border-right: 1px solid #bcbcbc; padding: 11px 10px 0px 10px; }
+div#FeatProdTop{ float: left; width: 485px; height: 25px; background:url(/Themes/NorthernSafety/Styles/images/recent-articles-top.jpg) top left no-repeat; }
+
+div#FeatProd .desccontainer { text-align:left; font-size:10px; line-height:12px; font-weight:bold; margin-top: 6px; height: 70px; }
+div#FeatProd .pricecontainer { text-align:left; font-size:10px; line-height:12px; margin-top: 3px; padding-bottom:8px; color: #C00; height:24px; }
+
+
+div#FeatProdAlignLeft { width: 127px; float: left; margin-right: 11px; background:url(/Themes/NorthernSafety/Styles/images/Article-Featured-Product-bg.jpg) no-repeat; height: 260px; padding: 10px; text-align:center; }
+div#FeatProdAlignLeft p img, div#FeatProdAlignRight p img { border:1px solid #ccc;}
+div#FeatProdAlignRight { width: 127px; float: right; margin:0; background:url(/Themes/NorthernSafety/Styles/images/Article-Featured-Product-bg.jpg) no-repeat; height: 260px; padding: 10px; text-align:center; }
+
+
+div#FeatProdBottom{ float: left; width: 485px; height: 10px; background:url(/Themes/NorthernSafety/Styles/images/recent-articles-bottom.gif) no-repeat; padding-:0 }
+div#FeatProdTop h3 { font-size:12px; color: #fff; padding:4px 0px 0px 10px; }
+
+/* Begin: Right Side Column */
+
+div#RecentRightContainerTop { float: right; width: 160px; height: 14px; padding: 4px 14px 7px 12px; border: none; background:url(/Themes/NorthernSafety/Styles/images/ad-container-top.jpg) top left no-repeat; color: #fff; margin-top: 10px; }
+div#RecentRightContainerTop h3 { font-size:12px; color: #fff; }
+div#RecentRightContainerBottom { float: right; width: 186px; height: 10px; padding: none; margin-bottom: 10px; background:url(/Themes/NorthernSafety/Styles/images/AdContainerBottom.png) bottom left no-repeat; }
+	
+div#RecentRightContainer { float: right; width: 158px; font-size: 10px; padding: 6px 14px 7px 12px; border-left: 1px solid #bcbcbc; border-right: 1px solid #bcbcbc; border-top: 1px solid #bcbcbc; background: #fefeff  url(/Themes/NorthernSafety/Styles/images/featuredAd_contact_us_bg.png) left bottom repeat-x; text-align:left; }
+h3#RecentRightContainer { line-height: 23px; font-size: 10px; margin: -15px -15px 10px -13px; background: url(/Themes/NorthernSafety/Styles/images/services_bg_gradient.png) left bottom repeat-x; padding: 0 0 0 12px; }
+div#RecentRightContainer h4 { line-height: 14px; font-size: 10px; margin-top: 2px; padding-bottom: 1px; } 
+div#RecentRightContainer h4 a { text-decoration:underline; font-weight:bold; }
+div#RecentRightContainer p,
+div#RecentRightContainer div { line-height: 16px; font-size: 10px; margin-bottom: 6px; }
+div#RecentRightContainer .date { font-size:9px; font-weight:normal; font-style:italic; color:#666666; text-decoration:none; line-height: 15px; }
+
+/* Begin: Article Archives Page*/
+
+h2.archivePageHeader { display: block; font-size: 16px; line-height: 34px; color: #152b67;  border-bottom: 1px solid #0b3f65; margin: 5px 0 8px 0; }
+p.archivePageHeader { display: block; font-size: 10px; line-height: 10px; color: #666; border:none; margin: 5px 0 10px 0; }
+
+div#archivePage { text-align:left; margin-bottom: 10px; padding-top: 8px; }
+div#archivePage ul, div#archivePage ul li { list-style:none; }
+div#archivePage h4 { font-size:12px; color: #bcbcbc; }
+div#archivePage h4 a { text-decoration:underline; }
+div#archivePage .date { font-size:9px; font-weight:normal; font-style:italic; color: #666; text-decoration:none; line-height:10px; padding-bottom: 5px; }
+div.articleArchStub { max-height:62px; overflow:hidden; line-height:16px; z-index: 1; }
+
+/* Live Chat */
+h3.contactMethod {
+	display: block;
+	height: 24px;
+	line-height: 24px;
+	padding: 0 0 0 6px;
+	margin: 0 0 10px 0;
+	font-size: 10px;
+	text-transform: uppercase;
+	background: url(/Themes/NorthernSafety/Styles/images/contactus_header_bg.png) left top repeat-x;
+}
+.chatpix {padding: 0 0 16px 0;}
+
+
+/* Landing Pages */
+
+#leftWrapper,
+#LPproductsContainer { width: 489px;margin:0; padding: 0;border:none;float: left; }
+.lpFontStyle1 {font-weight:bold; line-height:14px; margin: 0 10px 12px 10px;}
+.lpFontStyle2 {color: #C00;font-weight:bold;}
+
+p.main {padding-bottom:15px;}
+.LPBoxLeft {width: 155px;height:300px;margin: 0px 12px 0 0px; float: left; background-color: #fff; background:url(/Themes/NorthernSafety/Styles/images/lp-product-box.png) top left no-repeat;}
+
+.LPBoxLeftNRM {width: 155px;height:300px;margin: 0; float: left; background-color: #fff; background:url(/Themes/NorthernSafety/Styles/images/lp-product-box.png) top left no-repeat }
+
+.LPBoxLeftImage { width: 100px;height:100px; margin:0 27px 3px 27px; float: left; padding: 12px 0 0 0;}
+.LPBoxLeftDesc {width: 136px; height: 88px; margin: 0; float: left; padding: 3px 9px 0px 9px; line-height:14px; font-weight: bold;}
+.LPBoxLeftPrice {width: 136px; height: 20px; margin: 0; float: left; padding: 0px 9px 0px 9px; line-height:14px; font-weight: bold;}
+.LPBoxLeftBuyNowBtn { float: right; margin: 0; padding: 6px 9px 8px 9px; text-align:right;}
+.LPBoxLeftMore {width: 131px; height: 30px; margin: 3px 0 0 0; float: left; padding: 0px 14px 0px 9px; line-height: 14px; border-top:1px solid #9b9b9b; }
+.LPBoxLeftMore .more a { display: block; }
+.LPBoxLeftMore .more .arrowType2 { display: block; background: url(/Themes/NorthernSafety/Styles/images/arrow_link_type_2.gif) 0px 4px no-repeat; }
+.LPLongBox { width:489px; height: 33px; float: left; margin: 10px 0 0 0; background:url(/Themes/NorthernSafety/Styles/images/Long-Box.jpg) top left no-repeat; padding-top: 12px;}
+.LPLongBox p {font-weight:bold; font-size:12px; text-align:center;}
+.LPLongBox a {text-decoration: none; color: #C00;}
+.LPLongBox a:hover {text-decoration: underline; color: #C00;}
+
+.LPHalfBox {width:238px;height:150px;float: left;  margin: 10px 13px 0 0px; background-color: #fff;}
+.LPHalfBoxNRM {width:238px;height:150px;float: left;  margin: 10px 0 0 0px; background-color: #ececec;}
+.LPHalfBox, .LPHalfBoxNRM  { text-decoration:none; border:none; }
+
+h2.LPpageHeader{display: block;font-size: 16px;line-height: 30px;	color: #152b67;	border-bottom: 1px solid #0b3f65;margin: 0px 0 10px 0;}
+.LPbannerBottomSpace {padding: 0 0 5px 0;}
+
+/* Begin: Generic Static Page */
+div.generic h2.pageHeader { display: block; font-size: 16px; line-height: 34px; color: #152b67;  border-bottom: 1px solid #0b3f65; margin: 12px 0 20px 0; }
+/* End: Page Header */
+div.generic div#note { font-weight: bold; font-size: 10px; line-height: 10px; text-transform: uppercase; margin-bottom: 20px; }
+div.generic p { margin-bottom: 18px; font-size: 10px; line-height: 16px; }
+div.generic h3 { text-transform: uppercase; font-size: 10px; line-height: 16px; }
+div.generic ul { margin-bottom: 18px; }
+div.generic ul li { list-style-position: inside; }
+
+div.generic div.BTT { text-align: right; margin: -20px 0 20px 0; }
+div.generic div#supportForm { margin: 0px 0 20px 0; }
+div.generic div.breakLine { border-bottom: 1px solid #bebebe; margin: 0 0 20px 0; }
+div.generic form { width: 400px; margin:0 0 20px 100px; }
+div.generic form div#pageSubmitContainer { line-height: 18px; height: 18px; padding: 18px 20px; text-align: right; vertical-align: center; }
+div.generic form label { cursor: pointer; padding-left: 6px; line-height: 23px; font-size: 10px; }
+div.generic form select, div.generic form input { width: 150px; }
+/* End: Generic Static Page */
+
+/* Begin: FAQ */
+/* Begin: Page Header */
+div.faq h2.pageHeader { display: block; font-size: 16px; line-height: 34px; color: #152b67;  border-bottom: 1px solid #0b3f65; margin: 12px 0 18px 0; }
+div.faq h3#faq { font-size: 11px; line-height: 11px; text-transform: uppercase; padding-bottom: 9px; margin-bottom: 13px; border-bottom: 1px solid #bebebe; }
+/* End: Page Header */
+
+/* Begin: Questions */
+div.faq ul#faqQuestionsCol1 { display: block; float: left; width: 335px; }
+div.faq ul#faqQuestionsCol2 { display: block; float: right; width: 330px; }
+div.faq ul#faqQuestionsCol1 li,
+div.faq ul#faqQuestionsCol2 li  { list-style: outside none none; line-height: 18px; font-size: 10px; }
+div.faq ul#faqQuestionsCol1 li div.arrowType2,
+div.faq ul#faqQuestionsCol2 li div.arrowType2 { background: url(/Themes/NorthernSafety/Styles/images/arrow_link_type_2.gif) no-repeat 0 5px; }
+div.faq div.question,
+div.faq div.answer { line-height: 18px; font-size: 10px; }
+div.faq div.answer ul li { list-style-position: inside; }
+div.faq div.question { font-weight: bold; }
+/* End: Questions */
+
+/* Begin: Break Lines */
+div.faq div.BTT { text-align: right; margin-bottom: 21px; line-height: 12px; }
+div.faq div#questionsBreak { float: none; clear: both; border-bottom: 1px solid #bebebe; margin: 21px 0 13px 0; }
+div.faq div#supportFormBL { float: none; clear: both; border-bottom: 1px solid #bebebe; margin: -13px 0 0 0; }
+div.faq div#supportForm { margin: 30px 0 20px 0; }
+/* End: Break Lines */
+/* End: FAQ */
+
+/* Begin: Contact Us */
+/* div.contactus { width: 689px; padding: 0 18px 9px 18px; } */
+
+/* Begin: Page Header */
+div.contactus h2.pageHeader { display: block; font-size: 16px; line-height: 16px; color: #152b67;  border-bottom: 1px solid #0b3f65; padding: 0 0 4px 0; margin: 19px 0 10px 0; }
+div.contactus h3.contactHeader { font-weight: normal; font-size: 16px; margin-bottom: 5px; }
+div.contactus h4.contactEmailAddress { font-weight: normal; font-size: 12px; margin-bottom: 15px; }
+div.contactus p.contactText { margin-bottom: 10px; }
+/* End: Page Header */
+
+div.contactus div#logoText { width: 518px; height: 53px; padding: 20px 7px 7px 163px; margin: 0 0 20px 0; font-size: 10px; line-height: 16px; letter-spacing: -1px; background: url(/Themes/NorthernSafety/Styles/images/contactus_bg.png) left top no-repeat; }
+div.contactus div#logoText h3 { color: #563008; font-size: 12px; line-height: 16px; margin: 0 0 5px 0; text-transform: uppercase; letter-spacing: -1px; }
+
+/* Begin: Phone, Fax, Shedule */
+div.contactus h3.contactMethod { display: block; height: 24px; line-height: 24px; padding: 0 0 0 6px; margin: 0 0 10px 0; font-size: 10px; text-transform: uppercase; background: url(/Themes/NorthernSafety/Styles/images/contactus_header_bg.png) left top repeat-x; }
+div.contactus div#contactInfoContent { border: 1px solid #dedede; padding: 7px 0 13px 0; background: #fafbfc url(/Themes/NorthernSafety/Styles/images/contactus_content_bg.png) left top repeat-x; margin-bottom: 20px; }
+div.contactus div#contactInfoContent div.tollFreePhone,
+div.contactus div#contactInfoContent div.fax { display: block; float: left; width: 215px; margin-right: 18px; text-align: right; }
+div.contactus div#contactInfoContent div.scheduleContainer,
+div.contactus div#contactInfoContent div.faxAvailable { display: block; float: left; width: 450px; }
+div.contactus div#contactInfoContent div.scheduleContainer dl { display: block; line-height: 23px; font-size: 10px; }
+div.contactus div#contactInfoContent div.scheduleContainer dl dt { display: block; float: left; clear: left; width: 165px; }
+div.contactus div#contactInfoContent div.scheduleContainer dl dd { display: block; float: left; width: 230px; }
+div.contactus div#contactInfoContent div.tollFreePhone { font-size: 14px; font-weight: bold; line-height: 14px; margin-top: 5px; }
+div.contactus div#contactInfoContent div.tollFreePhone span.phone { color: #cc3300; }
+div.contactus div#contactInfoContent div.fax { font-weight: bold; }
+/* End: Phone, Fax, Shedule */
+
+/* Begin: Locations */
+div.contactus h4.locations { display: block; line-height: 26px; font-size: 10px; color: #993300; text-transform: uppercase; margin: 0 0 2px 0; }
+div.contactus div.addressContainer { float: left; width: 228px; line-height: 16px; margin-bottom: 16px; }
+div.contactus div.addressContainer div.name { font-weight: bold; }
+/* End: Locations */
+
+div.contactus div#pickUpCentersAndBranches { clear: left; float: none; font-size: 10px; line-height: 16px; font-weight: bold; text-align: right; margin: 0 0 16px 0; }
+
+/* Begin: Online Lists */
+div.contactus dl#onlineMethodLists { display: block; }
+div.contactus dl#onlineMethodLists dt { display: block; float: left; clear: left; width: 228px; line-height: 16px; font-size: 10px; }
+div.contactus dl#onlineMethodLists dd { display: block; float: left; width: 458px; line-height: 16px; font-size: 10px; margin: 0 0 15px 0; }
+/* End: Online Lists */
+
+/* Begin: Services */
+/* Begin: Index */
+/* Begin: Page Header */
+div.services h2.pageHeader { display: block; font-size: 16px; line-height: 34px; color: #152b67;  border-bottom: 1px solid #0b3f65; margin: 12px 0 18px 0; }
+/* End: Page Header */
+
+/* Begin: Logo Text */
+div.services div#logoText { width: 561px; padding: 4px 0 4px 127px; margin: 0 0 20px 0; height: 72px; font-size: 10px; line-height: 16px; background: url(/Themes/NorthernSafety/Styles/images/services_logo_text_bg.png) left top no-repeat; }
+div.services div#logoText h3 { color: #260066; font-size: 12px; line-height: 16px; margin: 0 0 6px 0; text-transform: uppercase; }
+/* End: Logo Text */
+
+div.services div#customerCareContainer { float: left; width: 443px; }
+div.services h3#customerCare { line-height: 24px; font-size: 10px; padding-left: 6px; margin-bottom: 7px; text-transform: uppercase; background: url(/Themes/NorthernSafety/Styles/images/services_bg_gradient.png) left top repeat-x; }
+div.services h3#customerCare span { padding: 0 12px 0 0; background: url(/Themes/NorthernSafety/Styles/images/arrow_link_type_6.gif) right center no-repeat; }
+div.services div#contactUsContainer { float: right; width: 194px; border: 1px solid #dedede; padding: 15px 15px 8px 15px; background: #fefeff url(/Themes/NorthernSafety/Styles/images/services_contact_us_bg.png) left bottom repeat-x; }
+div.services h3#contactUs { line-height: 23px; font-size: 10px; text-transform: uppercase; margin: -15px -15px 10px -15px; background: url(/Themes/NorthernSafety/Styles/images/services_bg_gradient.png) left bottom repeat-x; padding: 0 0 0 12px; }
+div.services div#contactUsContainer h4 { line-height: 16px; font-size: 10px; }
+div.services div#contactUsContainer span.phone { color: #cc3300; font-size: 11px; line-height: 32px; font-weight: bold; }
+div.services div#contactUsContainer p { line-height: 16px; font-size: 10px; margin-bottom: 6px; }
+
+/* Begin: Questions */
+div.services ul#questionsCol1 { display: block; float: left; width: 222px; }
+div.services ul#questionsCol2 { display: block; float: right; width: 221px; }
+div.services ul#questionsCol1 li,
+div.services ul#questionsCol2 li  { list-style: outside none none; line-height: 20px; font-size: 10px; }
+div.services ul#questionsCol1 li div.arrowType2,
+div.services ul#questionsCol2 li div.arrowType2 { background: url(/Themes/NorthernSafety/Styles/images/arrow_link_type_2.gif) no-repeat left center; }
+div.services div#questionsContainer h3 { display: block; text-transform: uppercase; font-size: 10px; line-height: 22px; margin-bottom: 4px; }
+div.services div#questionsContainer p { line-height: 16px; font-size: 10px; margin-bottom: 15px; }
+div.services div.question,
+div.services div.answer { line-height: 18px; font-size: 10px; }
+div.services div.answer ul li { list-style-position: inside; }
+div.services div.question { font-weight: bold; }
+/* End: Questions */
+
+/* Begin: Break Lines */
+div.services div.BTT { text-align: right; margin: -14px 0 -10px 0; line-height: 12px; }
+div.services div.breakLine { float: none; clear: both; border-bottom: 1px solid #bebebe; margin: 16px 0 11px 0; }
+div.services div#lastBTT { margin: -5px 0 0 0; }
+/* End: Break Lines */
+/* End: Index */
+
+/* Begin: How to Buy */
+div.howToBuy { padding-bottom: 48px !important; }
+/* Begin: Page Header */
+div.howToBuy h2.pageHeader { display: block; font-size: 16px; line-height: 26px; color: #152b67;  border-bottom: 1px solid #0b3f65; margin: 12px 0 18px 0; }
+/* End: Page Header */
+
+div.howToBuy h3 { font-size: 10px; line-height: 15px; color: #152b67; }
+div.howToBuy p { font-size: 10px; line-height: 15px; margin-bottom: 14px; width: 660px; }
+div.howToBuy p.imgFit { width: 490px; }
+div.howToBuy ul li { list-style: outside none none; }
+div.howToBuy div.breakLine { float: none; clear: both; border-bottom: 1px solid #bebebe; margin: 29px 0 15px 0; }
+/* End: How to Buy */
+
+/* Begin: Glossary */
+/* Begin: Page Header */
+div.glossary h2.pageHeader { display: block; font-size: 16px; line-height: 34px; color: #152b67;  border-bottom: 1px solid #0b3f65; margin: 12px 0 11px 0; }
+div.glossary h3.pageSubHeader { display: block; font-size: 11px; line-height: 24px;  border-bottom: 1px solid #bebebe; margin: 0 0 20px 0; }
+/* End: Page Header */
+div.glossary { padding-bottom: 13px !important; }
+div.glossary ul#abcList { display: block; margin: 0 auto; line-height: 26px; height: 26px; background: url(/Themes/NorthernSafety/Styles/images/abc_inactive.gif) left top repeat-x; }
+div.glossary ul#abcList li { display: block; list-style: outside none none; float: left; line-height: 26px; text-align: center; width: 25px; font-weight: bold; color: #999; }
+div.glossary ul#abcList li a { display: block; text-transform: uppercase; }
+div.glossary ul#abcList li a.selected,
+div.glossary ul#abcList li a:hover { display: block; background: url(/Themes/NorthernSafety/Styles/images/abc_active.gif) top left no-repeat; text-decoration: none; }
+div.glossary ul#abcList li.first { float: left; width: 30px; background: url(/Themes/NorthernSafety/Styles/images/abc_first_inactive.gif) left top no-repeat; }
+div.glossary ul#abcList li.first a { background: url(/Themes/NorthernSafety/Styles/images/abc_first_inactive.gif) left top no-repeat; }
+div.glossary ul#abcList li.first a.selected,
+div.glossary ul#abcList li.first a:hover { background: url(/Themes/NorthernSafety/Styles/images/abc_first_active.gif) left top no-repeat; }
+div.glossary ul#abcList li.last { float: right; width: 30px; background: url(/Themes/NorthernSafety/Styles/images/abc_last_inactive.gif) right top no-repeat; }
+div.glossary ul#abcList li.last a.selected,
+div.glossary ul#abcList li.last a:hover { background: url(/Themes/NorthernSafety/Styles/images/abc_last_active.gif) right top no-repeat; }
+div.glossary div.sectionName { float: left; width: 63px; margin: 15px 0 20px 0; text-transform: uppercase; font-weight: bold; font-size: 14px; }
+div.glossary div.termsContainer { padding: 13px 0 0 0; }
+div.glossary div.termsContainer { float: right; width: 621px; font-size: 10px; line-height: 18px; }
+div.glossary div.termDefinition span.term { font-weight: bold; }
+div.glossary div.BTT { text-align: right; margin-bottom: -16px; }
+div.glossary div#BTTLast { text-align: right; margin-top: 3px; }
+div.glossary div.breakLine { border-bottom: 1px solid #bebebe; margin: 23px 0 0 0; }
+/* End: Glossary */
+/* End: Services */

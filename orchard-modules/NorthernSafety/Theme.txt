@@ -1,0 +1,8 @@
+Name: NorthernSafety
+Author: The Application Developement Team of Northern Safety
+Website: http://www.northernsafety.com/
+Description: A Theme for Northern Safety, controls the view for articles and pages, etc.. within the Orchard's cms.
+Version: 1.4.2
+BaseTheme: TheThemeMachine
+# todo: provide tags
+# Tags: Classic, Serif

@@ -1,0 +1,70 @@
+﻿@{
+	int index = 1;
+}
+
+<div class="FeaturedArticlesWrapper">
+	<!-- Begin: Slider Box -->
+	<div id="SliderBoxTop">
+		<h2>Featured Articles</h2>
+	</div>
+	<div id="SliderBox"> 
+		<a id="prev"><img src="/Themes/NSDefault/Styles/images/Slider-Arrow-Left.png" /></a>
+		@foreach (dynamic i in Model.ContentItems.ContentItems) { 
+			
+			 <div class="featuredArticle" id="Article@(index)">      
+				<img src="/@Display(i.ContentItem.ArticlePart.ThumbImage)" width="150" height="150" />
+					<div id="FeatArticleContainer">
+					<div id="FeatArticleMainContainer">
+					<h3><a href="@i.ContentItem.AutoroutePart.Path">@Display(i.ContentItem.TitlePart.Title)</a></h3>
+					@Display(Html.Raw(i.ContentItem.BodyPart.Text))
+					</div>
+					<div id="FeatArticleReadMoreContainer">
+					<a href="/@i.ContentItem.AutoroutePart.Path">Read Full Article</a>
+					</div>
+					</div> 
+			</div>
+			
+			index++;
+		}
+		<a id="next"><img class="floatRight" src="/Themes/NSDefault/Styles/images/Slider-Arrow-Right.png" /></a> 
+	</div>
+	<div id="SliderBoxBottom">  
+	</div> 
+	<div id="play"></div>
+	<!-- End: Slider Box -->
+	<input type="hidden" id="curr" value="1" />
+	<input type="hidden" id="count" value="@(index-1)" />
+</div>
+
+<script type="text/javascript">
+	$(function () {
+		$('.featuredArticle').hide();
+		$('#Article1').show();
+		$('#next').click(function () {
+			var curr = parseInt($('#curr').val());
+			var count = parseInt($('#count').val());
+			var next = curr + 1;
+			if (next > count)
+			{ next = 1; }
+			$('#Article' + next).show();
+			$('#Article' + curr).hide();
+			$('#curr').val(next);
+		});
+		$('#prev').click(function () {
+			var curr = parseInt($('#curr').val());
+			var count = parseInt($('#count').val());
+			var prev = curr - 1;
+			if (prev < 1)
+			{ prev = count; }
+			$('#Article' + prev).show();
+			$('#Article' + curr).hide();
+			$('#curr').val(prev);
+		});
+		$('#play').click(function () {
+			$(this).everyTime("8s", "scroll", function () {
+				$('#next').click();
+			});
+		});
+		$('#play').click();
+	});
+</script>

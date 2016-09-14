@@ -1,0 +1,167 @@
+﻿@charset "UTF-8";
+/* CSS Document */
+
+/* Main Left Nav Container */
+
+div#verticalNavHP {width: 202px; /* 220px - 18px = 202px; */
+padding: 0 0 0 18px; margin: 0 0 0 -18px; background: #fff; float: none;background-image: url(/Themes/NorthernSafety/Styles/images/hNav/left_menu_bg-WH.gif); }
+
+/* Homepage Top Products Area */
+
+div#mainMenuHP { height: 378px; background:url(/Themes/NorthernSafety/Styles/images/hNav/HPNavBg.png); background-position:top; background-repeat:no-repeat; padding-bottom: 6px; }
+div#mainMenuHP h3.whiteText {color: #fff;border-top: none; padding:6px 0 6px 11px}
+
+ul#HPTopProducts {margin-left: 0; list-style-type:none;}	
+ul#HPTopProducts li {padding-left: 12px; list-style: none; display:block;border-top:1px dotted #9C9A89;line-height:28px;font-weight:bold; font-size:12px;}
+ul#HPTopProducts li a {color:#2f2f2f;}
+ul#HPTopProducts #special {border-top: none;}
+
+/* 3rd Level Search Results */
+
+div#SearchResultsStyleContainer {margin:10px 0 5px 0; height: 52px; background:url(/Themes/NorthernSafety/Styles/images/hNav/ResultsBgLevel3.png) left top repeat-x; border-bottom: 2px solid #c7c7c7; padding: 8px 10px 0 10px;}
+div#SearchResultsStyleContainer a.selected  {font-weight:bold;}
+div#SearchResultsStyleContainer a:hover.selected {text-decoration:none;}
+
+ul#results li.boldblack {font-weight:bold; color: #282828;border-right: 1px solid #868686; }
+ul#results li.space {margin-left:8px;font-weight:bold; color: #282828;}
+ul#results, ul#sort .boldgray {font-weight:bold; color:#282828;}
+
+ul#results li a, ul#sort li a {color:#274383; font-weight:normal;}
+ul#results {margin:0} 
+ul#sort {margin:0; padding-top:13px;}
+ul#sort li a { border-right: 2px solid #868686; padding-right: 10px; font-weight:normal;}
+ul#sort li.last a{border-right:none;}
+@-moz-document url-prefix() { 
+  ul#sort {
+     padding-top:12px;
+  }
+}
+ul#results li,
+ul#sort li {display: inline; list-style-type: none; padding-right: 8px; font-size:11px;}
+
+
+/* 2nd Level Attribute Upper Navigation - Specialty 
+
+div#mainMenuLevel2 { height: auto; background: #fff url(/Themes/NorthernSafety/Styles/images/hNav/LeftNavTopBgLevel2.png) left top no-repeat; padding-bottom: 0;background-image:url(/Themes/NorthernSafety/Styles/images/hNav/LeftNavTopLtGrade.png); background-position:top; background-repeat:no-repeat; }
+div#mainMenuLevel2 h1.blackText {color: #222;border-top: none; padding:8px 6px 6px 11px;  font-size:14px; font-weight: bolder; border-bottom: 2px solid #9c9c9c}
+
+/*ul#leftNavTopLevel2 {margin-left: 0; border-right: 1px solid #c4c3c3;list-style-type:none;}
+ul#leftNavTopLevel2 li {padding: 6px 12px 5px 12px; list-style: none; display: block; line-height: 15px;font-size:11px; border-bottom: 1px dotted #999;text-indent: -6px;list-style-type:none; }
+ul#leftNavTopLevel2 a {padding: 0 8px 0 6px; font-weight: bold; font-size:12px; color:#274383;}
+ul#leftNavTopLevel2 .extraTopPadding {padding-top: 6px;}
+ul#leftNavTopLevel2 .last {padding-bottom:none; border: none;}
+ul#leftNavTopLevel2 .special {padding-bottom:none; border-bottom: 1px dotted #999;border-top: 1px dotted #999;margin-top: 6px;}
+ul#leftNavTopLevel2 .bold {font-weight:bold; padding-top: 3px; padding-left: 12px;}
+
+ul#leftNavTopLevel2 ul li {border-bottom:#ececec solid 1px;}
+ul#leftNavTopLevel2 ul li .last {border:0}
+ul#leftNavTopLevel2 ul li a {padding: 0 8px 0 16px; font-weight: normal; font-size:12px; color: #369; }
+
+
+
+div#leftNavTopBottomLevel2 {background:url(/Themes/NorthernSafety/Styles/images/hNav/LeftNavBottomWhite.png) top no-repeat;height:12px; background-color:#fff; padding: 0 0 7px 0;}*/
+
+/* 2nd Level Attribute Upper Navigation - Specialty */
+
+div#mainMenuLevel2 { height: auto; background: #fff url(/Themes/NorthernSafety/Styles/images/hNav/LeftNavTopBgLevel2.png) left top no-repeat; padding-bottom: 0;background-image:url(/Themes/NorthernSafety/Styles/images/hNav/LeftNavTopLtGrade.png); background-position:top; background-repeat:no-repeat; }
+div#mainMenuLevel2_noresults {background-image:url(/Themes/NorthernSafety/Styles/images/hNav/LeftNavTopGraded_noresults.png); background-repeat:no-repeat; }
+div#mainMenuLevel2 h1.blackText {color: #222;border-top: none; padding:8px 6px 6px 11px;  font-size:14px; font-weight: bolder; border-bottom: 2px solid #9c9c9c}
+div#mainMenuLevel2 h1.blackTextNoResults {color: #222;border-top: none; padding:8px 6px 6px 11px;  font-size:14px; font-weight: bolder; border-bottom: none;margin-bottom:10px; background-image:url(/Themes/NorthernSafety/Styles/images/hNav/LeftNavTopGraded_noresults.png); background-repeat:no-repeat; height: 22px;}
+
+
+div#mainMenuLevel2 #navcontainer{border-right: 1px solid #c4c3c3;}
+div#mainMenuLevel2 #navcontainer ul li { list-style-type: none; margin: 0; padding: 0; background:none; }
+div#mainMenuLevel2 #navcontainer ul li ul li{ list-style-type: none; padding: 0 0 0 10px; margin: 0 0 0 -10px; background:none; font-weight:normal; }
+div#mainMenuLevel2 #navcontainer a, div#mainMenuLevel2 #active ul li a { display: block; width: 179px; height: 100%; padding: 5px 10px 8px 12px;font-size:12px; font-weight:bold;text-decoration: none; border-bottom: 1px dotted #999; color: #274383}
+div#mainMenuLevel2 #navcontainer ul li ul li a { display: block; width: 169px; font-weight:normal; padding: 5px 10px 8px 22px; }
+div#mainMenuLevel2 #navcontainer a:hover {background-color: #369;color: #091a46;background:url(/Themes/NorthernSafety/Styles/images/hNav/left-nav-chrome.png) repeat-x; border-bottom: 1px solid #b0aca8}
+div#mainMenuLevel2 #navcontainer a.last { border: none;}
+
+div#mainMenuLevel2 #active a, div#mainMenuLevel2 #active a:hover  {display: block; padding-left:24px; width: 167px;background: url(/Themes/NorthernSafety/Styles/images/hNav/active-nav-button.png) no-repeat; border-bottom: 1px solid #b0aca8;color: #091a46;}
+
+div#mainMenuLevel2 ul li#active ul li a { display: block; width: 169px; font-weight:normal; padding: 5px 10px 8px 22px; background:none; }
+div#mainMenuLevel2 ul li#active ul li a:hover  {background-color: #369;color: #091a46;background:url(/Themes/NorthernSafety/Styles/images/hNav/left-nav-chrome.png) repeat-x; border-bottom: 1px solid #b0aca8}
+
+div#mainMenuLevel2 #navcontainer_sub a {font-size:12px; font-weight: normal; padding-left: 24px;width: 167px;}
+
+
+div#leftNavTopBottomLevel2 {background:url(/Themes/NorthernSafety/Styles/images/hNav/LeftNavBottomWhite.png) top no-repeat;height:12px; background-color:#fff; padding: 0 0 7px 0;}
+
+
+/* 3rd Level Attribute Upper Vertical Navigation - Specialty */
+
+div#mainMenuLevel3 { height: auto; background: url(/Themes/NorthernSafety/Styles/images/hNav/LeftNavTopLtBrown.png); background-position:top; background-repeat: repeat-y; padding-bottom: 0; }
+div#mainMenuLevel3 h3.whiteText {color: #fff;border-top: none; padding:6px 0 6px 11px; background-image:url(/Themes/NorthernSafety/Styles/images/hNav/LeftNavTopDkBrown.png); background-position:top; background-repeat:no-repeat;}
+
+div#mainMenuLevel3 a.ClearAll {color: #d2d2d2;border-top: none; padding:6px 0 6px 11px; font-weight:normal; font-size:10px;}
+div#mainMenuLevel3 a:hover.ClearAll {text-decoration:underline;}
+
+ul#leftNavTopLevel3 {margin-left: 0; list-style-type:none; }
+ul#leftNavTopLevel3 li {padding: 2px 0 2px 21px; list-style: none; display: block; line-height: 15px;font-size:11px;}
+ul#leftNavTopLevel3 li a {padding-left: 8px; font-weight:bold; font-size:10px; color:#274383;}
+ul#leftNavTopLevel3 .boldExtraTopPadding {font-weight:bold; padding-top: 5px; padding-left: 12px;}
+ul#leftNavTopLevel3 .bold {font-weight:bold; padding-top: 3px; padding-left: 12px;}
+
+div#leftNavTopBottomLevel3 {background:url(/Themes/NorthernSafety/Styles/images/hNav/LeftNavTopBottomLtBrown.png) top no-repeat;height:12px; background-color:#fff; padding: 0 0 7px 0;}
+
+/* Universal Attribute Navigation */
+
+div#LeftNavAttributes {height: auto; padding-bottom: 0; margin-bottom: 7px; background-color:#fff;}
+div#LeftNavAttributes .headline {color:#111111;border-top: none; padding:3px 0 2px 11px; border-bottom: 2px solid #666;margin-bottom: 1px;font-size:12px;}
+
+ul#LeftNavAttributesStyling {margin-left: 0; padding-left:0; list-style-type:none;}
+ul#LeftNavAttributesStyling li {display: block; line-height: 15px; color: #777; list-style-type:none; text-indent: -11px;padding-left: 12px; padding-right: 12px;margin: 3px 0 2px 0;}
+ul#LeftNavAttributesStyling li a {padding: 1px 5px 1px 11px;font-size:11px; line-height: 14px;color:#274383; }
+ul#LeftNavAttributesStyling li.first {margin-top:8px;}
+ul#LeftNavAttributesStyling .navPlus {padding:6px 0 5px 6px; border-bottom: 2px solid #cfcbc4; margin-bottom: 5px;background: url(/Themes/NorthernSafety/Styles/images/blueplus_sign.png) 11px center no-repeat;padding-left: 21px;}
+ul#LeftNavAttributesStyling .navMinus {padding:6px 0 5px 20px; border-bottom: 2px solid #cfcbc4; margin-bottom: 5px;background: url(/Themes/NorthernSafety/Styles/images/blueminus_sign.png) 11px center no-repeat;padding-left: 21px;}
+ul#LeftNavAttributesStyling .navPlus a,
+ul#LeftNavAttributesStyling .navMinus a {color: #222; font-weight:bold;padding-left:11px;}
+ul#LeftNavAttributesStyling .navPlus a:hover,
+ul#LeftNavAttributesStyling .navMinus a:hover {text-decoration:none;}
+
+ul#LeftNavAttributesStyling .SeeMore {font-weight:bold; padding-left: 9px;}
+ul#LeftNavAttributesStyling li.SeeMore  { background:url(/Themes/NorthernSafety/Styles/images/new/orangedownarrow.png) 10px center no-repeat;padding-left: 22px; }
+
+
+/* Universal Navigation Message Rotator*/
+
+div#rotator {background:url(/Themes/NorthernSafety/Styles/images/hNav/message_rotator.png) top no-repeat; height: 46px; font: 12px Verdana, Geneva, sans-serif; font-weight:bold; font-style:italic; padding: 12px 0 0 10px; margin-bottom: 7px; }
+div#rotator p {color:#063; line-height:15px;}
+
+
+/* Universal Left Nav Style - Great Deals, Online Resources, Quick Shop */
+
+	/* Great Deals & Online Resources, etc. */
+
+
+div.mainLeftNavMenu {height: 100%;}
+div.mainLeftNavMenu h3.title {color: #22201b;border-top: none; padding:0 0 0 11px; margin-bottom: 2px;}
+div.mainLeftNavMenu ul.mainLeft, div.mainLeftNavMenu ul.linkMenu { list-style-type: none; margin-bottom:9px; line-height:17px; }
+div.mainLeftNavMenu ul.linkMenu {padding: 8px 0 0 12px;}
+div.mainLeftNavMenu ul.mainLeft li { list-style-type: none; }
+div.mainLeftNavMenu ul.linkMenu li a {color: #2C578F; font-size:11px;}
+div.mainLeftNavMenu .mainLeft {background:url(/Themes/NorthernSafety/Styles/images/hNav/leftnav-bg.png); background-position:top; background-repeat:repeat-x; border-top: 2px solid #8a8a8a; /*height: 100%;*/}
+
+	/* Quick Shop */
+	
+li#leftMenuQuickShop form div.product {height: 18px;margin-bottom: 3px;clear: left;}
+* html li#leftMenuQuickShop form div.product { margin-bottom: 2px;}
+li#leftMenuQuickShop form div.product input {padding-left: 1px !important; padding-right: 1px !important; color: #333; text-align: left;}
+li#leftMenuQuickShop form {padding: 5px 5px 9px 9px;}
+
+li#leftMenuQuickShop .itemNumber {width: 66px; text-align: center; margin: 0 1px; }
+li#leftMenuQuickShop .itemQty {width: 20px; text-align: center; margin: 0 1px; }
+li#leftMenuQuickShop span.itemFieldsSeparator {width: 3px; color: #bfbebe; }
+li#leftMenuQuickShop br {clear: left }
+li#leftMenuQuickShop div#addToShoppingCart {float: right; margin: -26px 0 0 0;}
+li#leftMenuQuickShop div#addToShoppingCart a { display: block; }
+li#leftMenuQuickShop div#addToShoppingCart a img { border: 0; }
+li#leftMenuQuickShop a {display: block; clear: left; margin: 5px 0 0 4px;}
+a#needToBuyMore,
+a#needToBuyLess {padding: 0 0 0 8px; background: url(/Themes/NorthernSafety/Styles/images/arrow_link_type_2.gif) left center no-repeat;}
+#needToBuyMoreContainer {display: none; }
+.ItemNLbl {float: left;width: 75px;height: 10px;margin: 0!important;padding: 0px!important}
+.ItemQtyLbl {float: left;width: 50px;height: 10px;margin: 0!important;}
+
+div.mainLeftNavMenu ul.linkMenu li span {margin-left: -1px;	padding-left: 8px;	background-image: url(/Themes/NorthernSafety/Styles/images/arrow_link_type_2.gif); background-repeat:no-repeat; background-position:2px}

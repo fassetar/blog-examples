@@ -1,0 +1,21 @@
+
+@{
+    IEnumerable<object> contentItems = Model.ContentItems;
+    Model.ContentItems.Classes.Add("content-items");
+    Model.ContentItems.Classes.Add("term-content-items");
+    string title = Model.Term.Name;
+    string parent = String.Empty;
+	string child = String.Empty;
+    if (Model.Term.Slug.Contains("safety-products/") || Model.Term.Slug.Contains("disaster-preparedness/"))
+    {
+        parent = Model.Term.Container.TermPart.Name;
+    }
+    var shape = New.Parts_Breadcrumbs_Article(Title: title, ParentTaxo: parent, ChildTaxo: child);
+    WorkContext.Layout.Navigation.Add(shape, "2");
+}
+<div id="archivePage">
+@Display(Model.ContentItems)
+</div>
+@if (contentItems == null || contentItems.Count() < 1) {
+<p>There are no articles in @Html.Encode(Model.Term.Name).</p>
+}

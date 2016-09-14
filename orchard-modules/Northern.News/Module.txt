@@ -1,0 +1,12 @@
+Name: Northern.News
+AntiForgery: enabled
+Author: Corey Hickok, Anthony Fassett - Northern Safety
+Website: http://www.northernsafety.com
+Version: 1.0
+OrchardVersion: 1.4
+Description: Northern Safety Custom Module
+Features:
+    Northern.News:
+        Description: Description for feature Northern.Articles.
+		Category: Content
+		Dependencies:  Contrib.Taxonomies, Omniture.SiteCatalyst, Orchard.ImportExport, Szmyd.Orchard.Modules.Menu

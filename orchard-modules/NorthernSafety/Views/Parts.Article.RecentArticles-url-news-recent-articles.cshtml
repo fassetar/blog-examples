@@ -1,0 +1,35 @@
+﻿@using Orchard.Utility.Extensions;
+@using Orchard.ContentManagement;
+
+@{
+    string title = "Recent Articles";
+    var shape = New.Parts_Breadcrumbs_Article(Title: title);
+    WorkContext.Layout.Navigation.Add(shape, "2");
+}
+
+<header>
+	<h2 style="clear:both;" class="ArticlePageHeader">Recent Articles</h2>
+		<p></p>
+</header>
+		@foreach (dynamic i in Model.ContentItems.ContentItems) { 
+			
+			string bodyHtml = i.ContentItem.BodyPart.Text;
+			var body = new HtmlString(Html.Excerpt(bodyHtml, 200).ToString()
+               .Replace(Environment.NewLine,"</p>"+Environment.NewLine+"<p>"));
+			var contentTypeClassName = ((string)i.ContentItem.ContentType).HtmlClassify();
+			
+			<article class="content-item @contentTypeClassName">
+			<h4><a href="@i.ContentItem.AutoroutePart.Path">@Display(i.ContentItem.TitlePart.Title)</a></h4>
+                <div class="date">@Display(i.Meta)</div>
+				<div class="articleStub">@Display(Html.Raw(body.ToString()))<a class="readmoreArticles" href="@i.ContentItem.AutoroutePart.Path">Read Full Article</a></div>
+			</article>
+			<div class="ArticlebreakLine"></div>
+		}  				
+					
+								
+	<div class="clear">
+				
+	</div>
+
+
+

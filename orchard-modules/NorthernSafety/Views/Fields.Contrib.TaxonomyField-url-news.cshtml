@@ -1,0 +1,49 @@
+﻿@using Orchard.Utility.Extensions;
+@using Orchard.ContentManagement;
+
+@{
+    var terms = (IEnumerable<Contrib.Taxonomies.Models.TermPart>)Model.Terms;
+	string name = @Model.ContentField.Name;
+    string parent = String.Empty;
+    string child = String.Empty;
+    string url = "/news-category";
+    if (Model.Terms.Count > 0){
+        parent = Model.Terms[0].Name;
+        url += "/" + Model.Terms[0].Name.ToLower().Replace(" ", "-");
+    } 
+    if (Model.Terms.Count > 1)
+    {
+        child = Model.Terms[1].Name;
+        url += "/" + Model.Terms[1].Name.ToLower().Replace(" ", "-");
+    }
+
+    var shape = New.Parts_Breadcrumbs_Article(Title: "Article", ParentTaxo: parent, ChildTaxo: child);
+    WorkContext.Layout.Navigation.Add(shape, "2");
+}
+
+@if (Model.Terms.Count > 0) {
+    @Html.Hidden("currentUrl2",url)
+    if (Model.Terms[0].Name.ToLower() == "safety products" &&  Model.Terms.Count > 1)
+    { 
+
+    <script type="text/javascript">
+        $(function () {
+            $('#articleProducts').load('/ArticleProducts/@Model.Terms[1].Name.Replace(" ", "-")');
+            $('#prodArticles').show();
+            $('#articleSep').show();
+        });
+    </script>
+    }
+}
+
+<script type="text/javascript">
+    $(function () {
+        var url = $('#currentUrl2').val();
+        $('.taxoLink').each(function () {
+            var href = $(this).children('span').children('a').attr('href').toLowerCase();
+            if (href == url) {
+                $(this).attr('id', 'active');
+            }
+        });
+    });
+</script>

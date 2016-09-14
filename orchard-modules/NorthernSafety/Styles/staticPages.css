@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/* CSS Document */
+
+div#content h2.pageHeader {
+	display: block;
+	font-size: 16px;
+	line-height: 30px;
+	color: #152b67;
+	border-bottom: 1px solid #0b3f65;
+	margin: 0px 0 11px 0;
+}

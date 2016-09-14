@@ -1,0 +1,11 @@
+﻿@using Orchard.Utility.Extensions;
+@{
+    var contentTypeClassName = ((string)Model.ContentItem.ContentType).HtmlClassify();
+}
+<article class="content-item @contentTypeClassName">
+    <h4><a href="/news/@Display(Model.Slug)">@Display(Model.Title)</a></h4>
+    @*<div class="ArticlePageHeader">@Display(Model.Meta)</div>*@
+    <div class="articleStub">@Display(Html.Raw(Model.ContentItem.BodyPart.Text))</div>
+    <div class="articleReadMore">... <a class="readmoreArticles" href="/news/@Display(Model.Slug)">Read Full Article</a></div>
+</article>
+<div class="ArticlebreakLine"></div>

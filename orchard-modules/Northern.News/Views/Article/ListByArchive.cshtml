@@ -1,0 +1,12 @@
+﻿@using Northern.News.Extensions;
+@using Northern.News.Models;
+
+<ul id="breadcrumbs">
+    <li><a href="/">Home</a></li>
+    <li><a href="/News">NS® News &amp; Information</a></li>
+    <li>@Model.ArchiveData.ToDateTime().ToString("MMMM") @Model.ArchiveData.Year.ToString()</li>
+</ul>
+<h2 class="archivePageHeader">Archives -  @Model.ArchiveData.ToDateTime().ToString("MMMM") @Model.ArchiveData.Year.ToString()</h2>
+<div id="archivePage">
+    @Display(Model.ContentItems)
+</div>

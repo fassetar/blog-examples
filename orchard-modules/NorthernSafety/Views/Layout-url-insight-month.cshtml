@@ -1,0 +1,54 @@
+@using Orchard.Utility.Extensions;
+
+@functions {
+    // To support the layout classifaction below. Implementing as a razor function because we can, could otherwise be a Func<string[], string, string> in the code block following.
+    string CalcuClassify(string[] zoneNames, string classNamePrefix)
+    {
+        var zoneCounter = 0;
+        var zoneNumsFilled = string.Join("", zoneNames.Select(zoneName => { ++zoneCounter; return Model[zoneName] != null ? zoneCounter.ToString() : ""; }).ToArray());
+        return HasText(zoneNumsFilled) ? classNamePrefix + zoneNumsFilled : "";
+    }
+}
+@{
+    /* Global includes for the theme
+    ***************************************************************/
+    
+    SetMeta("X-UA-Compatible", "IE=edge,chrome=1");
+    //Style.Include("http://fonts.googleapis.com/css?family=Lobster&subset=latin");
+    Style.Include("insight.css");
+
+    /* Some useful shortcuts or settings
+    ***************************************************************/
+
+    Func<dynamic, dynamic> Zone = x => Display(x); // Zone as an alias for Display to help make it obvious when we're displaying zones
+
+
+}
+<div id="holder">
+        @Zone(Model.Content)
+<div class="clear"></div>
+    <div id="footer">
+		    <div id="footerSuggest">
+			    <h1>We want this newsletter to fit your needs!</h1>
+			    <a href="/EmailUs" target="_blank">Click here</a> to contact us with any questions, comments, or suggestions.
+		    </div>  
+        </div>	
+        <div id="footerSitemapCopyright">
+		    <!-- Begin: Footer: Address -->
+		    <p id="footerAddress">
+			    Northern Safety Co., Inc.<br />
+			    PO Box 4250. Utica, NY 13504-4250<br />
+			    <span class="phone">Phone:</span> 1-800-571-4646<br />
+			    <span class="phone">Fax:</span> 1-800-635-1591
+		    </p>
+		    <!-- End: Footer: Address -->
+		    <!-- Begin: Footer: Copyright -->
+		    <p id="footerCopyright">
+			    Using this site signifies your agreement to the <a href="/Terms-Of-Use">Terms of Use</a>.<br />
+			    View our <a href="/Privacy">Privacy &amp; Security Policy</a>.<br />
+			    Copyright &copy; 2013 Northern Safety Co., Inc .
+		    </p>
+		    <!-- End: Footer: Copyright -->
+		    <div class="clear"></div>
+	    </div>
+</div>

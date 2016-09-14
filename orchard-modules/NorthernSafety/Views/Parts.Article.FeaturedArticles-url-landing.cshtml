@@ -1,0 +1,69 @@
+﻿<div class="FeaturedArticlesWrapper">
+<!-- Begin: Right Sidebar -->               
+		  		
+    <div id="rightWrapper">
+		<div id="InsightTop"></div>
+		<div id="InsightContainer">
+			<img src="/Themes/NSDefault/Styles/images/Insight-Articles.png"/>
+			<p><span class="red">FREE</span> Safety Newsletter</p>
+			<form id="signUpForm2" class="commonForm" action="/Email-Signup-Confirmation" method="post">
+				<input type="hidden" id="returnToPage" name="returnToPage" value="/News" />
+				<p style="margin:10px 0;"><input type="text" name="emailCollection" value="" id="specialOffersEmail2" size="20" placeholder="Enter your email address" /></p>
+				<p style="margin:10px 0;"><span class="orangeBtn"><a id="InsightSignUpBtn">Sign Up Now</a></span></p>
+			</form>
+		</div>
+		<div id="InsightBottom"></div>              
+        <div id="RecentRightContainerTop">
+		    <h3>Recent Articles</h3>
+        </div>
+   		<div id="RecentRightContainer">
+            @foreach (dynamic i in Model.ContentItems.ContentItems)
+            { 
+	            <h4 class="ArticleLink"><a href="/@i.ContentItem.AutoroutePart.Path">@Display(i.ContentItem.TitlePart.Title)</a><br />
+                <span class="date">@Display(i.Meta)</span></h4>
+            }
+			<p><a class="arrowType2" href="/news">View More Safety Articles</a></p> 
+        </div>
+        <div id="RecentRightContainerBottom">
+        </div>
+     </div>
+     <div class="clear"></div>
+     <div id="questionsBreak"></div>
+
+          <!-- End: Right Sidebar -->
+
+</div>
+<!-- End: Right Sidebar -->
+<script type="text/javascript">
+	$(function(){
+		$('#InsightSignUpBtn').button().click(function(){
+			if ($('#specialOffersEmail2').val() == '') {
+                    alert('Oops! Looks like you may not have entered a complete e-mail address.');
+                } else {
+                    var email = $('#specialOffersEmail2').val();
+                    if (isValidEmailAddress(email)) {
+                        var submitEmail = confirm("Please verify that this email address is correct; " + email + "");
+                        if (submitEmail) {
+                            $('#signUpForm2').submit();
+                            return false;
+                        } else {
+                            $('#specialOffersEmail2').focus();
+                            return false;
+                        }
+                    } else {
+                        alert('Oops! Looks like you may not have entered a complete e-mail address.');
+                    }
+                }
+		});
+	$('#specialOffersEmail2').keypress(function(e) {
+                if (e.which == 13) {
+                    $('#signUpBtn2').click();
+                    return false;
+                    e.preventDefault();
+                }
+            });
+
+        });
+        
+       
+</script>

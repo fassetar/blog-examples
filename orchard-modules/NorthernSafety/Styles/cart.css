@@ -1,0 +1,110 @@
+@charset "utf-8";
+/* CART */
+
+.SCCart {
+	/*position:relative;
+	z-index:15;*/
+	min-width:285px;
+}
+
+* html #SCLinksContainer { position:relative; }
+* html .SCCart { position:absolute; left:155px; top:23px; }
+* html #TopTotal { width:140px; }
+
+div#SCLinksContainer div.SCCart span.items {
+	min-width:129px;
+}
+
+.SCCart #cart_down {
+	position:relative;
+	/*background:#cccccc;*/
+	width:274px;
+	top:0px;
+	left:3px;
+	z-index:5;
+	float:left;
+	clear:both;
+	}
+	
+#cart_down div#cart_contents { 
+	background:url(/Themes/NSDefault/Styles/images/cart_drop_bkg.gif) bottom left repeat-y; 
+	padding:0 1px 30px 1px;
+	width:268px; 
+	z-index:10;	
+	position:absolute;
+	left:0px;
+	top:0px;
+	}	
+
+.hideCart {
+	display:none;
+	}
+	
+div.cartdowninner {
+	max-height:180px;
+	overflow-y:scroll;
+	margin:5px auto 5px auto;
+	width:260px;
+	padding:0;
+	}
+
+	
+table#cartdown {
+	width:240px;
+	font-size: 10px;	
+	margin:0;
+	padding:0;
+	}
+	
+	
+tr.prod {
+	padding:2px 0;
+	margin: 0;
+	text-align:left;
+	float:left;
+	}
+
+table#cartdown div.description, table#cartdown div.productNumber { 
+	text-align:left;
+	float:left;
+}
+
+table#cartdown div.description { line-height:48px; }
+
+table#cartdown div.productNumber { padding-left:2px; padding-top:15px; }
+
+table#cartdown div.description img {
+	border:1px solid #bebebe;
+}
+
+table#cartdown div.description img:hover {
+	border:1px solid #336699;
+}
+
+table#cartdown td.qtyContainer {  margin:0; padding: 15px 0; text-align:left; }
+table#cartdown td.qtyContainer input { width:20px; }
+
+table#cartdown td.totalContainer {  margin:0; padding:0 5px; line-height:48px; text-align:right; }
+
+table#cartdown td.breaker {
+	margin-left:auto;
+	margin-right:auto;
+	width:220px;
+	border-top:1px solid #000066;
+	line-height:1px;
+	padding:1px;
+	margin-top:2px;
+	text-align:center;
+	}
+	
+#cd_top {
+	color:#000000;
+	text-align:center;
+	width:250px;
+	padding:0 5px;
+	margin:0 auto;
+	border-bottom:1px solid #000066;
+	position:relative;
+	left:0px;
+	top:0px;
+	}

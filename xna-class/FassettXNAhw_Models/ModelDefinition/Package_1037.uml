@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="af4b5caf-b305-4274-8f8f-dce62eff42e0"
+  name="NonDrawableComponents" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <importedPackagesInternal>
+    <packageImport
+      Id="ac97fc77-3b69-47bb-aa72-2c3113c9b8a3"
+      visibility="Public">
+      <packageMoniker
+        Id="f85999c1-9aa8-4bd6-951a-4c8675bb516c"
+        LastKnownName="Anthony's XNA Game"
+        LastKnownLocation="Package_1413.uml" />
+    </packageImport>
+  </importedPackagesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="e7a1fef3-1ec4-48f6-9b4c-11d17e7f721b"
+        name="GameComponent"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="dbf7a748-2f92-4b3c-a595-ed57f4721efa"
+        name="InputManager"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="1a08b352-dd78-4a72-87b9-4ed49d2fac14"
+            isSubstitutable="false">
+            <classMoniker
+              Id="e7a1fef3-1ec4-48f6-9b4c-11d17e7f721b"
+              LastKnownName="GameComponent"
+              LastKnownLocation="Package_1037.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="870d3040-a3e4-4ede-9e57-85daa047eea1"
+            name="keyboardState"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="f9c3e734-dcd7-47f3-b2b0-70b45e7033a6"
+            name="lastKeyboardState"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="fee00b7a-5f75-4f08-a82c-0eff567597be"
+            name="theGame"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="1bac6330-32b9-420f-b792-68c1aae93fa6"
+            name="KeyboardState"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="17d7129d-f2fd-4b62-a87b-d9d0fe75deac"
+            name="LastKeyboardState"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="158ba278-8083-458a-9ae1-52b1de0ffccc"
+            name="KeyReleased"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="dc722b20-6909-4329-a8c1-f03fe0c000e1"
+            name="KeyPressed"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="8678e44c-dc8b-428a-b717-593f2ea0329b"
+            name="XNA API"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="d54f2ddf-7258-4c0e-bf13-00bfc136efb8"
+        name="ScreenManager"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="71af8bb6-5353-4969-9dd2-af07931e63d1"
+            isSubstitutable="false">
+            <classMoniker
+              Id="e7a1fef3-1ec4-48f6-9b4c-11d17e7f721b"
+              LastKnownName="GameComponent"
+              LastKnownLocation="Package_1037.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="263bc0d1-feb1-40a3-b326-084fdfdc93af"
+            name="gameScreens"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="11cd5e11-2196-4602-8000-aba37d4d459b"
+            name="OnScreenChange"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="2bdcb33c-b94a-4292-ab17-f72f838b60bd"
+            name="startDrawOrder"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="07506842-6537-40bb-9860-2f33fae1cad4"
+            name="drawOrderInc"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="8e5c4699-e0fc-4eec-a318-75e38683488a"
+            name="drawOrder"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+          <property
+            Id="9719b2f5-a09b-4ddd-86a2-441c8c2021b2"
+            name="CurrentScreen"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false" />
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="da2a206c-36b3-4d89-9aa8-b1125acbe2f1"
+            name="PopScreen"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="c81f7f4c-dda1-45dd-9667-761dbfa6fe5e"
+            name="RemoveScreen"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="649f0478-4b97-45fc-87a2-951486fe5318"
+            name="PushScreen"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="5a4dcb8b-a897-4726-9e89-bbfc5cdd9822"
+            name="AddScreen"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="8f972a00-cf32-46ed-8c34-0b32e3009a44"
+            name="ChangeScreens"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="9d27a035-cf81-43a2-bfd8-fd0d23cf7af6"
+            name="XNA API"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

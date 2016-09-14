@@ -1,0 +1,30 @@
+﻿@using Orchard.Utility.Extensions;
+@using Orchard.ContentManagement;
+@{
+    if (Model.ContentItem.TitlePart.Title != null)
+	{
+		Layout.Title = Model.ContentItem.TitlePart.Title + Layout.Title;
+	}
+	
+     var contentTypeClassName = ((string)Model.ContentItem.ContentType).HtmlClassify();
+     //var shape = New.Parts_Breadcrumbs_Article(Title: "Article");
+     //WorkContext.Layout.Navigation.Add(shape, "2");
+}
+<article class="content-item @contentTypeClassName">
+	<header>
+		<h2 style="clear:both;" class="ArticlePageHeader">@Display(Model.ContentItem.TitlePart.Title)</h2>
+		<p class="ArticlePageHeader"></p>
+	</header>
+	  
+	@Display(Model.Content)
+	@if(Model.Footer != null) {
+	<footer>
+		@Display(Model.Footer)
+	</footer>
+	}
+		
+	<hr id="articleSep" style=""display:none;" />
+    <div id="articleProducts">
+        
+    </div>
+</article>

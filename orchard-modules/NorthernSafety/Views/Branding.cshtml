@@ -1,0 +1,118 @@
+﻿<div id="header">
+ @{ string IPAddress = "";
+	   string IPAddress2 = "";
+       if (!String.IsNullOrEmpty(HttpContext.Current.Request.Headers["X-Forwarded-For"])) {
+           IPAddress = HttpContext.Current.Request.Headers["X-Forwarded-For"];
+       }
+       if (!String.IsNullOrEmpty(HttpContext.Current.Request.Headers["REMOTE_ADDR"])) {
+			IPAddress2 = HttpContext.Current.Request.Headers["REMOTE_ADDR"];
+			}
+       if (IPAddress.StartsWith("10.") || IPAddress.StartsWith("209.217.217.200") || IPAddress.StartsWith("12.6.10.227") || IPAddress.StartsWith("69.38.8.169") || IPAddress.StartsWith("209.177.254.229") || IPAddress.StartsWith("209.248.202.10") || IPAddress.StartsWith("64.19.63.195") || IPAddress2.StartsWith("10.") || IPAddress2.StartsWith("209.217.217.200") || IPAddress2.StartsWith("12.6.10.227") || IPAddress2.StartsWith("69.38.8.169") || IPAddress2.StartsWith("209.177.254.229") || IPAddress2.StartsWith("209.248.202.10") || IPAddress2.StartsWith("64.19.63.195"))
+            {
+           string server = HttpContext.Current.Request.Url.Host.ToString();
+           if (server.EndsWith("com"))
+           {
+                
+        <h2 class="logo_live"><a href="/"><span>Northern Safety Co., Inc. Safety and Industrial Supplies</span></a></h2>
+         }
+           else if (server.EndsWith("qas") || server.EndsWith("qat"))
+           { 
+        <h2 class="logo_stage"><a href="/"><span>Northern Safety Co., Inc. Safety and Industrial Supplies</span></a></h2>
+         }
+                  else if (server.EndsWith("dev"))
+           { 
+        <h2 class="logo_dev"><a href="/"><span>Northern Safety Co., Inc. Safety and Industrial Supplies</span></a></h2>
+         }
+       }
+       else
+       { 
+    <h2 class="logo"><a href="/"><span>Northern Safety Co., Inc. Safety and Industrial Supplies</span></a></h2>
+     } 
+     }
+    <p id="callCenterSchedule">
+    <span class="phone">
+        @{
+            HttpContext ctx = HttpContext.Current;
+            HttpCookie ppcCookie = new HttpCookie("PPCCookie");
+            string phone = "1-800-571-4646";
+            if (ctx.Request.Cookies["PPCCookie"] != null)
+            {
+                ppcCookie = ctx.Request.Cookies["PPCCookie"];
+            }
+            string pC = String.Empty;
+            if (!String.IsNullOrEmpty(ppcCookie["PPCSource"]))
+            {
+                try
+                {
+                    pC = ppcCookie["PPCSource"];
+                }
+                catch
+                {
+                    pC = String.Empty;
+                }
+            }
+            switch (pC)
+            {
+                case "GoogleP":
+                    phone = "1-888-201-6070";
+                    break;
+                case "GoogleO":
+                    phone = "1-888-201-6074";
+                    break;
+                case "YahooP":
+                    phone = "1-877-549-0569";
+                    break;
+                case "YahooO":
+                    phone = "1-877-549-0571";
+                    break;
+                case "MSNP":
+                    phone = "1-877-550-9699";
+                    break;
+                case "MSNO":
+                    phone = "1-877-550-9702";
+                    break;
+                default:
+                    phone = "1-800-571-4646";
+                    break;
+            }
+        }
+        @phone
+    </span>
+        <br />    
+        For sales &amp; customer service<br />
+        <em>7:30 am - 8:00 pm ET, Mon-Fri</em>
+    </p>
+
+    <!-- BEGIN LivePerson Button Code -->
+    <div id="liveChat">
+        
+    </div>
+    <!-- END LivePerson Button code -->
+
+    <div id="SCLinksContainer">
+
+    </div>
+</div>
+<!-- Begin: Search Box -->        
+<div id="topSearch">
+    @*<% HttpCookie oc = new HttpCookie("OnlineCatalog");
+    oc = Request.Cookies["OnlineCatalog"];
+    if (oc != null)
+    { %>
+        <div class="searchPhrase"><a href="http://www.northernsafetycatalog.com/return.cfm?target=top">Return to <span class="b hot">Online Catalog</span></a></div>
+    <%}
+    else
+    { %>*@
+        <div class="searchPhrase">Sign up for Exclusive Email Deals - <a href="/Email-Signup" id="emailSignup">Click Here</a></div>
+    @*<% } %>*@
+    <form id="TopSearchForm" name="TopSearchForm" action="/Search" method="get">
+        <label for="searchFldTop" class="searchWord">Search: </label>
+        <input type="text" name="q" id="searchFldTop" value="" class="searchTextArea" placeholder="Enter keyword or item #" />
+        <div id="autocomplete"></div>
+        <div class="searchGo"><a id="searchBtn">@*<img src="/Themes/NSDefault/Styles/images/go.png" alt="Search" />*@</a></div>
+    </form>
+    @*<div class="searchAdvanced"><a href="/Search/Advanced-Search">Advanced Search</a></div>
+    <div class="clear"></div>*@
+</div>   
+<div class="clear"></div>     
+<!-- End: Search Box -->  

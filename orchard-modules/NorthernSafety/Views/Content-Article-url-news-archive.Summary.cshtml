@@ -1,0 +1,15 @@
+﻿@using Orchard.Utility.Extensions;
+@{
+    var contentTypeClassName = ((string)Model.ContentItem.ContentType).HtmlClassify();
+	string bodyHtml = Model.ContentItem.BodyPart.Text;
+	var body = new HtmlString(Html.Excerpt(bodyHtml, 200).ToString()
+	   .Replace(Environment.NewLine,"</p>"+Environment.NewLine+"<p>"));
+}
+
+<div id="archivePage">
+<article class="content-item @contentTypeClassName">
+<h3><u><a href="/@Model.ContentItem.AutoroutePart.Path">@Display(Model.ContentItem.TitlePart.Title)</a></u></h3>
+	<div class="date">@Display(Model.Meta)</div>
+	<div class="articleStub">@Display(Html.Raw(body.ToString()))<a class="readmoreArticles" href="/@Model.ContentItem.AutoroutePart.Path">Read Full Article</a></div>
+</article>
+<div class="ArticlebreakLine"></div></div>

@@ -1,0 +1,18 @@
+/* Begin: Popup */
+h4.locations {
+	    display: block;
+	    line-height: 26px;
+	    font-size: 10px;
+	    color: #993300;
+	    text-transform: uppercase;
+	    margin: 0 0 2px 0;
+}
+div.addressContainer { float: left; width: 200px; line-height: 16px; margin-bottom: 16px; }
+div.addressContainer div.name { font-weight: bold; }
+    
+div#textContainer { margin: 15px; }
+div#textContainer ul { list-style-position:inside; margin-bottom: 15px; }
+div#textContainer h3 { display: block; margin-top: 14px; line-height: 16px; font-size: 10px; }
+div#textContainer p { font-size: 10px; line-height: 16px; margin-bottom: 15px; }
+div.breakLine { clear: left; float: none; border-bottom: 1px solid #bebebe; }
+/* End: Popup */

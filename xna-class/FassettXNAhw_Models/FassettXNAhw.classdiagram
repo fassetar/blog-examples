@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="30dae506-2325-4b94-907e-d6b6177f1860" name="FassettXNAhw" linkedPackageId="b17aa1aa-ea41-4c85-804d-33ce7b1aa504" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="2615fa42-b3c5-400c-94e1-748ee3fcabda">
+      <elementDefinition Id="8fdcdaf7-05a2-4ccc-9a37-9a293ed1baad" />
+      <body>Note that spaceShip does still inherit GameComponent  but used like a Model of Game3DObject.</body>
+      <annotatedElements>
+        <classMoniker Id="b2cd743a-396e-424d-93bc-dc44dec60be1" LastKnownName="SpaceShip" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="62810039-8353-4666-9933-66ae9f568d10" name="NonDrawableComponents">
+        <elementDefinition Id="af4b5caf-b305-4274-8f8f-dce62eff42e0" />
+        <importedPackagesInternal>
+          <packageImport Id="f4d7bf00-83d0-4fbd-a696-2dbdab4e23d6" visibility="Public">
+            <packageMoniker Id="9b7b6752-23ab-4cfe-9dcf-65c37ff44b26" LastKnownName="Anthony's XNA Game" />
+            <elementDefinition Id="ac97fc77-3b69-47bb-aa72-2c3113c9b8a3" />
+          </packageImport>
+        </importedPackagesInternal>
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="1c7399ab-027f-4ac1-9be0-ac9ec4ea8e3f" name="GameComponent" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="e7a1fef3-1ec4-48f6-9b4c-11d17e7f721b" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="3f774066-c562-4597-9bd8-67bccfca13a3" name="InputManager" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="dbf7a748-2f92-4b3c-a595-ed57f4721efa" />
+              <generalsInternal>
+                <generalization Id="ebe3b27f-4d90-4c7e-82af-21dc028632d9" isSubstitutable="false">
+                  <classMoniker Id="1c7399ab-027f-4ac1-9be0-ac9ec4ea8e3f" LastKnownName="GameComponent" />
+                  <elementDefinition Id="1a08b352-dd78-4a72-87b9-4ed49d2fac14" />
+                </generalization>
+              </generalsInternal>
+              <ownedAttributesInternal>
+                <property Id="c5355386-b215-4b3c-8b4c-a08084a88938" name="keyboardState" isLeaf="false" isStatic="true" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="870d3040-a3e4-4ede-9e57-85daa047eea1" />
+                </property>
+                <property Id="2455b49a-22b8-4883-9a35-549711f320f9" name="lastKeyboardState" isLeaf="false" isStatic="true" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f9c3e734-dcd7-47f3-b2b0-70b45e7033a6" />
+                </property>
+                <property Id="bd3b366b-5bfd-4d0a-8cd1-aff924f91f5f" name="theGame" isLeaf="false" isStatic="true" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="fee00b7a-5f75-4f08-a82c-0eff567597be" />
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="189ed9b9-97e9-4f67-b86e-c99c6285908b" name="KeyboardState" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="1bac6330-32b9-420f-b792-68c1aae93fa6" />
+                </operation>
+                <operation Id="52c9815d-428d-477d-bf6c-c77a92aa9ee7" name="LastKeyboardState" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="17d7129d-f2fd-4b62-a87b-d9d0fe75deac" />
+                </operation>
+                <operation Id="8695ef83-be20-48ea-b281-264408dad31e" name="KeyReleased" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="158ba278-8083-458a-9ae1-52b1de0ffccc" />
+                </operation>
+                <operation Id="284a1335-c6b9-41c1-afb7-f286ad1da14f" name="KeyPressed" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="dc722b20-6909-4329-a8c1-f03fe0c000e1" />
+                </operation>
+                <operation Id="6fab224e-59ff-444d-a1a4-540b44497b98" name="XNA API" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="8678e44c-dc8b-428a-b717-593f2ea0329b" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="8bae55b1-5606-4ad7-b2fb-b3250a1830ec" name="ScreenManager" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="d54f2ddf-7258-4c0e-bf13-00bfc136efb8" />
+              <generalsInternal>
+                <generalization Id="2a8c9a72-367a-43c2-8729-6389e60b1d30" isSubstitutable="false">
+                  <classMoniker Id="1c7399ab-027f-4ac1-9be0-ac9ec4ea8e3f" LastKnownName="GameComponent" />
+                  <elementDefinition Id="71af8bb6-5353-4969-9dd2-af07931e63d1" />
+                </generalization>
+              </generalsInternal>
+              <ownedAttributesInternal>
+                <property Id="d23eb7df-8d91-4a83-8395-8876f566ed00" name="gameScreens" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="263bc0d1-feb1-40a3-b326-084fdfdc93af" />
+                </property>
+                <property Id="3a7fafd5-0c60-42e6-a77a-aba343cda143" name="OnScreenChange" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="11cd5e11-2196-4602-8000-aba37d4d459b" />
+                </property>
+                <property Id="83c6f774-5949-43ae-add1-75cf12e16519" name="startDrawOrder" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2bdcb33c-b94a-4292-ab17-f72f838b60bd" />
+                </property>
+                <property Id="aa7a50c9-2135-4224-9d01-4060a19d1e34" name="drawOrderInc" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="07506842-6537-40bb-9860-2f33fae1cad4" />
+                </property>
+                <property Id="6ea93f1e-15d4-4c28-9703-32871d37cfe6" name="drawOrder" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8e5c4699-e0fc-4eec-a318-75e38683488a" />
+                </property>
+                <property Id="137e722c-21c0-4ab3-8c28-444bd96ba16e" name="CurrentScreen" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9719b2f5-a09b-4ddd-86a2-441c8c2021b2" />
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="422ddbff-0063-4b3e-a2e0-49f313731f6d" name="PopScreen" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="da2a206c-36b3-4d89-9aa8-b1125acbe2f1" />
+                </operation>
+                <operation Id="abb62dbe-4868-4335-bed9-772f54b20204" name="RemoveScreen" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="c81f7f4c-dda1-45dd-9667-761dbfa6fe5e" />
+                </operation>
+                <operation Id="fbc816e5-67df-44b0-b31d-9679f6c0989e" name="PushScreen" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="649f0478-4b97-45fc-87a2-951486fe5318" />
+                </operation>
+                <operation Id="f189c6a0-53a7-4c84-95f7-e12f6fbad7d6" name="AddScreen" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="5a4dcb8b-a897-4726-9e89-bbfc5cdd9822" />
+                </operation>
+                <operation Id="278cc9f4-6bc2-4907-b581-69be69ff2587" name="ChangeScreens" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="8f972a00-cf32-46ed-8c34-0b32e3009a44" />
+                </operation>
+                <operation Id="72821a26-605b-4f56-9d0c-818cea597bd5" name="XNA API" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="9d27a035-cf81-43a2-bfd8-fd0d23cf7af6" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="795f60b9-c8ed-4b26-8428-9b581da2d6dc" name="DrawableCompontent">
+        <elementDefinition Id="cf86ddc0-c291-4220-aa1d-d00b98ec1a4d" />
+        <importedPackagesInternal>
+          <packageImport Id="5c35afdc-5b41-4208-b0d5-5c4f971ba008" visibility="Public">
+            <packageMoniker Id="9b7b6752-23ab-4cfe-9dcf-65c37ff44b26" LastKnownName="Anthony's XNA Game" />
+            <elementDefinition Id="f5356f42-a4ff-402b-9247-a94d0e456df6" />
+          </packageImport>
+        </importedPackagesInternal>
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="96ad0064-170f-4f65-b03d-b191b597ac1a" name="Asteroid" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="6f5ce3f4-c6f9-4877-a40f-fce854be978d" />
+              <generalsInternal>
+                <generalization Id="6b580cb1-f45d-40f4-ae32-5e5dfcc793b1" isSubstitutable="false">
+                  <classMoniker Id="a0d96f03-60b2-49d3-89ec-a16b005b1675" LastKnownName="GameComponent" />
+                  <elementDefinition Id="3cb9ea5f-4023-422c-8187-9536137fdabd" />
+                </generalization>
+              </generalsInternal>
+              <ownedAttributesInternal>
+                <property Id="9a708656-fc9b-45b6-901b-76154defa306" name="theGame" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="91d89093-f8b2-443a-824d-18468f26b31b" />
+                </property>
+                <property Id="496f62d2-0189-467c-8458-db227a4c727b" name="Content" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5228eb09-e120-4f37-ac58-021c490652bf" />
+                </property>
+                <property Id="0b2ad429-3387-4d2e-a710-699af7b1170d" name="asteroid" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ac35a34c-779d-497d-9fa2-538f122d74d6" />
+                </property>
+                <property Id="96ebf41f-7389-4256-84ef-2391c21276d0" name="Zoom" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="dfa194b8-4178-44a7-8d9a-0718893d2948" />
+                </property>
+                <property Id="791ab8f4-ece4-4c22-9470-c16d77ccb0a0" name="RotationY" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1ab87a8e-99c6-478e-8e28-f9a7251c2a63" />
+                </property>
+                <property Id="ae6f2bc4-92d3-4577-b711-7ad835607666" name="RotationX" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="24c3be85-4535-455c-bab2-84659e117535" />
+                </property>
+                <property Id="3dea8dad-cad0-41c6-8c77-85192f19a876" name="gameWorldRotation" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a8410ec6-6d67-4ea6-bc96-c841ed555bf8" />
+                </property>
+                <property Id="98916298-9b64-4228-bf71-be932f927fd7" name="rnd" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c89d5519-4a48-45df-9dc2-d65cf3708c01" />
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="37cea4f6-7389-492f-8c3a-77919aea8636" name="XNA API" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="de40d99f-89b2-48d3-a26a-95862547359e" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="2a0f1a18-7520-445d-b530-7f1c565db57c" name="StartScreen" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="c1eb49cf-32eb-4e4b-a99e-9d68c550be06" />
+              <generalsInternal>
+                <generalization Id="71f4cb0e-d3a5-4915-9a63-ef27df7ac023" isSubstitutable="false">
+                  <classMoniker Id="a0d96f03-60b2-49d3-89ec-a16b005b1675" LastKnownName="GameComponent" />
+                  <elementDefinition Id="f0119291-96d7-4fb2-95cd-0b877b05aa9a" />
+                </generalization>
+              </generalsInternal>
+              <ownedAttributesInternal>
+                <property Id="7ac51864-77eb-4737-ae69-989c84e2159a" name="menu" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="99fca96a-d536-488a-930b-51254c1acb2b" />
+                </property>
+                <property Id="84a91fdf-a5b2-4e03-ac7b-38df556b72ea" name="spriteFont" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a9307f65-f3de-421e-9639-060a66b2c1a8" />
+                </property>
+                <property Id="0ca18136-b309-41f1-b42e-01d0ae0987c8" name="menuItems" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c35278f3-05c7-4b29-9025-b284ce023305" />
+                </property>
+                <property Id="0b38350b-fa1e-4ee6-9d0c-ae2d0585cee0" name="manager" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="22f0b825-d3c6-47a9-9857-8f7e4f7fc912" />
+                </property>
+                <property Id="18e887c3-78d8-4d8c-89e5-39d0895a6c52" name="bkg" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8582c868-8d19-42e8-b040-3966e9027c41" />
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="ef6acc15-7ac1-4361-ba58-d6e2611403cc" name="XNA API" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="2570c85f-c32f-42ab-88c9-a0178bfa5367" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="34286e37-b07c-4077-84c9-591de388636a" name="ScreenBackground" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="a31000a0-d8b8-4a2b-bf60-5cfc51d44d7a" />
+              <generalsInternal>
+                <generalization Id="0d979928-8dc3-4067-b3a0-e7832ca40a84" isSubstitutable="false">
+                  <classMoniker Id="a0d96f03-60b2-49d3-89ec-a16b005b1675" LastKnownName="GameComponent" />
+                  <elementDefinition Id="16066fad-fbc4-464c-9c92-d974dba5aa6e" />
+                </generalization>
+              </generalsInternal>
+              <ownedAttributesInternal>
+                <property Id="612a0c9c-8a46-43bb-b67f-bd2212467e21" name="screenRectangle" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="8ca86db6-ef2e-40f0-a787-ff15f2f68721" />
+                </property>
+                <property Id="68e6e353-95b0-4d24-a7ae-ed29c3828446" name="destination" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="59bb8a69-548a-4eb8-b8bb-5d4824364b2a" />
+                </property>
+                <property Id="27fd2e59-3522-4fe1-ba47-d6793ef6d927" name="image" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f5cef468-66fe-453c-b49e-e6c9046a8302" />
+                </property>
+                <property Id="2372668f-6e05-4e4b-b79b-dccb4e0fa402" name="drawMode" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1edbbf26-be3e-4e0f-8228-8106c26d68dd" />
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="2901ab65-a3bb-41fa-aa43-c8da5050d5f8" name="XNA API" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="28919a03-cbf7-4123-b82e-e95631fb212a" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="edc3a89b-b784-4e36-aac8-fd81b386fcee" name="Menu" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="be104e12-7bfb-4cc7-b2f5-37a4baa4c31f" />
+              <generalsInternal>
+                <generalization Id="134b39ec-ff01-489d-9fbf-4200e5a5033b" isSubstitutable="false">
+                  <classMoniker Id="a0d96f03-60b2-49d3-89ec-a16b005b1675" LastKnownName="GameComponent" />
+                  <elementDefinition Id="cf23bac5-2a43-4494-b2cf-9741619d6bdf" />
+                </generalization>
+              </generalsInternal>
+              <ownedAttributesInternal>
+                <property Id="bc6c650d-48ed-4ec9-a217-c11bf4f2734f" name="menuItems" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="15e825ef-a5f7-43cc-91eb-b4e467589f20" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="5944bd93-e4b5-4174-b19c-7632a161553c" LastKnownName="String" />
+                  </type_NamedElement>
+                </property>
+                <property Id="de2606f2-549c-43a1-8b67-8829fdc50f80" name="width" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="15b0f46e-d70a-4cfe-853c-fde0ee56bebc" />
+                </property>
+                <property Id="dace8da9-ff31-4554-9d60-ce567d5c020c" name="height" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3aedf6b5-3987-45be-b4f7-fcf7cb333509" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="ab97d00f-d97f-4474-b042-ef9deded3c14" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </property>
+                <property Id="716406b0-b43a-4b99-9c7b-7e46d482a467" name="position" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0b896d8d-96fe-4aa0-ab19-0559f6137eaf" />
+                </property>
+                <property Id="86012b6e-b28b-4495-be25-ef9886cddc34" name="spriteFont" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e0cb0698-970f-4753-8db6-de17f755face" />
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="0c7bb054-4335-488a-bf75-1b37d0900bbc" name="SetPosition" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="a490ff02-b9e2-480a-997d-062356d7ad43" />
+                </operation>
+                <operation Id="590a6cdb-1fa3-419c-b6c2-58d3a30cc088" name="MeasureMenu" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="abbd0cdc-069e-4aef-b77d-e60b17f896c3" />
+                </operation>
+                <operation Id="def5a53e-f70c-437a-a021-4b19b8c5e77d" name="SetMenuItems" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="f904a5ab-a6fe-4972-be19-4ef009954953" />
+                </operation>
+                <operation Id="f053e1c7-1290-429d-9885-2c7020663638" name="XNA API" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="1f2e8cef-ca04-4c34-a53c-44af7719b8f5" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="a0d96f03-60b2-49d3-89ec-a16b005b1675" name="GameComponent" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="230a7434-4d0b-4230-a818-18280a1cd495" />
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="a1461982-fce8-4aa2-b3cf-fcd62d1367ae" name="GamePlayScreen" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="2e196cd6-6219-4907-b8d9-fbcf273162b8" />
+              <generalsInternal>
+                <generalization Id="8ce6c187-dbdb-4cde-850d-04ee3cc1c6bf" isSubstitutable="false">
+                  <classMoniker Id="a0d96f03-60b2-49d3-89ec-a16b005b1675" LastKnownName="GameComponent" />
+                  <elementDefinition Id="ef6e3dbf-e66d-40be-9dc2-0c4658b7b71d" />
+                </generalization>
+              </generalsInternal>
+            </class>
+          </packageHasNamedElement>
+          <packageHasNamedElement>
+            <class Id="b2cd743a-396e-424d-93bc-dc44dec60be1" name="SpaceShip" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="1a03b632-e62c-475f-b50e-a738626b6ece" />
+              <generalsInternal>
+                <generalization Id="35d1a3d1-2a6a-42ec-9670-9da6361f118e" isSubstitutable="false">
+                  <classMoniker Id="a0d96f03-60b2-49d3-89ec-a16b005b1675" LastKnownName="GameComponent" />
+                  <elementDefinition Id="9909f8db-5108-4af7-9a8b-47b9eef7dc91" />
+                </generalization>
+              </generalsInternal>
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="ab97d00f-d97f-4474-b042-ef9deded3c14" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="5944bd93-e4b5-4174-b19c-7632a161553c" name="String" isAbstract="false" isLeaf="false" cachedFullName="String">
+        <elementDefinition Id="59259974-6d55-42c6-b7bd-763d77ac8ef9" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="9b7b6752-23ab-4cfe-9dcf-65c37ff44b26" name="Anthony's XNA Game">
+        <elementDefinition Id="f85999c1-9aa8-4bd6-951a-4c8675bb516c" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="7f05a711-2700-45f3-9b3f-db081dba8619" name="Game1" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="59d500e7-4f60-48c3-9ad9-ca5f057daa41" />
+              <ownedAttributesInternal>
+                <property Id="48a675f5-a5e0-4add-9a48-1306cf7e92ab" name="spriteBatch" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e0e2e960-35b8-48e7-a317-4139f769bca8" />
+                </property>
+                <property Id="a557d78f-c424-4998-850f-0cda007274ee" name="startScreen" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="829f6c6d-7cf9-481a-a182-f5c86b8ccf02" />
+                </property>
+                <property Id="d8e58ba4-329a-4c7d-906d-84f8fdfd5f2b" name="screenManager" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="20c89bb5-780b-423b-beb3-385af0c5177a" />
+                </property>
+                <property Id="a2140cec-fbae-47df-8883-e2b675b83ec1" name="GameSpriteBatch" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c92fa932-c1bb-47b0-8842-e5fc183817d2" />
+                </property>
+                <property Id="c1502f3b-a332-4ecd-81eb-f2e2670a6957" name="graphics" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c8b4e65a-e1b4-4e28-a9f3-92ad5c4c1b4e" />
+                </property>
+                <property Id="27a481b7-a71c-49c5-9aa9-7404b412de54" name="di" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="400483a2-a958-44ca-a3e0-1a76656ab616" />
+                </property>
+                <property Id="e1607c3b-0338-4b82-9aba-bac3232a5546" name="soundManager" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="81e2d657-fb4b-41cf-a811-bef818c5b55f" />
+                </property>
+              </ownedAttributesInternal>
+              <ownedOperationsInternal>
+                <operation Id="5ba6fdb9-f936-4740-9aea-739bfd364f43" name="XNA API" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="e8ec9b3b-6efb-4bd8-be4e-c6a97d028634" />
+                </operation>
+              </ownedOperationsInternal>
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="74e56a78-ecf3-473c-909b-af178ec240cd" name="Utilities">
+        <elementDefinition Id="d15c8a56-04d2-42c9-9522-5b3f7ae6c23f" />
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="5b7d20ae-46ce-4730-a865-1dda62d77082" name="ScreenEventArgs" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="331ad5b3-7a25-4bd4-a592-69aca686e928" />
+              <targetEnds>
+                <association Id="912df555-64b5-41d4-852e-5d3f29c7cca7" isDerived="false" sourceEndRoleName="ScreenEventArgs" targetEndRoleName="ScreenManager" isLeaf="false" isAbstract="false">
+                  <classMoniker Id="8bae55b1-5606-4ad7-b2fb-b3250a1830ec" LastKnownName="ScreenManager" />
+                  <relationshipOwnedElementsInternal>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="dc3c5536-794c-4014-8c97-8c0bb059fa53" name="ScreenEventArgs" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                        <elementDefinition Id="794947fc-847c-469d-a0de-83a1790eeb59" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                    <associationHasOwnedEnds>
+                      <memberEnd Id="5ab03b32-fb22-4692-9a8b-da84c22af863" name="ScreenManager" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                        <elementDefinition Id="808b6a23-b4d3-48d2-b387-d4c0d02d7579" />
+                      </memberEnd>
+                    </associationHasOwnedEnds>
+                  </relationshipOwnedElementsInternal>
+                  <elementDefinition Id="ba595d78-f3ea-45c0-a204-3da385ed33cc" />
+                </association>
+              </targetEnds>
+              <ownedAttributesInternal>
+                <property Id="92a52495-2de2-432a-b2ef-201481113cc8" name="gameScreen" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="92e9affa-36bb-4286-9486-816fd5716bfd" />
+                </property>
+              </ownedAttributesInternal>
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+    <logicalClassDesignerModelHasPackages>
+      <package Id="99a38262-d1ec-4dee-b973-6693ebe6a897" name="Game3DObjects">
+        <elementDefinition Id="56151217-edfa-4738-b16d-0abdf3f138fa" />
+        <importedPackagesInternal>
+          <packageImport Id="ba0ad264-955e-4fb9-8579-1af2a8cabc8c" visibility="Public">
+            <packageMoniker Id="9b7b6752-23ab-4cfe-9dcf-65c37ff44b26" LastKnownName="Anthony's XNA Game" />
+            <elementDefinition Id="ff1809fb-8cc4-4353-8e28-daf6e02e2509" />
+          </packageImport>
+        </importedPackagesInternal>
+        <packagedElements>
+          <packageHasNamedElement>
+            <class Id="f87cfa81-0715-4287-9bef-8be9971784b6" name="Game3DObject" isAbstract="false" isLeaf="false" isActiveClass="false">
+              <elementDefinition Id="1b6ae8f9-5d4d-4afa-a06d-d32596ed6cd5" />
+              <ownedAttributesInternal>
+                <property Id="9fbfdb44-110f-4499-9a12-155c44a13112" name="Update" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="447ea9ba-087a-4e51-854c-8d415d48ef04" />
+                </property>
+                <property Id="48f2f54d-8685-4d4f-b4fd-eb8a5707be21" name="Draw" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="62a8e881-33ec-4c8a-9490-92649fa60f12" />
+                </property>
+                <property Id="494c43a7-4772-422e-92a3-26ca26a5066f" name="Load" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9648ae93-7eec-4db0-9667-ba6aa7c8184a" />
+                </property>
+              </ownedAttributesInternal>
+            </class>
+          </packageHasNamedElement>
+        </packagedElements>
+      </package>
+    </logicalClassDesignerModelHasPackages>
+  </packagedElements>
+  <package Id="b17aa1aa-ea41-4c85-804d-33ce7b1aa504" name="FassettXNAhw_Models">
+    <elementDefinition Id="7ab3ab87-94b8-4eee-8bad-0ad37b008abc" />
+    <profileInstances>
+      <packageHasProfileInstances Id="4fcf9d5c-c030-4ba5-bcad-6f9e86c972ec">
+        <profileInstance Id="0cd914a3-4c98-4b5f-be99-7e21abb25e46" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="d28c7db0-73f5-4161-bd50-0e77ffa62e9e">
+        <profileInstance Id="db80e160-c8f9-42d3-97d4-06b3c7a4f9cd" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>

@@ -1,0 +1,37 @@
+<Placement>
+  <!-- Customize where the shapes are rendered -->
+
+  <!-- 
+  <Place Parts_Blogs_BlogArchives="Content:before"/>
+  <Place Parts_Blogs_RecentBlogPosts="Content:after"/>
+  <Match ContentType="Blog">
+    <Match DisplayType="Summary">
+      <Place Parts_Blogs_Blog_Description="Content:before"
+             Parts_Blogs_Blog_BlogPostCount="Meta:3"/>
+    </Match>
+  </Match>
+  <Match Path="/About">
+    <Place Parts_Common_Metadata="-"/>
+  </Match>
+-->
+  <Match ContentType="Page">
+    <Place Parts_Common_Metadata="-"/>
+    <Place Parts_Title="-"/>
+  </Match>
+  <Match ContentType="Lightbox">
+    <Place Parts_Common_Metadata="-"/>
+    <Place Parts_Title="-"/>
+  </Match>
+  <Match ContentType="Article">
+    <Place Parts_Common_Metadata="-"/>
+    <Place Parts_Title="-"/>
+  </Match>
+  <Match ContentType="NewsLetter">
+	<Place Fields_MediaPicker="Content:1"/>
+	<Place Parts_Common_Metadata="-"/>
+	<Place Parts_Title="-"/>
+	<Place Fields_DateTime="-"/>
+	<Place Fields_Common_Text="-"/>
+ 	</Match>
+	<Place Parts_Title="-"/> 
+</Placement>

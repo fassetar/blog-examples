@@ -1,0 +1,21 @@
+﻿@using Orchard.Utility.Extensions;
+		@foreach (dynamic i in Model.ContentItems.ContentItems) { 
+			
+			var contentTypeClassName = ((string)i.ContentItem.ContentType).HtmlClassify();
+			
+			<article class="content-item @contentTypeClassName">
+			<h3 class="ArticleLink"><a href="@i.ContentItem.AutoroutePart.Path">@Display(i.ContentItem.TitlePart.Title)</a>
+			<span class="date">@Display(i.Meta)</span></h3>
+				<div class="articleStub">@Display(Html.Raw(i.ContentItem.BodyPart.Text))</div>
+				<div class="articleReadMore">... <a class="readmoreArticles" href="@i.ContentItem.AutoroutePart.Path">Read Full Article</a></div>
+			</article>
+			<div class="ArticlebreakLine"></div>
+		}  				
+					
+								
+	<div class="clear">
+				
+	</div>
+
+
+

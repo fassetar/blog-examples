@@ -1,0 +1,9 @@
+﻿
+
+<div id="SiteCatalystData"></div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#SiteCatalystData').load('/SiteCatalyst?type=@Model.PageType&name=@Model.PageName.Replace(" ","---")');       
+    });
+</script>

@@ -1,0 +1,37 @@
+div#content { width: 710px; padding: 0 8px 0 7px; }
+div#home_promo { width:710px; height:350px; padding:0; margin:0; background:url/Themes/NorthernSafety/Styles/images/homeAd/homead2.jpg) no-repeat top left; }
+div.flashcontent { display:none; }
+div#controls { position:absolute; margin:-30px 0 0 10px; }
+div#controls img{ border:none; }
+div#controls a#prevAd { background:url(/Themes/NorthernSafety/Styles/images/homeAd/controls.gif) 0 0 no-repeat; width:15px; height:15px; display:block; float:left; }
+div#controls a#pause { background:url(/Themes/NorthernSafety/Styles/images/homeAd/controls.gif) -15px 0 no-repeat; width:15px; height:15px; display:block; float:left; }
+div#controls a#play { background:url(/Themes/NorthernSafety/Styles/images/homeAd/controls.gif) -30px 0 no-repeat; width:15px; height:15px; display:block; float:left; }
+div#controls a#nextAd { background:url(/Themes/NorthernSafety/Styles/images/homeAd/controls.gif) -45px 0 no-repeat; width:15px; height:15px; display:block; float:left; }
+
+/* Begin: Products */
+div#home_featured_prods { margin:10px 0; padding:0; width:710px; }
+
+div.home_prod { width:170px; height:295px; margin:0 7px 0 0; padding:0; float:left; }
+div.home_prod_head { width:170px; padding:0; margin:0; height:25px; }
+div.home_prod_head h4 a { color:white; font-size:14px; line-height:25px; text-decoration:none; text-align:left; padding:0 8px; }
+div.home_prod_head h4 a:hover { text-decoration:underline; }
+div.home_ns { background:url(/Themes/NorthernSafety/Styles/images/home_ns.jpg) top left no-repeat; } 
+div.home_top { background:url(/Themes/NorthernSafety/Styles/images/home_top.jpg) top left no-repeat; } 
+div.home_sale { background:url(/Themes/NorthernSafety/Styles/images/home_sale.jpg) top left no-repeat; } 
+
+div.home_prod_content { background:#ffffff; border-left:1px solid #dddddd; border-right:1px solid #dddddd; width:148px; height:252px; margin:0; padding:8px 10px 7px 10px; }
+div.home_prod_image { width:150px; height:150px; margin:0; padding:0 0 5px 0; }
+div.home_prod_image img { width:148px; height:148px; border:1px solid #dddddd; }
+div.home_prod_name { width:150px; padding:0; margin:0; font-size:10px; line-height:12px; font-weight:bold; height:60px; }
+div.home_prod_name a { color:#336699; text-decoration:none; }
+div.home_prod_name a:hover { text-decoration:underline; }
+div.home_prod_price { width:150px; padding:0; margin:0; font-size:10px; line-height:12px; height:12px; color:#000000; font-weight:bold; }
+div.home_prod_buy { width:150px; padding:5px 0; margin:0; text-align:right; }
+
+div.home_prod_foot { background:url(/Themes/NorthernSafety/Styles/images/home_product_bottom.png) bottom left no-repeat; width:162px; font-size:10px; line-height:16px; height:16px; border-top:1px solid #dddddd; margin:0; padding:0 0 0 8px; }
+
+
+
+div#cat_insight { width:170px; height:295px; margin:0; padding:0; float:left; }
+div#cat_insight a img { border:none; }
+/* End: Products */

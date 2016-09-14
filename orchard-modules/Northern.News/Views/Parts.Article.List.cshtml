@@ -1,0 +1,10 @@
+﻿@{
+    IEnumerable<object> articles = Model.ContentItems;
+}
+<div id="ArticleList">
+@Display(Model.ContentItems)
+</div>
+@if (articles == null || articles.Count() < 1)
+{
+<p>@T("There are no articles to display.")</p>
+}

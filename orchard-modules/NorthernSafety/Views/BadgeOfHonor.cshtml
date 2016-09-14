@@ -1,0 +1,144 @@
+﻿<div id="bottomContainer">    	
+	<div id="bottomContainerLeft">
+		<div class="signup">
+			<img src="/Themes/NSDefault/Content/images/emailEnvelope.png" alt="Email Sign up" />
+			<p>Sign up for Special Offers</p>
+		</div>
+		<p>Have our weekly savings and exclusive  promotions delivered to your inbox!</p>          
+		<div class="txtFldContainer" id="emailCollection">
+			<form id="signUpForm" name="signUpForm" action="/Email-Signup-Confirmation" method="post">
+				<input type="hidden" id="returnToPage" name="returnToPage" value="@Request.Url.PathAndQuery" />
+				<input type="text" name="specialOffersEmail" id="specialOffersEmail" value="" placeholder="Enter your email address" />
+			</form>
+		</div>
+		<div class="signupButton"><span class="small orangeBtn"><a id="signUpBtn" class="button">SUBMIT</a></span></div>
+	</div>
+	<script type="text/javascript">
+		$(function () {
+			$('#signUpBtn').button().click(function () {
+				if ($('#specialOffersEmail').val() == '') {
+					alert('Oops! Looks like you may not have entered a complete e-mail address.');
+				} else {
+					var email = $('#specialOffersEmail').val();
+					if (isValidEmailAddress(email)) {
+						var submitEmail = confirm("Please verify that this email address is correct; " + email + "")
+						if (submitEmail) {
+							$('#signUpForm').submit();
+							return false;
+						} else {
+							$('#specialOffersEmail').focus();
+							return false;
+						}
+					} else {
+						alert('Oops! Looks like you may not have entered a complete e-mail address.');
+					}
+				}
+			});
+
+			$('#specialOffersEmail').keypress(function (e) {
+				if (e.which == 13) {
+					$('#signUpBtn').click();
+					return false;
+					e.preventDefault();
+				}
+			});
+		});
+
+		function isValidEmailAddress(emailAddress) {
+			var pattern = new RegExp(/^([A-Za-z0-9/'_\-\.])+\@@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/);
+			return pattern.test(emailAddress);
+		}
+
+	</script>
+	<div id="bottomContainerRight">        
+		<div class="textcontainerNoPad">
+			<h4>Company Information</h4>
+			<ul>
+				<li><a href="/About-Us">About Us</a></li>
+				<li><a href="/Services">Services</a></li>
+				<li><a href="/Career-Opportunities">Career Opportunities</a></li>
+				@*<li><a href="/Privacy">Privacy &amp; Security Policy</a></li>*@
+				<li><a href="/Terms-Of-Use">Terms of Use</a></li>
+				
+			</ul>                
+		</div>
+		<div class="textcontainerPad">
+			<h4>Customer Service</h4>
+			<ul>
+				<li><a href="/Request-Catalog">Request a FREE Catalog</a></li>			
+				<li><a href="/Contact">Contact Us</a></li>
+				<li><a href="/Email-Us/webmaster">Feedback</a></li>
+				@*<li><a href="/Services/How-To-Shop">Shopping Help</a></li>*@
+				<li><a href="/FAQ">Frequently Asked Questions</a></li>
+				<li><a href="/livechat">Live Chat</a></li>
+			</ul>
+		</div>
+		<div class="textcontainerPad">
+			<h4>My Account</h4>
+			<ul>
+				<li><a href="/Account/Login">Login/Register</a></li>
+				<li><a href="/Account">My Account</a></li>
+				<li><a href="/Account/Order-History">Order History</a></li>
+				<li><a href="/Account/Order-History">Track Your Order</a></li>
+				<li><a href="/Account/Contact-Preferences">Contact Preferences</a></li>
+			</ul>
+		</div>
+		<div class="textcontainerPad">
+			<h4>Resources</h4>
+			<ul>
+				<li><a href="/News">News &amp; Information</a></li>
+				<li><a href="/Insight">Insight Newsletter</a></li>
+				<li><a href="/Glossary">Glossary of Terms</a></li>
+				<li><a href="/Selection-Guides">Product Selection Guides</a></li>
+				<li><a href="http://www.northernsafetycatalog.com">e-Catalog</a></li>
+				<li><a href="/Site-Map">Site Map</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="bottomContainerPartners"> 
+		<a href="http://www.bbb.org/buffalo/Business-Reviews/safety-equipment-and-clothing/northern-safety-co-inc-in-utica-ny-61000548/" target="_blank"><img src="/Themes/NSDefault/Content/images/bbb_logo.gif" alt="BBB Online Reliability Program" border="0" /></a>
+		<span id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=Qn5jst0LnD7IYktS2OiehQiMCyb7091HwgOPuX9tjYPIt2IkHoTvmZd"></script></span>
+	</div>
+	<div id="bottomContainerCustomerInfo">
+		Buy Online or Call Us Today: 1-800-571-4646<br />
+		<img src="/Themes/NSDefault/Content/images/cards.png" alt="credit Cards" />
+	</div>
+</div>
+
+
+		<div id="footer">
+				<div class="clear"></div>
+			<div id="footerSitemapCopyright">
+				<!-- Begin: Footer: Address -->
+				<p id="footerAddress">
+					Northern Safety Co., Inc.<br />
+					PO Box 4250. Utica, NY 13504-4250<br />
+					<span class="phoneLabel">Phone:</span> @*@NSI.Web.Helpers.Phone.Number()*@ 1-800-571-4646
+					<br />
+					<span class="phoneLabel">Fax:</span> 1-800-635-1591
+				</p>
+				<!-- End: Footer: Address -->
+				<!-- Begin: Footer: Copyright -->
+				<p id="footerCopyright">
+					Using this site signifies your agreement to the <a href="/Terms-Of-Use">Terms of Use</a>.<br />
+					View our <a href="/Privacy">Privacy &amp; Security Policy</a>.<br />
+					Copyright &copy; @DateTime.Now.Year Northern Safety Co., Inc.
+					<br /><br />
+					<a id="userStringClick">View User String</a> <span id="userString">@HttpContext.Current.Request.UserAgent</span>
+
+					<script type="text/javascript">
+						$(function () {
+							$('#userString').hide();
+							$('#userStringClick').click(function () {
+								$('#userString').show();
+								$(this).hide();
+								return false;
+							});
+						});
+					</script>
+				</p>
+				<!-- End: Footer: Copyright -->
+				<div class="clear"></div>
+		
+			</div>
+		</div>

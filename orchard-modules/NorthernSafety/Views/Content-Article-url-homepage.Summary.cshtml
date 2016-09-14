@@ -1,0 +1,7 @@
+﻿@using Orchard.Utility.Extensions;
+@{
+    var contentTypeClassName = ((string)Model.ContentItem.ContentType).HtmlClassify();
+}
+<article class="content-item @contentTypeClassName">
+    <a class="arrowType2" href="/news/@Display(Model.Slug)"><span class="special">@Display(Model.Title)</span></a>
+</article>

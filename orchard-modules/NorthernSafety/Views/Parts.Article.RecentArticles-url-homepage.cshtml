@@ -1,0 +1,30 @@
+﻿@using Orchard.Utility.Extensions;
+@{
+    IEnumerable<object> items = Model.ContentItems;
+    Model.ContentItems.Classes.Add("content-items");
+    Model.ContentItems.Classes.Add("list-items");
+}
+@*<div id="homeFeaturedContainer">*@        
+    <div id="homeLatestNews">
+        <a href="/news">Latest News & Articles</a>            
+    </div>
+    <div id="homeLatestNewsFeed">
+    <ul>
+    @foreach (dynamic i in Model.ContentItems.ContentItems) { 
+        
+        var contentTypeClassName = ((string)i.ContentItem.ContentType).HtmlClassify();
+        
+        <li>
+            <article class="content-item @contentTypeClassName">            
+                   <a href="@i.ContentItem.AutoroutePart.Path" class="arrowType2"><span class="special">@Display(i.ContentItem.TitlePart.Title)</span></a>
+            </article>
+        </li>
+        }
+    </ul>
+        <div id="homeLatestNewsMore">
+            <a class="readmore" href="/news">View More Safety Articles</a>   
+        </div>                    
+    </div>
+    <div id="homeLatestNewsFoot" class="readmore">
+        <img src="/Themes/NSDefault/Styles/images/na-foot.jpg" />
+    </div>

@@ -1,0 +1,11 @@
+﻿@{
+    IEnumerable<object> items = Model.ContentItems;
+    Model.ContentItems.Classes.Add("content-items");
+    Model.ContentItems.Classes.Add("list-items");
+}
+<div style="margin:10px 0 0 0; padding:5px; border:1px solid #c00;">
+<h2>Related Articles</h2>
+@foreach (var i in items) { 
+    <p>@Display(i)</p>
+}
+</div>

@@ -1,0 +1,131 @@
+﻿@functions {
+    // To support the layout classifaction below. Implementing as a razor function because we can, could otherwise be a Func<string[], string, string> in the code block following.
+    string CalcuClassify(string[] zoneNames, string classNamePrefix)
+    {
+        var zoneCounter = 0;
+        var zoneNumsFilled = string.Join("", zoneNames.Select(zoneName => { ++zoneCounter; return Model[zoneName] != null ? zoneCounter.ToString() : ""; }).ToArray());
+        return HasText(zoneNumsFilled) ? classNamePrefix + zoneNumsFilled : "";
+    }
+}
+@{
+    /* Global includes for the theme
+    ***************************************************************/
+    
+    SetMeta("X-UA-Compatible", "IE=edge,chrome=1");
+    //Style.Include("http://fonts.googleapis.com/css?family=Lobster&subset=latin");
+	<link rel="stylesheet" type="text/css" media="all" href="/Themes/NorthernSafety/Styles/site.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="/Themes/NorthernSafety/Styles/top_menu.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="/Themes/NorthernSafety/Styles/product-reviews.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="/Themes/NorthernSafety/Styles/cart.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="/Themes/NorthernSafety/Styles/autocomplete.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="/Themes/NorthernSafety/Styles/pages/product_availability.css" />  
+	<link rel="stylesheet" type="text/css" media="all" href="/Themes/NorthernSafety/Styles/breadcrumbs.css" /> 
+	<link rel="stylesheet" type="text/css" media="all" href="/Themes/NorthernSafety/Styles/verticalNav.css" /> 
+	<link rel="stylesheet" type="text/css" media="all" href="/Themes/NorthernSafety/Styles/jquery-ui-custom.css" />
+	
+   
+    if (Request.Path == "/"){
+		@*<link href="/Themes/NorthernSafety/Styles/pages/home.css" rel="stylesheet" type="text/css" />*@
+		<script type="text/javascript" src="/Themes/NorthernSafety/Scripts/homeAdNew.js"></script>
+		<style type="text/css">
+			div#content { width: 710px; padding: 0 8px 0 7px; }
+		</style>
+	}
+
+    /* Some useful shortcuts or settings
+    ***************************************************************/
+
+    Func<dynamic, dynamic> Zone = x => Display(x); // Zone as an alias for Display to help make it obvious when we're displaying zones
+
+    /* Layout classification based on filled zones
+    ***************************************************************/
+
+    //Add classes to the wrapper div to toggle aside widget zones on and off
+    var asideClass = CalcuClassify(new [] {"AsideFirst", "AsideSecond"}, "aside-"); // for aside-1, aside-2 or aside-12 if any of the aside zones are filled
+    if (HasText(asideClass)) {
+        Model.Classes.Add(asideClass);
+    }
+
+    //Add classes to the wrapper div to toggle tripel widget zones on and off
+    var tripelClass = CalcuClassify(new [] {"TripelFirst", "TripelSecond", "TripelThird"}, "tripel-"); // for tripel-1, triple-2, etc. if any of the tripel zones are filled
+    if (HasText(tripelClass)) {
+        Model.Classes.Add(tripelClass);
+    }
+
+    //Add classes to the wrapper div to toggle quad widget zones on and off
+    var footerQuadClass = CalcuClassify(new [] {"FooterQuadFirst", "FooterQuadSecond", "FooterQuadThird", "FooterQuadFourth"}, "split-"); // for quad-1, quad-2, etc. if any of the quad zones are filled
+    if (HasText(footerQuadClass)) {
+        Model.Classes.Add(footerQuadClass);
+    }
+
+    /* Inserting some ad hoc shapes
+    ***************************************************************/
+
+    WorkContext.Layout.Header.Add(New.Branding(), "5"); // Site name and link to the home page
+    WorkContext.Layout.Footer.Add(New.BadgeOfHonor(), "5"); // Powered by Orchard
+    //WorkContext.Layout.Footer.Add(New.User(), "10"); // Login and dashboard links
+
+    /* Last bit of code to prep the layout wrapper
+    ***************************************************************/
+    
+    Model.Id = "layout-wrapper";
+    var tag = Tag(Model, "div"); // using Tag so the layout div gets the classes, id and other attributes added to the Model
+
+    bool lb = false;
+    if (HttpContext.Current.Request.Path.ToLower().Contains("lightbox"))
+    {
+        lb = true;
+    }
+}
+@if (!lb)
+{
+    <div id="CustomerSiteHeader"></div>
+@tag.StartElement
+<div id="LBox" class="dialogClass">
+        <div id="LBoxContents"></div>
+    </div>  
+    <div id="BuyNow" class="dialogClass">
+        <div id="BuyNowContents"></div>
+    </div>
+    <div id="container">
+@if (Model.Header != null)
+{
+<header id="layout-header" class="group">
+    @Zone(Model.Header)
+</header>
+}
+@if (Model.Navigation != null)
+{
+<div id="layout-navigation" class="group">
+    @Zone(Model.Navigation) 
+</div>
+}
+<div id="contentContainer">
+    <div id="content"> 
+        @if (Model.BeforeContent != null && Request.Path != "/")
+        {         
+            @Zone(Model.BeforeContent)
+        }
+        @Zone(Model.Content)
+    </div>
+
+    <div id="verticalNavHP">
+        @Zone(Model.AsideFirst)
+    </div>
+            <!-- End LeftMenu -->
+
+            <div class="clear"></div>
+        </div>
+    </div>
+<div class="clear"></div>
+<div id="layout-footer" class="group">
+    <footer>
+        @Zone(Model.Footer)
+    </footer>
+</div>
+@tag.EndElement
+}
+else
+{    
+    @Display(Model.Content)
+}
