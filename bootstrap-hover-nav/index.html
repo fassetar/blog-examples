@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="myjanney">
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div ng-controller="mainController">
+    <!-- <uib-tabset class="nav-parent-tab">
+      <uib-tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active">
+        <uib-tabset class="nav-child-tab" ng-class="hoverTab()">
+          <uib-tab ng-repeat="subtab in tab.subtabs" heading="{{tab.subtabs[$index].title}}">
+            <div ng-bind="subtab.content"></div>
+          </uib-tab>
+        </uib-tabset>
+      </uib-tab>
+    </uib-tabset>
+    <br/>
+    <br/> -->
+    <div ng-mouseleave="hoverOut()">
+    <div class="nav-parent-tab">
+      <ul class="nav nav-tabs">
+        <li ng-repeat="tab in tabs" ng-class="(tab.active) ? 'active':''" ng-mouseover="hoverIn($index)">
+          <a ng-bind="tab.title" ng-mouseover="previewTab($index);" ng-click="activeTab($index);"></a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-content">
+      <div class="tab-pane" ng-repeat="tab in tabs track by $index" ng-cloak ng-class="'active'" ng-show="displayTab($index)">
+        <uib-tabset class="nav-child-tab" ng-show="displayTab($index)">
+          <uib-tab ng-repeat="subtab in tab.subtabs track by $index" heading="{{tab.subtabs[$index].title}}">
+            <div ng-bind="subtab.content"></div>
+          </uib-tab>
+        </uib-tabset>
+      </div>
+    </div>
+    </div>
+
+    <div ng-view=""></div>
+  </div>
+  <script src="https://code.angularjs.org/1.5.6/angular.min.js"></script>
+  <script src="https://cdn.rawgit.com/angular-ui/bootstrap/gh-pages/ui-bootstrap-tpls-1.3.3.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-messages.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
