@@ -63,10 +63,7 @@ input:checked + .slider:before {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  width: 960px;
-  height: 500px;
-  position: relative;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  
 }
 
 .topSlice,
