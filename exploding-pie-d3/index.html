@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link href="style.css" rel="stylesheet" />
+<body>
+  <div id="firstGraph"></div>
+  <label>3D/2D</label>
+  <label class="switch">
+    <input type="checkbox" class="messageCheckbox" onClick="changeData()">
+    <div class="slider round"></div>
+  </label>
+  <div id="secondGraph"></div>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="Donut3D.js"></script>
+  <script>
+    var salesData = [{
+      label: "Basic",
+      color: "#67b7dc"
+    }, {
+      label: "Plus",
+      color: "#84B761"
+    }, {
+      label: "Lite",
+      color: "#fdd400"
+    }, {
+      label: "Elite",
+      color: "#cc4748"
+    }, {
+      label: "Delux",
+      color: "#2F4074"
+    }];
+
+    var svg = d3.select("#firstGraph").append("svg").attr("width", 300).attr("height", 300);
+        svg.append("g").attr("id", "salesDonut").style("float","left");
+        Donut3D.draw("salesDonut", randomData(), 150, 150, 130, 120, 20, 0);
+     var svg2 = d3.select("#secondGraph").append("svg").attr("width", 300).attr("height", 300);
+        svg2.append("g").attr("id", "salesDonut2").style("float","left");
+        Donut3D.draw("salesDonut2", randomData(), 150, 150, 130, 120, 0, 0);
+        
+    function changeData() {
+      var checkedValue = document.querySelector('.messageCheckbox').checked;
+      if (!checkedValue) {
+        Donut3D.transition("salesDonut", randomData(), 130, 120, 20, 0);
+      } else {
+        Donut3D.transition("salesDonut", randomData(), 130, 120, 0, 0);
+      }
+    }
+
+    function randomData() {
+      return salesData.map(function(d) {
+        return {
+          label: d.label,
+          value: 100,
+          color: d.color
+        };
+      });
+    }
+  </script>
+</body>
