@@ -5,8 +5,11 @@ Example project using Selenium to test logins
 
 Release History
 =============
+ * 2016-12-02   v0.0.2   Removed drives
  * 2015-03-23   v0.0.1   Started recording history notes.
-
+ 
+Drivers
+http://www.seleniumhq.org/download/
 
 License
 =============
